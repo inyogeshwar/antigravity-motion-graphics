@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.js",
   "bin": {
-    "create-antigravity-motion": "./index.js"
+    "create-antigravity-motion": "index.js"
   },
   "files": [
     "index.js",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/inyogeshwar/antigravity-motion-graphics.git"
+    "url": "git+https://github.com/inyogeshwar/antigravity-motion-graphics.git"
   },
   "author": "Yogeshwar Kumar <111217412+inyogeshwar@users.noreply.github.com>",
   "license": "MIT",

@@ -5,9 +5,9 @@
   "main": "lib/motion.js",
   "type": "module",
   "bin": {
-    "antigravity-motion-graphics": "./bin/create.js",
-    "create-antigravity-motion": "./bin/create.js",
-    "antigravity-motion": "./bin/cli.js"
+    "antigravity-motion-graphics": "bin/create.js",
+    "create-antigravity-motion": "bin/create.js",
+    "antigravity-motion": "bin/cli.js"
   },
   "files": [
     "bin",
@@ -53,7 +53,7 @@
   "author": "Yogeshwar Kumar <111217412+inyogeshwar@users.noreply.github.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/inyogeshwar/antigravity-motion-graphics.git"
+    "url": "git+https://github.com/inyogeshwar/antigravity-motion-graphics.git"
   },
   "license": "MIT",
   "dependencies": {
