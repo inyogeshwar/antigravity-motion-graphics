@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.0.1] - 2026-11-03
+
+### Added
+- **Official Scaffolding Wrapper Package (`packages/create-antigravity-motion`):**
+  - Instant `npx create-antigravity-motion [name]` delegation.
+  - Native support for `npm create antigravity-motion`, `pnpm create antigravity-motion`, and `bun create antigravity-motion`.
+- **Live NPM Badges & Registry Integration:**
+  - Added live version and download badges.
+  - Verified binary mappings for `antigravity-motion`, `create-antigravity-motion`, and `antigravity-motion-graphics`.
+
 ## [1.0.0] - 2026-11-03
 
 ### Added

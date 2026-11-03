@@ -1,6 +1,6 @@
 {
   "name": "antigravity-motion-graphics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deterministic Programmatic Motion Design Studio in Google Antigravity",
   "main": "lib/motion.js",
   "type": "module",
