@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Antigravity Motion Graphic</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #090A0F;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .badge {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #F59E0B;
+      margin-bottom: 24px;
+    }
+    .headline {
+      font-size: 80px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-align: center;
+      max-width: 900px;
+      letter-spacing: -2px;
+      margin-bottom: 40px;
+    }
+    .card {
+      width: 860px;
+      height: 520px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 40px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      padding: 60px;
+      position: relative;
+    }
+    .metric-value {
+      font-size: 110px;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -3px;
+    }
+    .metric-label {
+      font-size: 32px;
+      color: #94A3B8;
+      margin-top: 10px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 7px;
+      margin-top: auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #F59E0B, #EF4444);
+      border-radius: 7px;
+      width: 0%;
+    }
+  </style>
+</head>
+<body>
+  <div id="badge" class="badge">Programmatic Motion</div>
+  <h1 id="headline" class="headline">Code Every Frame With Zero Compromise</h1>
+  
+  <div id="card" class="card">
+    <div id="metric-val" class="metric-value">0%</div>
+    <div class="metric-label">Deterministic Render Fidelity</div>
+    <div class="progress-bar">
+      <div id="progress" class="progress-fill"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { spring, clamp } from './lib/motion.js';
+
+    // Global deterministic seek function (The Render Contract)
+    window.seek = function(t) {
+      // Badge spring entrance (t: 0.2s -> 1.0s)
+      const badgeSpring = spring(t - 0.2, 220, 24);
+      const badgeEl = document.getElementById('badge');
+      badgeEl.style.opacity = clamp((t - 0.2) / 0.3);
+      badgeEl.style.transform = `translateY(${(1 - badgeSpring) * 30}px)`;
+
+      // Headline entrance (t: 0.5s -> 1.5s)
+      const headSpring = spring(t - 0.5, 180, 22);
+      const headEl = document.getElementById('headline');
+      headEl.style.opacity = clamp((t - 0.5) / 0.4);
+      headEl.style.transform = `translateY(${(1 - headSpring) * 40}px) scale(${0.9 + 0.1 * headSpring})`;
+
+      // Card scale & progress bar (t: 1.0s -> 4.0s)
+      const cardSpring = spring(t - 1.0, 160, 24);
+      const cardEl = document.getElementById('card');
+      cardEl.style.opacity = clamp((t - 1.0) / 0.3);
+      cardEl.style.transform = `translateY(${(1 - cardSpring) * 60}px) scale(${0.85 + 0.15 * cardSpring})`;
+
+      // Metric count up (0 -> 100%)
+      const progSpring = spring(t - 1.2, 90, 20);
+      const percent = Math.min(100, Math.round(progSpring * 100));
+      document.getElementById('metric-val').textContent = `${percent}%`;
+      document.getElementById('progress').style.width = `${percent}%`;
+    };
+
+    // Initialize at frame 0
+    window.seek(0);
+  </script>
+</body>
+</html>

@@ -62,12 +62,23 @@ flowchart LR
 
 ## Quickstart
 
-### Prerequisites
-- **Node.js**: `v18.0.0` or higher
-- **Python**: `3.10` or higher
-- **FFmpeg**: Installed and available in PATH (or specified via `FFMPEG_PATH`)
+### Option A: One-Click Scaffold via NPX (Recommended)
 
-### 1. Clone & Install
+Just like `npx create-remotion` or `npx create-next-app`, you can scaffold a new deterministic motion studio project in one command:
+
+```bash
+# Interactive scaffolding wizard
+npx antigravity-motion-graphics my-video
+
+# Or using the create- alias:
+npx create-antigravity-motion my-video
+
+# Non-interactive quickstart (Canvas template + auto-install):
+npx antigravity-motion-graphics my-video --template canvas --yes --install
+```
+
+### Option B: Clone & Run Locally
+
 ```bash
 git clone https://github.com/inyogeshwar/antigravity-motion-graphics.git
 cd antigravity-motion-graphics

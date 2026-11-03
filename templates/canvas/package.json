@@ -1,0 +1,14 @@
+{
+  "name": "my-motion-video",
+  "version": "1.0.0",
+  "description": "Deterministic programmatic motion graphic video generated with Antigravity Motion Studio",
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs",
+    "render:hq": "node render.mjs --sub 4",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

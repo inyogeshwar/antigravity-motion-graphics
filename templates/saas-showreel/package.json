@@ -1,0 +1,15 @@
+{
+  "name": "my-saas-showreel",
+  "version": "1.0.0",
+  "description": "High-conversion SaaS product promotional reel generated with Antigravity Motion Studio",
+  "type": "module",
+  "scripts": {
+    "render": "node render.mjs",
+    "render:hq": "node render.mjs --sub 4",
+    "sfx": "node sfx.mjs cues.json out/sfx.wav",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}

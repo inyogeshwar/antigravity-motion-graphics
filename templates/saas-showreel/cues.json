@@ -1,0 +1,20 @@
+[
+  { "t": 0.1, "type": "whoosh" },
+  { "t": 0.6, "type": "thump" },
+  { "t": 1.4, "type": "whoosh" },
+  { "t": 2.0, "type": "pop" },
+  { "t": 2.8, "type": "ding" },
+  { "t": 3.2, "type": "whoosh" },
+  { "t": 4.0, "type": "click" },
+  { "t": 5.0, "type": "pop" },
+  { "t": 6.2, "type": "whoosh" },
+  { "t": 6.8, "type": "thump" },
+  { "t": 7.6, "type": "click" },
+  { "t": 8.4, "type": "pop" },
+  { "t": 9.2, "type": "ding" },
+  { "t": 10.2, "type": "whoosh" },
+  { "t": 11.0, "type": "click" },
+  { "t": 12.2, "type": "thump" },
+  { "t": 13.0, "type": "ding" },
+  { "t": 14.0, "type": "whoosh" }
+]

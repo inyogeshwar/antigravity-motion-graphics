@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ViraloKit — Official Motion Promo</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #060709;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+    }
+    #c {
+      display: block;
+      max-width: 100vw;
+      max-height: 100vh;
+      aspect-ratio: 9/16;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.85);
+    }
+    #hud {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: #64748b;
+      font-size: 14px;
+      font-family: monospace;
+      pointer-events: none;
+      z-index: 10;
+    }
+    /* Hidden assets for image preloading */
+    .preloads { display: none; }
+  </style>
+</head>
+<body>
+
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="hud">ViraloKit Promo • <span id="time-display">0.00</span>s / 15.00s</div>
+
+<div class="preloads">
+  <img id="img-hero" src="./assets/hero-mockup.png" alt="Hero Mockup" />
+</div>
+
+<script>
+  // Closed-Form Motion Physics & Analytical Spring Engine (0xMovez / Antigravity Harness)
+  const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+
+  function spring(t, k = 170, d = 26) {
+    if (t <= 0) return 0;
+    const w0 = Math.sqrt(k);
+    const z = d / (2 * w0);
+    if (z < 1) {
+      const wd = w0 * Math.sqrt(1 - z * z);
+      return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+    }
+    return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+  }
+
+  function track(t, keys, k = 170, d = 26) {
+    if (!keys || keys.length === 0) return 0;
+    let v = keys[0][1];
+    for (let i = 1; i < keys.length; i++) {
+      const [t0, val] = keys[i];
+      const prevVal = keys[i - 1][1];
+      v += (val - prevVal) * spring(t - t0, k, d);
+    }
+    return v;
+  }
+
+  function rng(seed) {
+    return () => {
+      seed |= 0;
+      seed = (seed + 0x6D2B79F5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  const W = 1080;
+  const H = 1920;
+  const DUR = 15.0;
+  const canvas = document.getElementById('c');
+  const g = canvas.getContext('2d');
+  const timeDisplay = document.getElementById('time-display');
+  const imgHero = document.getElementById('img-hero');
+
+  // Pre-seed deterministic grain
+  const prng = rng(1337);
+  const stars = Array.from({ length: 60 }, () => ({
+    x: prng() * W,
+    y: prng() * H,
+    r: 1 + prng() * 2,
+    alpha: 0.15 + prng() * 0.4
+  }));
+
+  // Colors
+  const BG_COLOR = '#060709';
+  const CARD_BG = '#0E1015';
+  const BORDER_COLOR = '#232733';
+  const TEXT_WHITE = '#F8FAFC';
+  const TEXT_MUTED = '#94A3B8';
+  const ACCENT_PINK = '#FF2D55';
+  const ACCENT_ORANGE = '#FF6B00';
+  const META_GREEN = '#10B981';
+
+  // Helper: Draw pill badge
+  function drawBadge(text, x, y, bg, border, textColor, icon = null) {
+    g.save();
+    g.font = '600 28px -apple-system, sans-serif';
+    const textWidth = g.measureText(text).width;
+    const padX = 24;
+    const badgeW = textWidth + padX * 2 + (icon ? 30 : 0);
+    const badgeH = 54;
+
+    g.fillStyle = bg;
+    g.strokeStyle = border;
+    g.lineWidth = 1.5;
+    g.beginPath();
+    g.roundRect(x - badgeW / 2, y - badgeH / 2, badgeW, badgeH, 27);
+    g.fill();
+    g.stroke();
+
+    let startX = x - badgeW / 2 + padX;
+    if (icon === 'dot') {
+      g.fillStyle = textColor;
+      g.beginPath();
+      g.arc(startX + 8, y, 6, 0, Math.PI * 2);
+      g.fill();
+      startX += 28;
+    }
+
+    g.fillStyle = textColor;
+    g.textAlign = 'left';
+    g.textBaseline = 'middle';
+    g.fillText(text, startX, y);
+    g.restore();
+  }
+
+  // Helper: Draw glowing glassy card
+  function drawCard(x, y, w, h, radius = 28) {
+    g.save();
+    g.fillStyle = CARD_BG;
+    g.strokeStyle = BORDER_COLOR;
+    g.lineWidth = 2;
+    g.beginPath();
+    g.roundRect(x - w / 2, y - h / 2, w, h, radius);
+    g.fill();
+    g.stroke();
+    g.restore();
+  }
+
+  // SCENES
+  const SCENES = [
+    {
+      // 0.0s - 3.2s: THE HOOK
+      from: 0.0,
+      to: 3.2,
+      draw(t) {
+        const s1 = spring(t, 240, 22);
+        const s2 = spring(t - 1.2, 260, 20);
+
+        // Subdued ambient background glow
+        const glow = g.createRadialGradient(W / 2, 700, 20, W / 2, 700, 500);
+        glow.addColorStop(0, 'rgba(255, 45, 85, 0.12)');
+        glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        g.fillStyle = glow;
+        g.fillRect(0, 0, W, H);
+
+        if (t < 1.3) {
+          // Question Hook
+          g.save();
+          g.translate(W / 2, 850);
+          g.scale(0.85 + 0.15 * s1, 0.85 + 0.15 * s1);
+          g.globalAlpha = clamp(t * 5);
+
+          drawBadge('INSTAGRAM AUTOMATION WARNING', 0, -280, 'rgba(239, 68, 68, 0.15)', 'rgba(239, 68, 68, 0.4)', '#EF4444', 'dot');
+
+          g.fillStyle = TEXT_WHITE;
+          g.font = '900 108px -apple-system, sans-serif';
+          g.textAlign = 'center';
+          g.fillText('TIRED OF', 0, -110);
+          g.fillStyle = '#EF4444';
+          g.fillText('SHADOWBANS?', 0, 10);
+
+          g.font = '500 42px -apple-system, sans-serif';
+          g.fillStyle = TEXT_MUTED;
+          g.fillText('Scrapers & bots get accounts locked.', 0, 150);
+          g.restore();
+        } else {
+          // The Solution Reveal
+          const tRel = t - 1.3;
+          const sReveal = spring(tRel, 280, 22);
+          g.save();
+          g.translate(W / 2, 850);
+          g.scale(0.8 + 0.2 * sReveal, 0.8 + 0.2 * sReveal);
+          g.globalAlpha = clamp(tRel * 4);
+
+          drawBadge('Official Meta Graph API v23.0', 0, -290, 'rgba(16, 185, 129, 0.12)', 'rgba(16, 185, 129, 0.4)', META_GREEN, 'dot');
+
+          g.fillStyle = TEXT_WHITE;
+          g.font = '900 115px -apple-system, sans-serif';
+          g.textAlign = 'center';
+          g.fillText('MEET', 0, -110);
+
+          // ViraloKit gradient text
+          const grad = g.createLinearGradient(-350, 0, 350, 0);
+          grad.addColorStop(0, ACCENT_PINK);
+          grad.addColorStop(1, ACCENT_ORANGE);
+          g.fillStyle = grad;
+          g.fillText('VIRALOKIT', 0, 15);
+
+          g.font = '600 44px -apple-system, sans-serif';
+          g.fillStyle = '#E2E8F0';
+          g.fillText('Professional Creator Studio', 0, 130);
+
+          // Accent bar
+          g.fillStyle = grad;
+          g.fillRect(-220 * sReveal, 190, 440 * sReveal, 10);
+          g.restore();
+        }
+      }
+    },
+    {
+      // 3.2s - 7.0s: THE STUDIO INTERFACE ASSEMBLES
+      from: 3.2,
+      to: 7.0,
+      draw(t) {
+        const sEntry = spring(t, 180, 24);
+        const sCard1 = spring(t - 0.8, 240, 20);
+        const sCard2 = spring(t - 1.6, 240, 20);
+
+        // Header label
+        g.save();
+        g.globalAlpha = clamp(t * 3);
+        drawBadge('100% Policy-Compliant Architecture', W / 2, 220, 'rgba(16, 185, 129, 0.12)', 'rgba(16, 185, 129, 0.35)', META_GREEN, 'dot');
+
+        g.fillStyle = TEXT_WHITE;
+        g.font = '800 68px -apple-system, sans-serif';
+        g.textAlign = 'center';
+        g.fillText('Live Creator Interface', W / 2, 320);
+        g.restore();
+
+        // 3D Tilt perspective mockup container
+        g.save();
+        const mockY = 920 - 40 * (1 - sEntry);
+        const mockScale = 0.88 + 0.12 * sEntry;
+        g.translate(W / 2, mockY);
+        g.scale(mockScale, mockScale);
+
+        // Browser Frame Wrapper
+        const frameW = 980;
+        const frameH = 680;
+        g.fillStyle = '#0F1117';
+        g.strokeStyle = '#262A36';
+        g.lineWidth = 3;
+        g.beginPath();
+        g.roundRect(-frameW / 2, -frameH / 2, frameW, frameH, 32);
+        g.fill();
+        g.stroke();
+
+        // Window Title Bar
+        g.fillStyle = '#171A23';
+        g.beginPath();
+        g.roundRect(-frameW / 2, -frameH / 2, frameW, 64, [32, 32, 0, 0]);
+        g.fill();
+
+        // Window buttons (red, yellow, green)
+        g.fillStyle = '#FF5F56'; g.beginPath(); g.arc(-frameW / 2 + 40, -frameH / 2 + 32, 8, 0, Math.PI * 2); g.fill();
+        g.fillStyle = '#FFBD2E'; g.beginPath(); g.arc(-frameW / 2 + 65, -frameH / 2 + 32, 8, 0, Math.PI * 2); g.fill();
+        g.fillStyle = '#27C93F'; g.beginPath(); g.arc(-frameW / 2 + 90, -frameH / 2 + 32, 8, 0, Math.PI * 2); g.fill();
+
+        // URL bar
+        g.fillStyle = '#090A0D';
+        g.beginPath();
+        g.roundRect(-220, -frameH / 2 + 14, 440, 36, 18);
+        g.fill();
+        g.fillStyle = '#64748B';
+        g.font = '500 20px monospace';
+        g.textAlign = 'center';
+        g.fillText('🔒 viralokit.vercel.app/dashboard', 0, -frameH / 2 + 38);
+
+        // Render actual 4K dashboard screenshot inside frame
+        if (imgHero.complete && imgHero.naturalWidth > 0) {
+          g.save();
+          g.beginPath();
+          g.roundRect(-frameW / 2 + 12, -frameH / 2 + 64, frameW - 24, frameH - 76, [0, 0, 24, 24]);
+          g.clip();
+          // Draw image cropped
+          g.drawImage(imgHero, -frameW / 2 + 12, -frameH / 2 + 64, frameW - 24, frameH - 76);
+          g.restore();
+        }
+        g.restore();
+
+        // Floating Callout Card 1: AI Captions (left-aligned)
+        if (t > 0.8) {
+          g.save();
+          const card1X = 280;
+          const card1Y = 1380 + (1 - sCard1) * 60;
+          g.translate(card1X, card1Y);
+          g.scale(sCard1, sCard1);
+          drawCard(0, 0, 480, 140, 22);
+
+          // Icon
+          g.fillStyle = '#FF2D55';
+          g.beginPath();
+          g.roundRect(-210, -45, 60, 60, 16);
+          g.fill();
+          g.fillStyle = '#FFFFFF';
+          g.font = '700 32px sans-serif';
+          g.textAlign = 'center';
+          g.fillText('✨', -180, -3);
+
+          g.fillStyle = TEXT_WHITE;
+          g.font = '700 30px -apple-system, sans-serif';
+          g.textAlign = 'left';
+          g.fillText('Multimodal AI Captions', -130, -15);
+          g.font = '500 24px -apple-system, sans-serif';
+          g.fillStyle = TEXT_MUTED;
+          g.fillText('Gemini 2.0 Flash + Tone Tuning', -130, 25);
+          g.restore();
+        }
+
+        // Floating Callout Card 2: Carousel Studio (right-aligned)
+        if (t > 1.6) {
+          g.save();
+          const card2X = 800;
+          const card2Y = 1560 + (1 - sCard2) * 60;
+          g.translate(card2X, card2Y);
+          g.scale(sCard2, sCard2);
+          drawCard(0, 0, 480, 140, 22);
+
+          // Icon
+          g.fillStyle = '#FF6B00';
+          g.beginPath();
+          g.roundRect(-210, -45, 60, 60, 16);
+          g.fill();
+          g.fillStyle = '#FFFFFF';
+          g.font = '700 32px sans-serif';
+          g.textAlign = 'center';
+          g.fillText('📸', -180, -3);
+
+          g.fillStyle = TEXT_WHITE;
+          g.font = '700 30px -apple-system, sans-serif';
+          g.textAlign = 'left';
+          g.fillText('Multi-Slide Carousels', -130, -15);
+          g.font = '500 24px -apple-system, sans-serif';
+          g.fillStyle = TEXT_MUTED;
+          g.fillText('2 to 10 Slides Direct Publish', -130, 25);
+          g.restore();
+        }
+      }
+    },
+    {
+      // 7.0s - 10.5s: PROOF & ARCHITECTURE METRICS
+      from: 7.0,
+      to: 10.5,
+      draw(t) {
+        const sM = spring(t, 200, 22);
+
+        g.save();
+        g.globalAlpha = clamp(t * 3);
+        drawBadge('Enterprise Cloud Infrastructure', W / 2, 220, 'rgba(255, 107, 0, 0.12)', 'rgba(255, 107, 0, 0.35)', ACCENT_ORANGE, 'dot');
+
+        g.fillStyle = TEXT_WHITE;
+        g.font = '800 76px -apple-system, sans-serif';
+        g.textAlign = 'center';
+        g.fillText('Built For Scale', W / 2, 330);
+        g.restore();
+
+        // 3 Giant Metric Cards on Staggered Springs
+        const metrics = [
+          {
+            delay: 0.1,
+            val: '100',
+            unit: 'Posts / Day',
+            title: 'Official Meta Limit',
+            desc: 'Maximum throughput via official Graph API v23.0',
+            color: META_GREEN
+          },
+          {
+            delay: 0.7,
+            val: '25 GB',
+            unit: 'Cloud Media',
+            title: 'Dedicated Isolation',
+            desc: 'Ultra-fast Cloudinary CDN asset management',
+            color: '#38BDF8'
+          },
+          {
+            delay: 1.3,
+            val: '100%',
+            unit: 'Verified Meta Data',
+            title: 'Zero Estimates',
+            desc: 'Real follower reach, views, and save velocity',
+            color: ACCENT_PINK
+          }
+        ];
+
+        metrics.forEach((m, idx) => {
+          if (t > m.delay) {
+            const sm = spring(t - m.delay, 220, 20);
+            const cardY = 560 + idx * 340;
+            g.save();
+            g.translate(W / 2, cardY);
+            g.scale(0.85 + 0.15 * sm, 0.85 + 0.15 * sm);
+            g.globalAlpha = clamp((t - m.delay) * 4);
+
+            drawCard(0, 0, 960, 290, 30);
+
+            // Left colored accent border
+            g.fillStyle = m.color;
+            g.beginPath();
+            g.roundRect(-480, -145, 12, 290, [30, 0, 0, 30]);
+            g.fill();
+
+            // Big Number
+            g.font = '900 96px -apple-system, sans-serif';
+            g.fillStyle = m.color;
+            g.textAlign = 'left';
+            g.fillText(m.val, -430, -20);
+            const valWidth = g.measureText(m.val).width;
+
+            // Unit tag
+            g.font = '700 34px -apple-system, sans-serif';
+            g.fillStyle = TEXT_MUTED;
+            g.fillText(m.unit, -430 + valWidth + 28, -25);
+
+            // Title & Description
+            g.font = '700 38px -apple-system, sans-serif';
+            g.fillStyle = TEXT_WHITE;
+            g.fillText(m.title, -430, 50);
+
+            g.font = '400 28px -apple-system, sans-serif';
+            g.fillStyle = '#64748B';
+            g.fillText(m.desc, -430, 98);
+            g.restore();
+          }
+        });
+      }
+    },
+    {
+      // 10.5s - 12.8s: INTERACTIVE CURSOR CLICK ACTION
+      from: 10.5,
+      to: 12.8,
+      draw(t) {
+        const sAction = spring(t, 220, 22);
+
+        g.save();
+        g.globalAlpha = clamp(t * 3);
+        g.fillStyle = TEXT_WHITE;
+        g.font = '800 76px -apple-system, sans-serif';
+        g.textAlign = 'center';
+        g.fillText('Ready To Scale?', W / 2, 450);
+
+        g.font = '500 36px -apple-system, sans-serif';
+        g.fillStyle = TEXT_MUTED;
+        g.fillText('Deploy multi-slide carousels in seconds', W / 2, 530);
+        g.restore();
+
+        // CTA Button with Spring Depress
+        const btnY = 960;
+        const isClick = t >= 1.2;
+        const pressSpring = spring(t - 1.2, 340, 18);
+        const btnScale = isClick ? 1.0 - 0.08 * (1 - spring(t - 1.35, 300, 20)) : 1.0;
+
+        g.save();
+        g.translate(W / 2, btnY);
+        g.scale(btnScale * (0.8 + 0.2 * sAction), btnScale * (0.8 + 0.2 * sAction));
+
+        // Glow ring
+        const grad = g.createLinearGradient(-360, 0, 360, 0);
+        grad.addColorStop(0, ACCENT_PINK);
+        grad.addColorStop(1, ACCENT_ORANGE);
+
+        if (isClick) {
+          const waveR = 80 + 300 * pressSpring;
+          g.strokeStyle = `rgba(255, 45, 85, ${1 - pressSpring})`;
+          g.lineWidth = 6;
+          g.beginPath();
+          g.arc(0, 0, waveR, 0, Math.PI * 2);
+          g.stroke();
+        }
+
+        g.fillStyle = grad;
+        g.beginPath();
+        g.roundRect(-380, -75, 760, 150, 42);
+        g.fill();
+
+        g.fillStyle = '#FFFFFF';
+        g.font = '800 48px -apple-system, sans-serif';
+        g.textAlign = 'center';
+        g.textBaseline = 'middle';
+        g.fillText('Launch Studio Free  →', 0, 0);
+        g.restore();
+
+        // Animated Mouse Cursor moving on closed-form spring path
+        const cursorStopsX = [[0, 950], [1.1, W / 2 + 120]];
+        const cursorStopsY = [[0, 1400], [1.1, btnY + 20]];
+        const curX = track(t, cursorStopsX, 160, 22);
+        const curY = track(t, cursorStopsY, 160, 22);
+
+        g.save();
+        g.translate(curX, curY);
+        // Cursor SVG pointer
+        g.fillStyle = '#FFFFFF';
+        g.strokeStyle = '#000000';
+        g.lineWidth = 3;
+        g.beginPath();
+        g.moveTo(0, 0);
+        g.lineTo(0, 45);
+        g.lineTo(12, 35);
+        g.lineTo(24, 55);
+        g.lineTo(34, 50);
+        g.lineTo(22, 30);
+        g.lineTo(38, 30);
+        g.closePath();
+        g.fill();
+        g.stroke();
+        g.restore();
+      }
+    },
+    {
+      // 12.8s - 15.0s: FINAL LOGO LOCKUP & SEAMLESS CTA
+      from: 12.8,
+      to: 15.0,
+      draw(t) {
+        const sOutro = spring(t, 240, 22);
+
+        // Ambient center pulse
+        const glow = g.createRadialGradient(W / 2, 850, 50, W / 2, 850, 550);
+        glow.addColorStop(0, 'rgba(255, 45, 85, 0.16)');
+        glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        g.fillStyle = glow;
+        g.fillRect(0, 0, W, H);
+
+        g.save();
+        g.translate(W / 2, 820);
+        g.scale(0.8 + 0.2 * sOutro, 0.8 + 0.2 * sOutro);
+        g.globalAlpha = clamp(t * 4);
+
+        // Instagram gradient container icon
+        const iconGrad = g.createLinearGradient(-80, -80, 80, 80);
+        iconGrad.addColorStop(0, '#833AB4');
+        iconGrad.addColorStop(0.5, '#FD1D1D');
+        iconGrad.addColorStop(1, '#FCB045');
+
+        g.fillStyle = iconGrad;
+        g.beginPath();
+        g.roundRect(-90, -260, 180, 180, 46);
+        g.fill();
+
+        // Camera lens icon inside
+        g.strokeStyle = '#FFFFFF';
+        g.lineWidth = 10;
+        g.beginPath();
+        g.roundRect(-60, -230, 120, 120, 32);
+        g.stroke();
+        g.beginPath();
+        g.arc(0, -170, 30, 0, Math.PI * 2);
+        g.stroke();
+        g.fillStyle = '#FFFFFF';
+        g.beginPath();
+        g.arc(36, -206, 7, 0, Math.PI * 2);
+        g.fill();
+
+        // Product Name
+        g.fillStyle = TEXT_WHITE;
+        g.font = '900 115px -apple-system, sans-serif';
+        g.textAlign = 'center';
+        g.fillText('ViraloKit', 0, -20);
+
+        g.font = '700 36px -apple-system, sans-serif';
+        g.fillStyle = ACCENT_PINK;
+        g.letterSpacing = '8px';
+        g.fillText('CREATOR STUDIO', 0, 50);
+
+        // The URL pill
+        drawBadge('viralokit.vercel.app', 0, 170, '#151821', BORDER_COLOR, TEXT_WHITE);
+
+        g.font = '500 32px -apple-system, sans-serif';
+        g.fillStyle = TEXT_MUTED;
+        g.fillText('Free Forever • Zero Shadowban Risk', 0, 270);
+        g.restore();
+      }
+    }
+  ];
+
+  function draw(t) {
+    // Background base
+    g.fillStyle = BG_COLOR;
+    g.fillRect(0, 0, W, H);
+
+    // Subtle background starfield/dust for cinematic depth
+    for (const s of stars) {
+      g.fillStyle = `rgba(255, 255, 255, ${s.alpha * 0.4})`;
+      g.beginPath();
+      g.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      g.fill();
+    }
+
+    // Render active scene
+    for (const scene of SCENES) {
+      if (t >= scene.from && t < scene.to) {
+        scene.draw(t - scene.from);
+      }
+    }
+  }
+
+  // Pure deterministic seek interface for Playwright runner
+  window.seek = (t) => {
+    draw(t);
+    return true;
+  };
+
+  if (navigator.webdriver) {
+    const hudEl = document.getElementById('hud');
+    if (hudEl) hudEl.style.display = 'none';
+  }
+
+  // Live preview loop when opened in browser
+  if (!navigator.webdriver) {
+    const t0 = performance.now();
+    function loop() {
+      const now = ((performance.now() - t0) / 1000) % DUR;
+      draw(now);
+      if (timeDisplay) timeDisplay.textContent = now.toFixed(2);
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+  }
+</script>
+</body>
+</html>
