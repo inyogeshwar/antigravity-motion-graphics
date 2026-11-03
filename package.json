@@ -1,0 +1,45 @@
+{
+  "name": "antigravity-motion-graphics",
+  "version": "1.0.0",
+  "description": "Deterministic Programmatic Motion Design Studio in Google Antigravity",
+  "main": "lib/motion.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:py": "python -m unittest discover tests",
+    "test:all": "node --test tests/*.test.js && python -m unittest discover tests",
+    "render": "node render.mjs",
+    "render:hq": "node render.mjs --sub 4 --crf 16",
+    "sfx": "node sfx.mjs",
+    "voice": "node voice.mjs",
+    "cartesia": "node cartesia.mjs",
+    "heygen": "node heygen.mjs",
+    "beats": "python beats.py",
+    "remotion:studio": "remotion studio",
+    "remotion:render": "remotion render"
+  },
+  "keywords": [
+    "motion-graphics",
+    "antigravity",
+    "remotion",
+    "hyperframes",
+    "gsap",
+    "video-code",
+    "motion-design",
+    "deterministic-rendering",
+    "spring-physics"
+  ],
+  "author": "Yogeshwar Kumar <111217412+inyogeshwar@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inyogeshwar/antigravity-motion-graphics.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "playwright": "^1.64.1"
+  }
+}
