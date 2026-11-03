@@ -125,6 +125,7 @@ antigravity-motion-graphics/
 │   └── copilot-instructions.md # Coding agent standards and Render Contract rules
 ├── docs/                      # Architectural and engine documentation
 │   ├── architecture.md        # Complete multi-engine studio design
+│   ├── motion-studio-course.md # The 0xMovez Autonomous Motion Studio Masterclass
 │   ├── render-contract.md     # Pure time mathematics & anti-slop rules
 │   ├── voice-engines.md       # Cartesia & HeyGen TTS integration guide
 │   └── effects-pipeline.md    # Face tracking and 51 video effects guide
