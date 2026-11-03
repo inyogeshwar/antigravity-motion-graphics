@@ -4,6 +4,7 @@
 
 **High-Performance Programmatic Motion Design & Deterministic Video Engine**
 
+[![npm version](https://img.shields.io/npm/v/antigravity-motion-graphics.svg)](https://www.npmjs.com/package/antigravity-motion-graphics)
 [![CI](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml/badge.svg)](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/codeql.yml/badge.svg)](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
