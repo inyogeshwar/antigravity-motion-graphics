@@ -1,0 +1,14 @@
+{
+  "id": "advoc-split-talking-head",
+  "order": 32,
+  "name": "Advoc Split-Screen Explainer",
+  "tagline": "50/50 vertical split layout: top half motion graphics canvas with animated folders & HyperFrames code, bottom half talking head footage.",
+  "inspired_by_display": [
+    "aiwith.om"
+  ],
+  "niches": [
+    "Talking Head Tutorials",
+    "Tech Workflows"
+  ],
+  "status": "released"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "advoc-cream-pipeline",
+  "order": 30,
+  "name": "Advoc Media Cream Pipeline",
+  "tagline": "Warm paper background with subtle skyline outlines, Anton condensed headlines, Hot Pink accents, floating macOS windows, and 4-step progress stepper.",
+  "inspired_by_display": [
+    "aiwith.om",
+    "advocmedia.in"
+  ],
+  "niches": [
+    "AI Tools",
+    "Tech Explainers",
+    "SaaS Prompts",
+    "GitHub Repos"
+  ],
+  "status": "released"
+}

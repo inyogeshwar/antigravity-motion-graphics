@@ -1,0 +1,15 @@
+{
+  "id": "advoc-connector-automation",
+  "order": 33,
+  "name": "Advoc Connector Automation",
+  "tagline": "App node connection graphs (Instagram -> Claude), floating connector dialogs, and real-time profile analytics cards.",
+  "inspired_by_display": [
+    "aiwith.om"
+  ],
+  "niches": [
+    "AI Automations",
+    "Integrations",
+    "APIs"
+  ],
+  "status": "released"
+}

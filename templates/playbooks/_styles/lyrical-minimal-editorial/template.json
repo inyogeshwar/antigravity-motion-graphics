@@ -1,0 +1,15 @@
+{
+  "id": "lyrical-minimal-editorial",
+  "order": 40,
+  "name": "Lyrical Minimal Editorial",
+  "tagline": "Subtle serif typography with film grain and slow drift for slow romantic Bollywood songs and acoustic covers.",
+  "inspired_by_display": [
+    "bitchord"
+  ],
+  "niches": [
+    "Acoustic Covers",
+    "Lofi Bollywood",
+    "Poetry"
+  ],
+  "status": "released"
+}

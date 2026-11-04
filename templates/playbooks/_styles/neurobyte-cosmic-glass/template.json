@@ -1,0 +1,15 @@
+{
+  "id": "neurobyte-cosmic-glass",
+  "order": 31,
+  "name": "Neurobyte Cosmic Glass",
+  "tagline": "Dark cosmic nebula with frosted glassmorphism cards, glowing cyan badges, star counts, and 10-app grid matrix finale.",
+  "inspired_by_display": [
+    "neurobyte96"
+  ],
+  "niches": [
+    "Developer Tools",
+    "GitHub Curations",
+    "Open Source"
+  ],
+  "status": "released"
+}

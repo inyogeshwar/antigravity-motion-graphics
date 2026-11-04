@@ -150,6 +150,54 @@ ffmpeg -y -i out/motionos_typography_silent.mp4 -i scratch/motionos_reel_audio.m
 
 ---
 
+---
+
+## 🎬 Showcase Catalog & Creator Style Gallery
+
+MotionOS includes battle-tested, high-retention template compositions reproducing the exact editing archetypes of top viral creators:
+
+### 1. Advoc Media Suite (`aiwith.om` / Claude Code Pipeline)
+
+| Style Preset | Inspiration & Source | Visual Look & Palette | Key Components | Render Command |
+|---|---|---|---|---|
+| **`advoc-cream-pipeline`** *(Style 1A)* | `@aiwith.om`<br>[`morluto/rea`](https://github.com/morluto/rea) | Warm Paper/Cream (`#F3ECE1`) + Hot Pink (`#FF2D95`) + Dark Ink | Floating macOS windows, terminal prompt, 4-step progress stepper, rubber stamps. | `node render.mjs --html compositions/rea_showcase/index.html --dur 26.2 --fps 30` |
+| **`neurobyte-cosmic-glass`** *(Style 1B)* | `@neurobyte96`<br>`Video-28898` | Dark Cosmic Navy (`#0B111E`) + Electric Cyan (`#00D2FF`) Glow | Frosted glassmorphism cards, GitHub star counts, 10-app grid finale. | `npx antigravity-motion vibe plan clip.mp4 --style neurobyte-cosmic-glass` |
+| **`advoc-split-talking-head`** *(Style 1C)* | `@aiwith.om`<br>`Video-58518` | 50/50 Split Canvas (Cream Paper Top + Creator Face Bottom) | Animated folder morph, HyperFrames code card, lavalier talking-head. | `npx antigravity-motion vibe plan clip.mp4 --style advoc-split-talking-head` |
+| **`advoc-connector-automation`** *(Style 1D)* | `@aiwith.om`<br>`Video-68340` | Cream Canvas + Floating Dark UI Windows | Dotted connector lines (Instagram ➔ Claude), real-time profile analytics. | `npx antigravity-motion vibe plan clip.mp4 --style advoc-connector-automation` |
+
+---
+
+### 2. Raj Shamani High-Retention Podcast Suite
+
+| Style Preset | Video Reference | Caption Style & Typography | Color Highlights & VFX | B-Roll & Visual Features |
+|---|---|---|---|---|
+| **`raj-shamani-neon-lime`** | `Video-59491` | Ultra-Bold Sans (`TheBoldFont` / `Montserrat`) | White text + **Electric Lime Green (`#00FF66`)** Glow | Top header pill (`THIS MINDSET>>>>🔥⚡`), sudden punch-in zooms. |
+| **`raj-shamani-cinema-serif`** | `Video-74558` | Elegant Serif (`Cinzel` / `Playfair Display`) | Pure Crisp White, clean bottom-center | **Movie B-Rolls** (Titanic, DiCaprio, Eternal Sunshine) synced to dialogue. |
+| **`raj-shamani-crimson-hook`** | `Video-1840` *(Sam Altman)* | Geometric Heavy Sans | White + **Giant Crimson Red (`#FF1E27`)** Glow | Negative space curiosity hook (`So What Version... DIED?`), archival PIP. |
+| **`raj-shamani-handwritten-story`** | `Video-19856` | Organic Handwritten (`Caveat` / `Indie Flower`) | Soft Minimalist White (1-2 words/line) | Casual intimate dialogue pacing, zero abrupt cuts. |
+| **`raj-shamani-hype-emoji`** | `Video-51800` | Heavy Extended Sans | **Dual-Tone: Neon Yellow (`#FFE500`) + Red Glow (`#FF2222`)** | **3D Animated Emojis** (💀 Skull popping on punchlines), rapid jump cuts. |
+
+*Template Composition:* `compositions/podcast_raj_shamani/index.html`  
+*Render Command:* `node render.mjs --html compositions/podcast_raj_shamani/index.html --dur 30 --fps 30`
+
+---
+
+### 3. Bollywood & Lyrical Synchronized Suite (BitChord + SpotiDost)
+
+| Style Preset | Inspiration | Typography & Animation | Features | Render Command |
+|---|---|---|---|---|
+| **`lyrical-neon-pulse`** | BitChord + SpotiDost *(Kamariya)* | Kinetic Bold Display + Pulsing Glow | Beat-locked word boundaries, Shazam audio recognition, LRCLIB sync. | `node render.mjs --html compositions/kamariya_reel/index.html --dur 25 --fps 30` |
+| **`lyrical-minimal-editorial`** | BitChord Editorial | Modern Serif (`Billion Dreams` / `Lemon Milk`) | Film grain overlays, subtle drift, romantic Bollywood pacing. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset minimal` |
+| **`lyrical-cyber-hindi`** | Indian Hip-Hop & Indie Folk | Devanagari Calligraphic + Cyber Cyan Glow | Native Hindi script tracking, dynamic glow drop shadows. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset cyber` |
+
+---
+
+### 4. Core MotionOS Studio Showreels
+
+- **Mega 7-in-1 Template Reel:** `compositions/mega_template_reel/index.html` — Showcases UI morphs, kinetic springs, code blocks, emoji bursts, and finale.
+- **MotionOS Typography Reel:** `compositions/motionos_reel/index.html` — Kinetic typography and sound design showcase.
+
+
 ## Project Structure
 
 ```
