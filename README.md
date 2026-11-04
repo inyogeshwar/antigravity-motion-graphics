@@ -14,12 +14,62 @@
 *Turn raw footage into viral creator videos and write code for cinematic, broadcast-grade motion graphics with zero non-determinism.*
 
 [Vibe Editing OS (VEOS)](#vibe-editing-os-veos-workflow) •
+[Visual Showcase](#-visual-showcase-rendered-video--motion-graphics) •
 [Key Features](#key-features) •
 [Quickstart](#quickstart) •
 [Documentation Guide](docs/MOTIONOS_GUIDE.md) •
 [The Render Contract](#the-render-contract)
 
 </div>
+
+---
+
+## 🎬 Visual Showcase: Rendered Video & Motion Graphics
+
+MotionOS produces deterministic, broadcast-grade video edits with real-time face segmentation, text-behind-head layering, procedural SFX, and mathematical Bezier spring dynamics.
+
+### 1. Automated Render Contact Sheet (`namanvideo.mp4` Pipeline)
+Full 30-frame visual contact sheet generated directly by MotionOS during offline video compilation:
+
+<div align="center">
+  <img src="examples/namanvideo/naman_final_contact.png" alt="MotionOS Rendered Contact Sheet" width="100%" />
+  <p><em>Generated with local Faster-Whisper Turbo + MediaPipe Matting + 0xMovez Spring Engine</em></p>
+</div>
+
+### 2. Motion Graphics & Component Breakdown
+
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f01_hook.png" alt="01 Hook Frame" />
+      <br /><strong>01. Split Screen Hook</strong><br /><em>RAW unedited top vs Final Edit bottom</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f06_viral.png" alt="02 Depth Sandwich" />
+      <br /><strong>02. Depth Sandwich</strong><br /><em>Dynamic badge behind speaker's head</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f15_colors.png" alt="03 Color Specs" />
+      <br /><strong>03. Color Swatch Cards</strong><br /><em>High-contrast brand palette showcase</em>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f21_fonts.png" alt="04 Typography" />
+      <br /><strong>04. Typography Specimens</strong><br /><em>Display & UI typography specimen cards</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f29_motion.png" alt="05 Motion Curve" />
+      <br /><strong>05. Live Bezier Motion Curve</strong><br /><em>Interactive spring speed graph</em>
+    </td>
+    <td width="33%" align="center">
+      <img src="examples/namanvideo/ref_frames/f43_comment.png" alt="06 Growth CTA" />
+      <br /><strong>06. Comment Growth Funnel CTA</strong><br /><em>Automated Instagram CTA widget</em>
+    </td>
+  </tr>
+</table>
+
+👉 *See full reproduction plan, word timestamps, and reference comparison in [`examples/namanvideo/`](examples/namanvideo/README.md)*.
 
 ---
 
