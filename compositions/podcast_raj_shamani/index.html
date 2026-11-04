@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>Raj Shamani Style Podcast Auto-Caption Reel</title>
+  <style>
+    @font-face {
+      font-family: 'AmericanCaptain';
+      src: url('../../assets/fonts/blog/American-Captain.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'BigNoodle';
+      src: url('../../assets/fonts/blog/big_noodle_titling_oblique.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'LemonMilk';
+      src: url('../../assets/fonts/blog/LEMONMILK-BoldItalic.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'SFPro';
+      src: url('../../assets/fonts/SFProDisplay-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'AppleColorEmoji';
+      src: url('../../assets/fonts/AppleColorEmoji.ttf') format('truetype');
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #060608;
+      color: #FFFFFF;
+      font-family: 'AmericanCaptain', 'SFPro', sans-serif;
+      position: relative;
+    }
+
+    /* Video Frame Container (Simulating 9:16 Studio Camera with Dynamic Punch-in Zoom) */
+    #cameraViewport {
+      position: absolute;
+      top: 0; left: 0;
+      width: 1080px; height: 1920px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-origin: center center;
+      transition: none;
+    }
+
+    /* Cinematic Dark Studio Backdrop with Vignette */
+    #studioBackdrop {
+      position: absolute;
+      width: 1200px;
+      height: 2100px;
+      background: radial-gradient(circle at 50% 45%, #181926 0%, #08080c 70%, #020204 100%);
+    }
+
+    /* Mic & Warm Studio Light Glow */
+    .studio-glow {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.15) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    /* Speaker Headshot / Silhouette Silhouette Silhouette Card */
+    .podcast-speaker-frame {
+      position: absolute;
+      top: 280px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 860px;
+      height: 980px;
+      border-radius: 48px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(0,0,0,0.85) 100%);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 60px;
+    }
+
+    .mic-icon {
+      font-size: 140px;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+    }
+
+    .speaker-tag {
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 34px;
+      letter-spacing: 4px;
+      color: #FFDD00;
+      background: rgba(0,0,0,0.7);
+      padding: 8px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,221,0,0.4);
+      margin-bottom: 12px;
+    }
+
+    .speaker-name {
+      font-family: 'LemonMilk', sans-serif;
+      font-size: 42px;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+    }
+
+    /* Top Podcast Show Badge (Figuring Out Style) */
+    .show-pill {
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(20px);
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 28px;
+      letter-spacing: 3px;
+      color: #FFFFFF;
+      z-index: 100;
+    }
+    .show-pill .rec-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #FF0033;
+      box-shadow: 0 0 16px #FF0033;
+    }
+
+    /* =========================================================================
+       RAJ SHAMANI SIGNATURE AUTO-CAPTION BOX
+       Ultra-Bold, High Contrast, 2-3 Words Chunking, Neon Highlights
+       ========================================================================= */
+    #captionStage {
+      position: absolute;
+      bottom: 320px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 960px;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .caption-chunk {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      row-gap: 16px;
+      width: 100%;
+    }
+
+    .p-word {
+      font-family: 'AmericanCaptain', sans-serif;
+      font-size: 110px;
+      letter-spacing: 4px;
+      line-height: 1.1;
+      color: #FFFFFF;
+      /* Heavy stroke / shadow to cut through any background */
+      text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000,
+         0 8px 24px rgba(0,0,0,0.9);
+      display: inline-block;
+      transform-origin: center center;
+    }
+
+    /* Active Highlight (Raj Shamani Neon Yellow) */
+    .p-word.active-yellow {
+      color: #FFE600 !important;
+      text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000,
+         0 0 40px rgba(255, 230, 0, 0.9);
+      transform: scale(1.18);
+    }
+
+    /* High-Impact Green Highlight for Money / Growth */
+    .p-word.active-green {
+      color: #00FF66 !important;
+      text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000,
+         0 0 40px rgba(0, 255, 102, 0.9);
+      transform: scale(1.22);
+    }
+
+    /* Shock / Warning Red Highlight */
+    .p-word.active-red {
+      color: #FF0055 !important;
+      text-shadow: 
+        -4px -4px 0 #000,  
+         4px -4px 0 #000,
+        -4px  4px 0 #000,
+         4px  4px 0 #000,
+         0 0 40px rgba(255, 0, 85, 0.9);
+      transform: scale(1.22);
+    }
+
+    /* Inactive Words in Current Chunk */
+    .p-word.inactive {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Dynamic Growth Card Widget (Appears on Money Statements) */
+    #growthWidget {
+      position: absolute;
+      top: 500px;
+      right: 90px;
+      width: 320px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 28px;
+      padding: 24px;
+      backdrop-filter: blur(25px);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(16, 185, 129, 0.2);
+      z-index: 400;
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    #growthWidget .stat-title {
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 26px;
+      letter-spacing: 2px;
+      color: #A7F3D0;
+    }
+    #growthWidget .stat-num {
+      font-family: 'AmericanCaptain', sans-serif;
+      font-size: 64px;
+      color: #00FF66;
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
+    }
+
+    /* Soundwaves / Live Visualizer at Bottom */
+    .audio-viz-bar {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      height: 48px;
+      align-items: flex-end;
+      z-index: 100;
+    }
+    .viz-col {
+      width: 8px;
+      background: #FFE600;
+      border-radius: 999px;
+      height: 8px;
+      box-shadow: 0 0 10px rgba(255, 230, 0, 0.5);
+    }
+
+    /* Bottom Creator Handle Safe-Zone */
+    .bottom-handle {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'LemonMilk', sans-serif;
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Camera Viewport with Zoom Punch-Ins -->
+  <div id="cameraViewport">
+    <div id="studioBackdrop"></div>
+    <div class="studio-glow"></div>
+
+    <!-- Top Show Branding -->
+    <div class="show-pill">
+      <div class="rec-dot"></div>
+      <span>FIGURING OUT WITH RAJ SHAMANI</span>
+    </div>
+
+    <!-- Podcast Guest / Speaker Setup -->
+    <div class="podcast-speaker-frame" id="speakerCard">
+      <div class="mic-icon">🎙️</div>
+      <div class="speaker-tag">FOUNDER INSIGHTS</div>
+      <div class="speaker-name">SPECIAL GUEST</div>
+    </div>
+
+    <!-- Dynamic Metric / Growth Widget Pop-up -->
+    <div id="growthWidget">
+      <div class="stat-title">SAVINGS POTENTIAL</div>
+      <div class="stat-num" id="statNum">+ ₹50 LAKH</div>
+    </div>
+
+    <!-- Signature Raj Shamani Caption Box -->
+    <div id="captionStage">
+      <!-- Injected word chunks dynamically based on seek(t) -->
+      <div class="caption-chunk" id="captionChunk"></div>
+    </div>
+
+    <!-- Live Audio Equalizer -->
+    <div class="audio-viz-bar" id="audioViz"></div>
+
+    <!-- Bottom Handle -->
+    <div class="bottom-handle">@RAJSHAMANI • MOTIONOS</div>
+  </div>
+
+  <script>
+    // Closed-Form Analytical Damped Spring
+    function spring(t, k = 220, d = 22) {
+      if (t <= 0) return 0;
+      const w0 = Math.sqrt(k);
+      const z = d / (2 * w0);
+      if (z < 1) {
+        const wd = w0 * Math.sqrt(1 - z * z);
+        return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+      }
+      return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+    }
+
+    // Initialize 16 audio visualizer bars
+    const vizContainer = document.getElementById('audioViz');
+    for (let i = 0; i < 16; i++) {
+      const col = document.createElement('div');
+      col.className = 'viz-col';
+      col.id = 'viz_' + i;
+      vizContainer.appendChild(col);
+    }
+
+    /* =========================================================================
+       PODCAST TRANSCRIPT TIMINGS (Raj Shamani 15-second Viral Hook)
+       4 Chunks with word-level millisecond timestamps
+       ========================================================================= */
+    const CHUNKS = [
+      // Chunk 1 (0.0s - 3.2s): The Hook
+      {
+        start: 0.0,
+        end: 3.2,
+        cameraZoom: 1.0,
+        words: [
+          { text: "90%", start: 0.1, color: "active-red" },
+          { text: "INDIANS", start: 0.6, color: "active-yellow" },
+          { text: "DON'T", start: 1.2, color: "active-yellow" },
+          { text: "KNOW", start: 1.6, color: "active-yellow" },
+          { text: "THIS!", start: 2.1, color: "active-red" }
+        ]
+      },
+      // Chunk 2 (3.2s - 6.8s): The Relatable Problem (Punch-in Zoom 1.08x)
+      {
+        start: 3.2,
+        end: 6.8,
+        cameraZoom: 1.08,
+        words: [
+          { text: "AAP", start: 3.3, color: "active-yellow" },
+          { text: "₹50,000", start: 3.8, color: "active-green" },
+          { text: "KAMATE", start: 4.5, color: "active-yellow" },
+          { text: "HO,", start: 4.9, color: "active-yellow" },
+          { text: "LEKIN", start: 5.4, color: "active-yellow" },
+          { text: "PAISA", start: 5.8, color: "active-green" },
+          { text: "KAHAN", start: 6.2, color: "active-yellow" },
+          { text: "GAYA?", start: 6.5, color: "active-red" }
+        ]
+      },
+      // Chunk 3 (6.8s - 10.8s): The Secret / Growth Rule (Chart pops up!)
+      {
+        start: 6.8,
+        end: 10.8,
+        cameraZoom: 1.0,
+        showWidget: true,
+        words: [
+          { text: "JUST", start: 6.9, color: "active-yellow" },
+          { text: "FOLLOW", start: 7.3, color: "active-yellow" },
+          { text: "THE", start: 7.7, color: "active-yellow" },
+          { text: "50-30-20", start: 8.2, color: "active-green" },
+          { text: "RULE", start: 9.2, color: "active-green" },
+          { text: "OF", start: 9.8, color: "active-yellow" },
+          { text: "WEALTH!", start: 10.2, color: "active-green" }
+        ]
+      },
+      // Chunk 4 (10.8s - 15.0s): High-Stakes Climax (Deep Punch-in Zoom 1.15x)
+      {
+        start: 10.8,
+        end: 15.0,
+        cameraZoom: 1.15,
+        words: [
+          { text: "NAHI", start: 10.9, color: "active-red" },
+          { text: "KIYA", start: 11.3, color: "active-red" },
+          { text: "TOH", start: 11.7, color: "active-yellow" },
+          { text: "ZINDAGI", start: 12.1, color: "active-yellow" },
+          { text: "BHAR", start: 12.6, color: "active-yellow" },
+          { text: "STRUGGLE", start: 13.1, color: "active-red" },
+          { text: "HOGA!", start: 13.9, color: "active-red" }
+        ]
+      }
+    ];
+
+    /* =========================================================================
+       DETERMINISTIC window.seek(t) FUNCTION
+       ========================================================================= */
+    window.seek = function(t) {
+      const camera = document.getElementById('cameraViewport');
+      const chunkContainer = document.getElementById('captionChunk');
+      const growthWidget = document.getElementById('growthWidget');
+
+      // 1. Audio Visualizer Dynamics
+      for (let i = 0; i < 16; i++) {
+        const bar = document.getElementById('viz_' + i);
+        const wave = 0.5 + 0.5 * Math.sin(t * 16 + i * 0.9);
+        bar.style.height = Math.max(6, wave * 44) + 'px';
+      }
+
+      // 2. Find Active Chunk
+      let currentChunk = CHUNKS[0];
+      for (const ch of CHUNKS) {
+        if (t >= ch.start && t < ch.end) {
+          currentChunk = ch;
+          break;
+        }
+      }
+      if (t >= CHUNKS[CHUNKS.length - 1].end) {
+        currentChunk = CHUNKS[CHUNKS.length - 1];
+      }
+
+      // 3. Camera Punch-in Zoom Dynamics (Spring Transition)
+      const targetZoom = currentChunk.cameraZoom;
+      const zoomSpring = spring(t - currentChunk.start, 180, 20);
+      const currentScale = 1.0 + (targetZoom - 1.0) * zoomSpring;
+      camera.style.transform = `scale(${currentScale})`;
+
+      // 4. Growth Metric Card Visibility
+      if (currentChunk.showWidget) {
+        const wSpring = spring(t - currentChunk.start, 220, 18);
+        growthWidget.style.opacity = wSpring;
+        growthWidget.style.transform = `scale(${0.85 + 0.15 * wSpring})`;
+      } else {
+        growthWidget.style.opacity = 0;
+      }
+
+      // 5. Render Words in Chunk
+      let chunkHtml = '';
+      currentChunk.words.forEach((w) => {
+        const isSpoken = t >= w.start;
+        let cls = 'p-word inactive';
+        let wordScale = 1.0;
+
+        if (isSpoken) {
+          cls = `p-word ${w.color}`;
+          const b = spring(t - w.start, 320, 20);
+          wordScale = 1.0 + 0.18 * b;
+        }
+
+        chunkHtml += `<span class="${cls}" style="transform: scale(${wordScale})">${w.text}</span>`;
+      });
+      chunkContainer.innerHTML = chunkHtml;
+    };
+
+    window.seek(0);
+  </script>
+</body>
+</html>
