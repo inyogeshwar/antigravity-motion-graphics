@@ -1,7 +1,7 @@
 # MotionOS: The Autonomous Vibe Editing & Motion Graphics Operating System
 
 > **Official Guide & Production Manual**  
-> *Antigravity Edition — Upgraded from the VEOS (Vibe Editing OS) Architecture*
+> *Antigravity Edition — Upgraded from the MotionOS (Vibe Editing OS) Architecture*
 
 ---
 
@@ -50,7 +50,7 @@ npm test
 Transcribe raw footage down to millisecond word timestamps using `faster-whisper`, and analyze pauses for jump-cut trimming:
 
 ```bash
-npx motionos veos prep "raw_footage.mp4"
+npx motionos vibe prep "raw_footage.mp4"
 ```
 *Outputs: `raw_footage.words.json` with word timestamps and silence gap detection.*
 
@@ -62,7 +62,7 @@ The AI engine analyzes the transcript semantics, places a dynamic hook in the fi
 ```bash
 # Select one of the 4 creator styles:
 # --style tech-bento | bold-creator | minimal | neon-glow
-npx motionos veos plan "raw_footage.mp4" --style tech-bento
+npx motionos vibe plan "raw_footage.mp4" --style tech-bento
 ```
 *Outputs:*
 * `raw_footage_plan.json` (visual effects timetable)
@@ -75,7 +75,7 @@ npx motionos veos plan "raw_footage.mp4" --style tech-bento
 MotionOS extracts keyframes at the exact midpoint of every planned effect and generates a visual preview contact sheet:
 
 ```bash
-npx motionos veos preview "raw_footage.mp4"
+npx motionos vibe preview "raw_footage.mp4"
 ```
 *Outputs: `raw_footage_check.png`.*  
 Inspect the frame in Antigravity or your image viewer:
@@ -90,10 +90,10 @@ Execute the full rendering pipeline with camera tracking, background matting, an
 
 ```bash
 # 1080p standard
-npx motionos veos render "raw_footage.mp4" --out "out/final.mp4"
+npx motionos vibe render "raw_footage.mp4" --out "out/final.mp4"
 
 # 4K Ultra-HD
-npx motionos veos render "raw_footage.mp4" --out "out/final_4k.mp4" --width 2160
+npx motionos vibe render "raw_footage.mp4" --out "out/final_4k.mp4" --width 2160
 ```
 
 ---
@@ -102,7 +102,7 @@ npx motionos veos render "raw_footage.mp4" --out "out/final_4k.mp4" --width 2160
 Generate a contact sheet tile (6x5) and mobile phone viewport test to verify the 5-point studio rubric:
 
 ```bash
-npx motionos veos review "out/final.mp4"
+npx motionos vibe review "out/final.mp4"
 ```
 
 #### The MotionOS Quality Rubric (Target 8+/10):

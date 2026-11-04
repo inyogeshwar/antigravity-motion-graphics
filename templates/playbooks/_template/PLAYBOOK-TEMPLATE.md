@@ -1,6 +1,6 @@
 # Editing playbook template (the v2 format every creator's playbook follows)
 
-**Reference example:** the reference playbook (`reference_playbook` from `veos paths`), a complete playbook written in
+**Reference example:** the reference playbook (`reference_playbook` from `vibe paths`), a complete playbook written in
 this exact structure. It is the quality bar: match its **depth, specificity and decisiveness**, never its content.
 **Every section below is required.** Write concrete numbers where the craft needs them (px, frames, seconds, hex values,
 font names), concrete examples drawn from the creator's own topics, and decided rules. **Never write menus or "you
@@ -169,7 +169,7 @@ Add any steps this creator needs: product shots, a screen-recording step, a reci
 - **Finishing:** grain, vignette, regrade rules.
 
 ## §11 Sound
-**The bundled SFX pack:** `veos paths` → `sfx_pack`, with tags in its `catalog.json` (role, vibe, energy, use).
+**The bundled SFX pack:** `vibe paths` → `sfx_pack`, with tags in its `catalog.json` (role, vibe, energy, use).
 - **Choose this creator's sound palette from it:** the allowed vibes, the allowed and banned roles, a short list of
   preferred sound ids per use (transition, text-pop, reveal, data, warning, success, CTA, list cue), whether meme sounds
   are allowed, whether the hook is dry, and how dense or sparse the sound feels.

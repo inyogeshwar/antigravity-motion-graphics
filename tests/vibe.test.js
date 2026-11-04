@@ -10,21 +10,21 @@ import {
   listPlaybookStyles,
   getPlaybookStyle,
   initPlaybook
-} from '../lib/veos.js';
+} from '../lib/vibe.js';
 
-describe('MotionOS Vibe Editing Engine (lib/veos.js)', () => {
+describe('MotionOS Vibe Editing Engine (lib/vibe.js)', () => {
   test('listPlaybookStyles returns all authentic creator styles', () => {
     const styles = listPlaybookStyles();
     assert.ok(styles.length >= 20, `Expected at least 20 styles, found ${styles.length}`);
-    const naman = styles.find(s => s.id === 'naman-infotainment-motion');
-    assert.ok(naman, 'naman-infotainment-motion should be present');
-    assert.strictEqual(naman.name, 'Naman Infotainment Motion');
+    const creatorStyle = styles.find(s => s.id === 'creator-infotainment-motion');
+    assert.ok(creatorStyle, 'creator-infotainment-motion should be present');
+    assert.strictEqual(creatorStyle.name, 'Creator Infotainment Motion');
   });
 
   test('getPlaybookStyle retrieves full style metadata and template', () => {
-    const style = getPlaybookStyle('naman-infotainment-motion');
+    const style = getPlaybookStyle('creator-infotainment-motion');
     assert.ok(style);
-    assert.strictEqual(style.id, 'naman-infotainment-motion');
+    assert.strictEqual(style.id, 'creator-infotainment-motion');
     assert.ok(style.template.tagline.length > 0);
     assert.ok(style.markdown.length > 0);
   });
@@ -34,7 +34,7 @@ describe('MotionOS Vibe Editing Engine (lib/veos.js)', () => {
     if (fs.existsSync(tmpDir)) fs.rmSync(tmpDir, { recursive: true, force: true });
     fs.mkdirSync(tmpDir, { recursive: true });
 
-    const res = initPlaybook('naman-infotainment-motion', tmpDir);
+    const res = initPlaybook('creator-infotainment-motion', tmpDir);
     assert.ok(fs.existsSync(res.playbookPath));
     assert.ok(fs.existsSync(res.profilePath));
 

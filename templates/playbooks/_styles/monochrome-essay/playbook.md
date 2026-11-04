@@ -8,7 +8,7 @@
 
 **Measured sizes are floors, not targets.** The references' captions (52–54 px) and in-world text were too small for a phone; here they are larger, and the one drawn object of each scene owns the middle of the frame.
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 **Minimal means few, not small.** This style has few things on screen, so each one has to be big. A thin serif at 60 px and a 120 px line icon in a sea of black read as *empty*, not as calm. The 12 Oct test drew exactly that, so these are the floors:
 - **Captions:** page phrase **96–112 px**, scene caption **76–84 px**, gold face caption **76–88 px**, all EB Garamond **600** (not 500). If a phrase doesn't fit at that size, chunk it shorter; never shrink it.
@@ -37,7 +37,7 @@ This is **a philosopher reading his own essay in a dark room at 2 a.m.** Calm, l
 | D1 | **Ten times better, same soul.** Keep the calm, the black page, the restraint; raise the craft in the drawing, the light, the continuity and the type. Never a hype edit, never a meme, never colour in a scene | The feel, §8.0 |
 | D2 | **The speaker moves, and frame 0 is never empty:** PAGE (short, with the point of light already alive) → FACE → SCENE ↔ FACE; the face arrives within ~2.5 s | §3.6, §6.0 |
 | D3 | **Seamless, running motion:** nothing appears from nothing (every scene grows from the dot or the point, or morphs from the last); every hold breathes | §8.0, §9 |
-| D4 | **Sound is scored like Naman's, at a whisper:** air, light and a few low weights on the drawing's events. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards, at a whisper:** air, light and a few low weights on the drawing's events. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible:** hair to chin and both ears, alone in the frame, never zoomed | §2, §3.6.6 |
 | D6 | **Captions are seen:** every spoken word, gold serif 76–88 px just under the chin on the face, white serif on black in pages (96–112 px) and scenes (76–84 px) | §5 |
 | D7 | **No imposed checks.** This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2 |
@@ -130,7 +130,7 @@ Not checks: this is what the three reference reels do every time, and why it wor
 - M5. **One picture per sentence or clause, landing 0–9 f before its noun** (dk2, dk3).
 - M6. **One continuity object** (dk2's ≈ 56 px dot, dk3's point of light) is "you" and survives every scene change: it morphs into the next object, or the scene collapses into it and the next grows out of it.
 - M7. **Monochrome scenes:** saturation 0 (dk2, dk3, every sampled frame). Hierarchy is luminance and glow.
-- M8. **The only added colour is the gold caption** `#FFCB41` on footage (dk1). The footage keeps its own colour: **never desaturate, wash out or lift the blacks** (Naman, 12 Oct: "dont make the videos pale"). Natural saturation, deep blacks, contrast +5–10% so the face pops against the black scenes (§4.3).
+- M8. **The only added colour is the gold caption** `#FFCB41` on footage (dk1). The footage keeps its own colour: **never desaturate, wash out or lift the blacks** (Creator, 12 Oct: "dont make the videos pale"). Natural saturation, deep blacks, contrast +5–10% so the face pops against the black scenes (§4.3).
 - M9. **A held scene always moves** (dk2's longest, 9.6 s, fills, resets and grows; dk3 drifts and spins constantly).
 - M10. **Captions in sync:** readable **by the first word's onset** (fix: dk3 lagged up to 0.5 s: "Every day" spoken 9.01, readable ≈ 9.5). Hard swaps on the onset frame (dk1 f34).
 - M11. **Calm pace:** 3.0–3.4 words/s; pauses kept ≤ 0.4 s (dk1 0.40, dk2 0.52, dk3 0.32); never speed the voice up.
@@ -719,7 +719,7 @@ This edition adds **a whisper score of air and light**: sparse, soft and low, ti
 
 **Never in this style:** whooshes that rush, clicks that snap, glitches, risers, game or comedy sounds, anything as loud as the voice.
 
-### 11.2 The SFX ledger (Naman's rule, unchanged)
+### 11.2 The SFX ledger (Studio Standard Rule, unchanged)
 - **Any file at most 2× in a reel,** except the one **list cue** (here the 0552611/21/31 set as the dot collects).
 - **No file on two consecutive cues;** rotate within each pool.
 - **Density:** the sparsest of all styles: about one cue every 2–3 s, each tied to a drawing event or a crossing; face-to-face jump cuts get nothing.
@@ -743,7 +743,7 @@ Voice high-pass 80 Hz, de-ess, light compression; **−14 LUFS, TP ≤ −1 dBTP
 | Situation | Placement |
 |---|---|
 | FACE, house (dk1 measured) | Full frame; head top y **200–260** (dk1 240–252), eye line ≈ **640**, chin ≈ **1000**, face centre x **480–560** (dk1 494–530), face width ≈ **430–520 px** (dk1 ≈ 490); caption band y 1346–1402 on the chest |
-| FACE, footage tighter than the rule (head top < 150, or ears cut) | **Full frame as shot, edge to edge** (Naman, 13 Oct): the hair may touch the top edge, eyes to chin always in; the gold caption sits just under the chin or crosses the chest. Never shrink the footage over a blurred or darkened copy of its own frame |
+| FACE, footage tighter than the rule (head top < 150, or ears cut) | **Full frame as shot, edge to edge** (Studio Standard): the hair may touch the top edge, eyes to chin always in; the gold caption sits just under the chin or crosses the chest. Never shrink the footage over a blurred or darkened copy of its own frame |
 | FACE, footage looser (head top > 400) | As shot, or scale up ≤ 1.2× **once for the whole reel** (never per cut) so the eye line sits ≈ 600–700 |
 | FACE, the caption band is bright or busy | Keep the framing; apply the §5.3 shadow upgrade and move the caption within y 1250–1450 (it may cross the chin/face) |
 | PAGE, SCENE | No footage |

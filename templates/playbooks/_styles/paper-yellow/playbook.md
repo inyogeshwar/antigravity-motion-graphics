@@ -16,7 +16,7 @@
 
 **Never pale.** The grade is warm and rich: warm skin, deep blacks (never lifted or milky), saturated skies. The cream page is a background colour, never a washed-out speaker. B&W is a short named beat only (a doubt or reframe line ≤ 2 s; a montage of inserts ≤ 3 s), and colour comes back on the action (§4.5, EV-7).
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 **How to use this file:**
 - Follow §1 (procedure) in order.
@@ -45,7 +45,7 @@ This is **a cinematic magazine that talks to you.** A warm, calm voice; behind h
 | D1 | **Ten times better, same soul.** Keep the yellow poster words behind the head, the cream page and its card slot, the serif subtitles, the polaroids, the calm voice; raise the craft: words that sit in the room, real paper, cards with weight, a hand-drawn marker, one hero per frame. Never loud, never bouncy, never templated | The feel, §8.0, §8.7 |
 | D2 | **The speaker moves:** full frame at frame 0 and for every claim and the ending; the page for proof (absent, in a polaroid or card, or in the page dock); back full frame. No layout unchanged for more than ~6–8 s; frame 0 is never empty | §3.0a, §3.8a |
 | D3 | **Seamless motion, high retention:** a visual change every ≤ 1.5 s, cut on the word that names it; the hero word carries from the face onto the page (EV-8); inside every beat something keeps moving (the push, the poster's parallax, the light on the paper, the marker drawing) | §8.0, §9, §10 |
-| D4 | **Sound is scored like Naman's, at this style's calm:** paper on the page, a shutter on the polaroid, the marker on its stroke, air under the poster's rise, a warm pop on every numbered item, one deep boom at the turn; about one cue every 1.6–2.4 s on shown beats. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards, at this style's calm:** paper on the page, a shutter on the polaroid, the marker on its stroke, air under the poster's rise, a warm pop on every numbered item, one deep boom at the turn; about one cue every 1.6–2.4 s on shown beats. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible:** cap/hair to chin at every push, punch, polaroid, card, carousel, cut-out and dock; a tight selfie stays full screen or fills a ≥ 940 px face card, never shrunk over its own blur, never a pillar | §2, §3.7, §12.2 |
 | D6 | **Captions are seen:** every spoken word, `CAP-SUB` 86–96 px, **just under the chin** on full frame, in the band under the cards on the page; nothing a viewer must read under 48 px | §5 |
 | D7 | **Never pale, and no imposed checks.** Warm, rich colour and deep blacks always; B&W only as a short named beat. This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2, §4.5 |
@@ -283,7 +283,7 @@ The rule is one sentence: **hair (or cap) and the full face sit comfortably insi
 | Pop-out polaroid (oa2) | The matted head breaks above the polaroid frame; the whole head stays inside the 1080×1920 frame |
 | Small cut-out on a cyc (oa2) | Full body; nothing to crop |
 
-**The tight-selfie fix (every layout):** when the footage is tighter than the face allows (a handheld selfie or close low angle where the cap/hair or the chin already touch or leave the frame: oa1 ~43 s, oa3 38.4–44.8 s, oa2 24.9 s), do **not** crop further and do not punch in. **Keep the shot full screen, edge to edge** (Naman, 13 Oct: never shrink it over a blurred copy of itself; a hard rectangle against its own blur looks cheap). The cap or hair may touch the top edge; eyes to chin are always in. Make room by moving the poster block (smaller, lower, or beside the head) or by turning the beat into a page beat with the ≥ 940 px face card, which the footage fills. Let the subtitle cross the chest if needed. Never zoom past the face to "fill" the frame.
+**The tight-selfie fix (every layout):** when the footage is tighter than the face allows (a handheld selfie or close low angle where the cap/hair or the chin already touch or leave the frame: oa1 ~43 s, oa3 38.4–44.8 s, oa2 24.9 s), do **not** crop further and do not punch in. **Keep the shot full screen, edge to edge** (Studio Standard: never shrink it over a blurred copy of itself; a hard rectangle against its own blur looks cheap). The cap or hair may touch the top edge; eyes to chin are always in. Make room by moving the poster block (smaller, lower, or beside the head) or by turning the beat into a page beat with the ≥ 940 px face card, which the footage fills. Let the subtitle cross the chest if needed. Never zoom past the face to "fill" the frame.
 
 ### 3.8 ADAPTATION: one person, one talking-head take (for most plugin users)
 > **This section is an adaptation, not an observation.** The references were shot with a crew, sets and location B-roll. A plugin user usually has one take of themselves talking to their own camera. Below is how the same grammar runs on that take. It uses the devices seen in these five reels; the moves this edition adds (the page dock §3.8a, the poster carry EV-8) are marked.
@@ -387,7 +387,7 @@ Pick **one page** per reel (cream for tutorials and recaps, vignetted/beige for 
 - The footage keeps its rich colour: warm skin, **deep blacks** (true black, never lifted or milky), saturated skies and teal shadows where the light gives them. Grade contrast up 5–10% rather than down; saturation as shot or up to +10%.
 - The cream, beige and grid pages are **background colours**; the speaker on them (polaroid, card, page dock) keeps full colour, and the paper itself gets a warm lamp gradient, never a flat grey.
 - **B&W is a named beat:** a doubt or reframe line on the creator (≤ 2 s), an anxiety montage of inserts (≤ 3 s), the callback cut-out (≤ 2 s). Colour comes back by blooming from the face outward on the action word (EV-7). Never a pale, faded or desaturated look for a whole item or the reel.
-- No blurred fill behind the speaker anywhere: full screen or a face card on the page (Naman, 13 Oct).
+- No blurred fill behind the speaker anywhere: full screen or a face card on the page (Studio Standard).
 
 ---
 
@@ -820,7 +820,7 @@ Measured loudness: oa1, oa2, oa5 −14.2 LUFS (true peak −0.3, −1.4, −0.1 
 - **Real sound is welcome** under a vlog beat (oa4: car door, engine); it counts as a cue for the cadence.
 - **Never in this style:** meme or cartoon sounds, glitches, alarms, cash registers, long risers under the voice; nothing that sounds like a template pack. The vibe is cinematic and tactile.
 
-### 11.2 The SFX ledger (Naman's rule)
+### 11.2 The SFX ledger (Studio Standard Rule)
 - **Any file at most 2× in a reel,** except the one **list cue** (`game-pop-up-2025-08-27-06-39-58-utc-game-pop-up-3`, one per numbered chapter or item).
 - **No file on two consecutive cues;** rotate within each pool.
 - **Density:** about one cue every 1.6–2.4 s on shown beats (a poster phrase, the page, a card, a polaroid, a marker stroke, a number, a UI step); swaps inside the card slot and plain cuts on the talking head stay dry; in a tour's ~1.04 s pulse, score the first and last shot of a list burst, not every cut.
@@ -967,7 +967,7 @@ Not a checklist; the questions the best editor asks while scrubbing:
 
 ## §16 Build + render
 
-- **Pipeline:** the plugin's edit skill: plan, draw every frame in `reel.js` (`frame(t)`), look at stills, score (`plan/sounds.json`, then `veos sfx`), storyboard, render.
+- **Pipeline:** the plugin's edit skill: plan, draw every frame in `reel.js` (`frame(t)`), look at stills, score (`plan/sounds.json`, then `vibe sfx`), storyboard, render.
 - **Fonts:** all bundled, mapped in §5.1.
 - **Component map** (helpers you write once per reel):
 

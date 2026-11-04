@@ -1,8 +1,8 @@
 # Drawing the reel
 
-You draw the whole reel yourself, as HTML, one frame at a time. Two files: `P/plan/kit.js` (your helpers: `veos kit
+You draw the whole reel yourself, as HTML, one frame at a time. Two files: `P/plan/kit.js` (your helpers: `vibe kit
 start` puts this style's kit there, or the starting kit) and `P/plan/reel.js` (this reel: its sections and timeline).
-`veos page` puts them in one page with the reel's data; `veos stills`, `veos storyboard` and `veos render` capture it in
+`vibe page` puts them in one page with the reel's data; `vibe stills`, `vibe storyboard` and `vibe render` capture it in
 headless Chrome. Anything HTML, CSS, SVG or canvas can do, you can draw: there is no component library and no ceiling.
 
 ## What the page gives you
@@ -17,7 +17,7 @@ headless Chrome. Anything HTML, CSS, SVG or canvas can do, you can draw: there i
 | `FACE(n)` | the face box at frame `n` `{x, y, w, h, cx, cy}`, or `null` |
 | `FACE0` | the reel's steady face `{x, y, w, h, cx, cy, head_top, chin}` (median), for crops and layout |
 | `ASSET(name)` | URL of `P/plan/assets/<name>` (file stem or full name): logos, screenshots, the creator's images |
-| `VIDEO(name, t)` | URL of the frame at local time `t` of a video asset (`veos asset add <clip> --name <name>`) |
+| `VIDEO(name, t)` | URL of the frame at local time `t` of a video asset (`vibe asset add <clip> --name <name>`) |
 | `VB` | set it to a px value in a frame to give wrappers with `filter:url(#vb)` a vertical motion blur |
 | fonts | every bundled family, by name in CSS: Inter Tight, Plus Jakarta Sans, Anton, Instrument Serif, Permanent Marker, Montserrat, Jost, Silkscreen, Lilita One, JetBrains Mono, Poppins, EB Garamond, Source Serif 4, Space Grotesk, Pinyon Script, Barlow Condensed, Barlow Semi Condensed, Bangers, Archivo Black, Caveat, Nanum Pen Script, Unbounded, Bodoni Moda, Courier Prime, Fraunces, Noto Sans / Serif Devanagari, Noto Sans Telugu, Tamil, Kannada, Malayalam, Bengali, Gujarati, Gurmukhi, Noto Color Emoji |
 
@@ -65,4 +65,4 @@ stamp, its captions. Change, add or delete anything in kit.js; nothing checks ho
   the kit declares; it may replace a kit function by declaring a function of the same name.
 - **Keep it light:** a few hundred elements on screen at most; build big constant strings once, outside the frame
   function.
-- **If the page fails to load,** `veos stills` / `veos render` report the error with its line: fix it in reel.js or kit.js.
+- **If the page fails to load,** `vibe stills` / `vibe render` report the error with its line: fix it in reel.js or kit.js.

@@ -13,7 +13,7 @@
 
 *Turn raw footage into viral creator videos and write code for cinematic, broadcast-grade motion graphics with zero non-determinism.*
 
-[Vibe Editing OS (VEOS)](#vibe-editing-os-veos-workflow) •
+[MotionOS Vibe Editing](#vibe-editing-workflow) •
 [Visual Showcase](#-visual-showcase-rendered-video--motion-graphics) •
 [Key Features](#key-features) •
 [Quickstart](#quickstart) •
@@ -28,11 +28,11 @@
 
 MotionOS produces deterministic, broadcast-grade video edits with real-time face segmentation, text-behind-head layering, procedural SFX, and mathematical Bezier spring dynamics.
 
-### 1. Automated Render Contact Sheet (`namanvideo.mp4` Pipeline)
+### 1. Automated Render Contact Sheet (Creator Showcase Reel)
 Full 30-frame visual contact sheet generated directly by MotionOS during offline video compilation:
 
 <div align="center">
-  <img src="examples/namanvideo/naman_final_contact.png" alt="MotionOS Rendered Contact Sheet" width="100%" />
+  <img src="examples/creator-showcase/showcase_contact.png" alt="MotionOS Rendered Contact Sheet" width="100%" />
   <p><em>Generated with local Faster-Whisper Turbo + MediaPipe Matting + 0xMovez Spring Engine</em></p>
 </div>
 
@@ -41,49 +41,49 @@ Full 30-frame visual contact sheet generated directly by MotionOS during offline
 <table>
   <tr>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f01_hook.png" alt="01 Hook Frame" />
+      <img src="examples/creator-showcase/ref_frames/f01_hook.png" alt="01 Hook Frame" />
       <br /><strong>01. Split Screen Hook</strong><br /><em>RAW unedited top vs Final Edit bottom</em>
     </td>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f06_viral.png" alt="02 Depth Sandwich" />
+      <img src="examples/creator-showcase/ref_frames/f06_viral.png" alt="02 Depth Sandwich" />
       <br /><strong>02. Depth Sandwich</strong><br /><em>Dynamic badge behind speaker's head</em>
     </td>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f15_colors.png" alt="03 Color Specs" />
+      <img src="examples/creator-showcase/ref_frames/f15_colors.png" alt="03 Color Specs" />
       <br /><strong>03. Color Swatch Cards</strong><br /><em>High-contrast brand palette showcase</em>
     </td>
   </tr>
   <tr>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f21_fonts.png" alt="04 Typography" />
+      <img src="examples/creator-showcase/ref_frames/f21_fonts.png" alt="04 Typography" />
       <br /><strong>04. Typography Specimens</strong><br /><em>Display & UI typography specimen cards</em>
     </td>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f29_motion.png" alt="05 Motion Curve" />
+      <img src="examples/creator-showcase/ref_frames/f29_motion.png" alt="05 Motion Curve" />
       <br /><strong>05. Live Bezier Motion Curve</strong><br /><em>Interactive spring speed graph</em>
     </td>
     <td width="33%" align="center">
-      <img src="examples/namanvideo/ref_frames/f43_comment.png" alt="06 Growth CTA" />
+      <img src="examples/creator-showcase/ref_frames/f43_comment.png" alt="06 Growth CTA" />
       <br /><strong>06. Comment Growth Funnel CTA</strong><br /><em>Automated Instagram CTA widget</em>
     </td>
   </tr>
 </table>
 
-👉 *See full reproduction plan, word timestamps, and reference comparison in [`examples/namanvideo/`](examples/namanvideo/README.md)*.
+👉 *See full reproduction plan, word timestamps, and reference comparison in [`examples/creator-showcase/`](examples/creator-showcase/README.md)*.
 
 ---
 
 ## Overview
 
 **MotionOS** is an open-source, code-driven video synthesis and editing operating system. It unifies two world-class paradigms:
-1. **The Vibe Editing OS (VEOS):** Automated talking-head video editing that transcribes raw footage, cuts pauses, applies 51 computer-vision effects behind the speaker's head, and generates storyboard previews for creator approval.
+1. **The MotionOS Vibe Editing:** Automated talking-head video editing that transcribes raw footage, cuts pauses, applies 51 computer-vision effects behind the speaker's head, and generates storyboard previews for creator approval.
 2. **The 0xMovez Deterministic Motion Engine:** High-performance mathematical motion graphics where every frame is a pure function of time:
 
 $$\text{Frame State} = \text{window.seek}(t)$$
 
 ---
 
-## Vibe Editing OS (VEOS) Workflow
+## MotionOS Vibe Editing Workflow
 
 MotionOS provides a 4-step automated pipeline inspired by the VEOS workflow:
 
@@ -97,16 +97,16 @@ flowchart LR
 
 ```bash
 # 1. Prep speech & detect silences
-npx motionos veos prep "raw.mp4"
+npx motionos vibe prep "raw.mp4"
 
 # 2. Plan storyboard with style preset (tech-bento, bold-creator, minimal, neon-glow)
-npx motionos veos plan "raw.mp4" --style tech-bento
+npx motionos vibe plan "raw.mp4" --style tech-bento
 
 # 3. Fast preview gate (review still frames before rendering)
-npx motionos veos preview "raw.mp4"
+npx motionos vibe preview "raw.mp4"
 
 # 4. Render broadcast video with face matting & SFX
-npx motionos veos render "raw.mp4" --out "out/final.mp4"
+npx motionos vibe render "raw.mp4" --out "out/final.mp4"
 ```
 
 Read the full [MotionOS Guide & Production Manual](docs/MOTIONOS_GUIDE.md).

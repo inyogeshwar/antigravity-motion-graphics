@@ -11,7 +11,7 @@
 - **The whole face is always visible** at every zoom, punch-in, crop, card and bubble (hair to chin). How far a zoom goes is decided by the face, not the frame. Captions may cross the face (§2.1 M3). **The text behind him never hides his face:** it sits behind the head, the hair and the shoulders, never in front of them.
 
 **Measured sizes are floors, not targets.** The references set table rows, node labels and UI text at 15–35 px, parked a 370 px photo card and a 320 px chat bubble on big pages, and left a small folder and a small QR on empty canvases. On a phone that reads as empty or unreadable. So:
-- **Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video, a screen recording, a landscape clip, a photo or a diagram either fills the whole frame edge to edge (cover-crop to the part that matters, or a push-in), or sits in a designed box (rounded, rimmed or softly shadowed, on this style's own ground, colour, gradient, texture, grid or drawn set) that it fills completely. Never shrink anything inside the frame over a blurred or darkened copy of itself, never pad a box, band or panel with blurred side bars, never set a card on the creator's own blurred frame. A tight selfie stays full screen as shot: move the text, not the video (eyes to chin always in; the hair may touch the top edge). When the whole head must show, use a box sized so the footage fills it with the head inside. (A matte cut-out over a plate is fine: it has no box edge.)
+- **Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video, a screen recording, a landscape clip, a photo or a diagram either fills the whole frame edge to edge (cover-crop to the part that matters, or a push-in), or sits in a designed box (rounded, rimmed or softly shadowed, on this style's own ground, colour, gradient, texture, grid or drawn set) that it fills completely. Never shrink anything inside the frame over a blurred or darkened copy of itself, never pad a box, band or panel with blurred side bars, never set a card on the creator's own blurred frame. A tight selfie stays full screen as shot: move the text, not the video (eyes to chin always in; the hair may touch the top edge). When the whole head must show, use a box sized so the footage fills it with the head inside. (A matte cut-out over a plate is fine: it has no box edge.)
 - **Captions:** the base caption **100–110 px** (never below 90), the two-tier key word **160–180 px**, the lead-in tier **56–60 px**; captions sit **just under the chin** on full frame (§5.2).
 - **The hero of a beat** (the anchor scene's object, the card, the page, the disc, the folder, the table, the QR) is **≥ 760 px wide** (x ≈ 160–920) and owns the middle of the frame; a group (choice cards, a stat grid, icon tiles, the disc row) fills **x ≈ 80–1000**.
 - **Labels:** anything that carries meaning **≥ 48 px**; table rows ≥ 52 px; node labels ≥ 64 px; titles on scene sheets ≥ 72 px.
@@ -44,7 +44,7 @@ This is **an older brother at his desk who has already done it, telling you exac
 | D1 | **Ten times better, same soul.** Keep the fast, ambitious, number-first teaching; raise the craft: animation principles on every poster word, number, sheet, card and move; one hero per frame; a visible progress that pays off. Never a meme edit, never a slideshow | The feel, §8.0 |
 | D2 | **The speaker moves:** full frame at frame 0 and for every opinion, turn and ending; absent for scenes; gliding into the split, the photo card or the bubble when there's something to read or choose; **never off camera for more than ~6 s**; frame 0 is never empty | §3.0a |
 | D3 | **Seamless, running motion:** cuts land on word onsets; the poster carries across cuts; layout moves glide (EV-5); the anchor scene continues the face's push; something changes every ~1.4–2.2 s; nothing teleports, nothing sits after its point has landed | §8.0, §9 |
-| D4 | **Sound is scored like Naman's:** a slam on every poster word that lands, a roll and a hit on every number, a whoosh on every scene, paper on every sheet, a click on every cursor, a sub-boom on every punchline. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards:** a slam on every poster word that lands, a roll and a hit on every number, a whoosh on every scene, paper on every sheet, a click on every cursor, a sub-boom on every punchline. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible:** hair to chin in every framing, split box, card and bubble; the poster never in front of it; a tight selfie stays full screen as shot (eyes to chin in), never shrunk over its own blur, never a pillar; **never pale** | §2, §12.4 |
 | D6 | **Captions are seen:** every spoken word, appending, **just under the chin** on full frame, with the two-tier key word punching up | §5 |
 | D7 | **No imposed checks.** This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2 |
@@ -750,7 +750,7 @@ The references ran ~6–15 SFX per reel, about one every 4–7 s, nearly all on 
 
 **Never in this style:** comedy or cartoon sounds, voice clips, meme hits, crowd reactions; a bed, beat, drone, pad or music outro (N12).
 
-### 11.2 The SFX ledger (Naman's rule)
+### 11.2 The SFX ledger (Studio Standard Rule)
 - **Any file at most 2× in a reel,** except the one **list cue** (the anchor's sheet, coin or node sound on every item).
 - **No file on two consecutive cues;** rotate within each pool.
 - **Density:** about one cue every **1.2–1.8 s** inside scenes, poster builds, cards and splits (this style is fast); on face beats only their events (a poster slam, a number's land, a rail tile, a punchline sub-boom); nothing on plain punch jump cuts or on ordinary two-tier key words.
@@ -787,13 +787,13 @@ The references ran ~6–15 SFX per reel, about one every 4–7 s, nearly all on 
 | L-8 bubble | The footage scaled into the bubble (≥ 600 px wide: x 400–1000, y 300–1180), head **≥ 30%** of the bubble height (ts3 measured 20–25% in a 320 px bubble: too small), whole, never cropped at the hair |
 
 ### 12.3 Matte
-Needed for G-1 (poster type behind the head, EV-1) and G-8 (proof behind the speaker): use the engine's person matte (`veos matte --seconds <those seconds>` in the background, one heavy job at a time), feathered 2–3 px; hair and glasses edges clean, the whole head and hair inside the matte (the poster never cuts into the hair); look at stills where hands cross the type.
+Needed for G-1 (poster type behind the head, EV-1) and G-8 (proof behind the speaker): use the engine's person matte (`vibe matte --seconds <those seconds>` in the background, one heavy job at a time), feathered 2–3 px; hair and glasses edges clean, the whole head and hair inside the matte (the poster never cuts into the hair); look at stills where hands cross the type.
 
 ### 12.4 The tight-selfie fix (any layout)
 When the head is too big or too close for the frame or box (hair top or chin outside, or the head crossing a side edge, as in ts5's 3.0–4.5 s handheld-feel close and ts4's 39.5 s extreme crop):
 1. **Full frame: keep it full screen as shot.** No shift, no scale-down, no blurred fill. Eyes to chin always in; the hair may touch the top edge. Skip punch-ins on that footage; the poster sits behind the head anyway, so move or resize the type, never the video.
 2. **In a split box, card or bubble the footage fills the box** (cover), cropped on the face; size the box so the whole head fits (a taller split bottom, a bigger card or bubble): ≥ 40 px air above the hair (≥ 30 px in a card/bubble), the chin inside; never a narrow pillar.
-3. **Never** shrink the video inside its frame or box over a blurred or darkened copy of itself, pad a box with blurred side bars, or set a box on the creator's own blurred frame (Naman, 13 Oct: "either full screen or enclosed in a box").
+3. **Never** shrink the video inside its frame or box over a blurred or darkened copy of itself, pad a box with blurred side bars, or set a box on the creator's own blurred frame (Studio Standard: "either full screen or enclosed in a box").
 4. If the head still can't fit a box, use the full-frame beat or another part of the take. Never crop the eyes or chin.
 
 ### 12.5 Frame rate and audio
@@ -913,7 +913,7 @@ Not a checklist; the questions the best editor asks while scrubbing:
 
 ## §16 Build + render
 
-- **Pipeline:** the plugin's edit skill: plan in the edit brief (beat sheet, transition map, sound ledger), draw every frame in `reel.js` (`frame(t)`), look at stills of every landing frame, score (`plan/sounds.json`, `veos sfx`), then storyboard and render.
+- **Pipeline:** the plugin's edit skill: plan in the edit brief (beat sheet, transition map, sound ledger), draw every frame in `reel.js` (`frame(t)`), look at stills of every landing frame, score (`plan/sounds.json`, `vibe sfx`), then storyboard and render.
 - **Fonts (bundled):** Inter Tight (`InterTight-VF`, `InterTight-Italic-VF`), Anton, Barlow Condensed Bold, Permanent Marker, Caveat. Pre-paint ₹ % ⚠ ✓ before the first frame.
 - **Component map** (helpers written once per reel in `reel.js`):
 

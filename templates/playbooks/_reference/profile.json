@@ -11,27 +11,25 @@
  "captions": {
   "choice": "romanised"
  },
- "template": null,
+ "template": "creator-infotainment-motion",
  "creator": {
-  "name": "Naman Soni",
-  "handle": "@namansoni.ai",
+  "name": "Motion Creator",
+  "handle": "@motion.studio",
   "language": "hinglish",
   "cta": {
    "pattern": "comment kar do {KEYWORD}",
-   "deliverable": "PDF in DM",
-   "community_chip": "Ship Without Code · link in bio",
+   "deliverable": "Asset pack in DM",
+   "community_chip": "MotionOS · link in bio",
    "signoff": "peace out"
   },
   "glossary": [
-   "Claude",
-   "Claude Code",
-   "Lovable",
+   "MotionOS",
+   "Antigravity",
+   "Remotion",
    "Vercel",
    "Supabase",
-   "Kubernetes",
-   "Emil Kowalski",
-   "Impeccable",
-   "Ship Without Code"
+   "Playwright",
+   "FFmpeg"
   ]
  }
 }

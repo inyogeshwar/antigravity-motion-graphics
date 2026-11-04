@@ -15,7 +15,7 @@ The analysis covered cut lists, framing and caption measurements, caption reveal
 - Only two reels exist. Where a value was seen once it is still the house value, but it is marked "(1 reel)" when that matters. Guesses are marked as guesses.
 
 **Measured sizes are floors, not targets.** The references' captions (46–66 px, a 362 px column, long lines shrunk to 22–48 px) and STEP chip (300×98 at 48 px) were small on a phone. Here:
-- **Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video, a screen recording, a landscape clip, a photo or a diagram either fills the whole frame edge to edge (cover-crop to the part that matters, or a push-in), or sits in a designed box (rounded, rimmed or softly shadowed, on this style's own ground, colour, gradient, texture, grid or drawn set) that it fills completely. Never shrink anything inside the frame over a blurred or darkened copy of itself, never pad a box, band or panel with blurred side bars, never set a card on the creator's own blurred frame. A tight selfie stays full screen as shot: move the text, not the video (eyes to chin always in; the hair may touch the top edge). When the whole head must show, use a box sized so the footage fills it with the head inside. (A matte cut-out over a plate is fine: it has no box edge.)
+- **Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video, a screen recording, a landscape clip, a photo or a diagram either fills the whole frame edge to edge (cover-crop to the part that matters, or a push-in), or sits in a designed box (rounded, rimmed or softly shadowed, on this style's own ground, colour, gradient, texture, grid or drawn set) that it fills completely. Never shrink anything inside the frame over a blurred or darkened copy of itself, never pad a box, band or panel with blurred side bars, never set a card on the creator's own blurred frame. A tight selfie stays full screen as shot: move the text, not the video (eyes to chin always in; the hair may touch the top edge). When the whole head must show, use a box sized so the footage fills it with the head inside. (A matte cut-out over a plate is fine: it has no box edge.)
 - **Captions:** `CAP-WORD` **72–80 px** (`FMT-STEPS`) / **76–84 px** (`FMT-TALK`), `CAP-GOLD` ≈ 1.35× (**100–110 / 104–116 px**), every spoken word, a column up to **900 px**; never below **64 px**: break the phrase instead.
 - **The STEP chip:** **≥ 420×130 px** with 64 px mono, a 5-dot progress row under it (EV-3).
 - **The real thing is the hero:** the object (or the screen) fills the frame; the one detail that proves the step reads at **≥ 48 px** on a phone: get the close shot (L-4), rack to it (EV-5) or crop the recording until it does.
@@ -48,7 +48,7 @@ This is **a friend at his workbench at golden hour, showing you exactly how he d
 | D1 | **Ten times better, same soul.** Keep "name it on the face, do it with the hands, one gold word"; raise the craft: match-on-action relays, the gold word catching the light, a chip whose count you feel, the living time-lapse, the rack to the proof, the shutter freeze, the closer that loops. Calm and tactile, never slick, never busy | The feel, §8.0 |
 | D2 | **The speaker moves:** face full frame ↔ the real thing full frame on the action word, back at least once per step (every ~7–12 s; never more than ~20 s without the face in this edition), the bench card (`L-7`) for 1–2 "name it while doing it" beats per 60 s, the closer punch; frame 0 is never empty | §3.3, §3.7 |
 | D3 | **Seamless, running motion:** every angle change carries the hand's motion through the cut (EV-2), a slow filmic drift (≤ 3 %) inside every hands shot, something changes every ~1.5–2.5 s (a cut, a gold word, the chip, the hands) | §8.0, §9, §10 |
-| D4 | **Sound is scored like Naman's, at this style's whisper:** paper, pen, a typewriter key on every chip, a focus ring and a shutter on the proof, soft air on the dock, one warm sub under the reveal; the face's opinion lines dry. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards, at this style's whisper:** paper, pen, a typewriter key on every chip, a focus ring and a shutter on the proof, soft air on the dock, one warm sub under the reveal; the face's opinion lines dry. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible** at every framing, punch, jump cut and in the bench card; a tight selfie stays full screen as shot (never shrunk over its own blur), never a narrow pillar | §2, §3.5, §12.3 |
 | D6 | **Captions are seen:** every spoken word, `CAP-WORD` 72–84 px with the gold italic word ≈ 1.35×, just under the chin on the face, a fixed band on the hands | §5 |
 | D7 | **No imposed checks.** This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2 |
@@ -737,7 +737,7 @@ This edition **scores the real thing** with a whisper-quiet, tactile foley, the 
 
 **Never in this style:** comedy, cartoon or crowd sounds, voice memes, risers, cash registers, glitches, whips or digital beeps (N14). The warmth is the voice and the hands.
 
-### 11.2 The SFX ledger (Naman's rule)
+### 11.2 The SFX ledger (Studio Standard Rule)
 - **Any file at most 2× in a reel,** except the one **list cue** (here the single keystroke `keyboard-typing-2025-02-18-23-33-14-utc-mountain-audio-typing-sound-4` on every STEP chip and recap tick).
 - **No file on two consecutive cues;** rotate within each pool. The footage's own sound doesn't count.
 - **Density:** `FMT-STEPS` about one cue every 1.6–2.4 s on hands beats, each tied to a picture event (an action, a chip, a rack, a freeze, a burn); the face's asides and opinions stay dry. `FMT-TALK` at most one cue every 6–10 s.
@@ -776,7 +776,7 @@ Face framings are in §3.5. In addition:
 This is the fix for the case that keeps failing: **a tight handheld selfie close-up (or a tight podcast crop) where the hair and the chin leave the frame.**
 1. **Keep it full screen as shot.** Eyes to chin always in; the hair may touch the top edge. Move the chip, the gold word and the text clear of the face; never move or shrink the video for them.
 2. **When the whole head must show,** use the bench card (`L-7`): the footage fills the card (cover, cropped on the face, ≥ 940 px wide) on the warm work shot, with the head inside.
-3. **Never** shrink the footage inside the frame over a blurred copy of itself, and never pad it with blurred borders (Naman, 13 Oct: "either full screen or enclosed in a box").
+3. **Never** shrink the footage inside the frame over a blurred copy of itself, and never pad it with blurred borders (Studio Standard: "either full screen or enclosed in a box").
 4. **If the hair left the frame while recording,** keep it full screen (eyes to chin in), keep that moment short, and prefer another part of the take for long beats.
 5. **Skip punch-ins (L-2) on such footage**; cut on breaths instead (§3.7). Captions may cross the face; nothing else is checked.
 
@@ -936,7 +936,7 @@ Not a checklist; the questions the best editor asks while scrubbing:
 ---
 
 ## §16 Build + render
-- **Pipeline:** the plugin's edit skill: plan, draw every frame in `reel.js` (`frame(t)`), look at stills, score (`plan/sounds.json`, then `veos sfx`), storyboard, render.
+- **Pipeline:** the plugin's edit skill: plan, draw every frame in `reel.js` (`frame(t)`), look at stills, score (`plan/sounds.json`, then `vibe sfx`), storyboard, render.
 - **Fonts (bundled):** Inter Tight (600, captions), Instrument Serif Italic (gold keyword), JetBrains Mono (700, STEP chip; fallback Courier Prime Bold), Plus Jakarta Sans (fallback body).
 - **Helpers you'll want** (pure functions of t): `Footage(t)` (hard-cut list, per-shot scale/offset, and `ScaleDownFill(shot, scale)` for §12.3); `Captions(blocks, words)` (pre-laid blocks, ≤ 900 px, 64 px floor, under the chin on the face, 2 f / 3 f fades on the audible onset, independent of the cuts); `StepChip(n, onF, offF)` + `RecapTick(ticks)`; `FilmBurn(cutF)` (the 8 f T-03 overlay, under the captions); `Grade(shot)` (warm and rich, identical on every shot, never pale); `Drift(shot)` (≤ 3 %), `Relay(cutF)` (EV-2), `GoldLight(word)` (EV-1), `ChipRoll(n)` + `StepDots(n, total)` (EV-3), `TimeLapse(range, ramp)` (EV-4), `Rack(rect)` (EV-5), `ShutterFreeze(f)` (EV-6), `BenchCard(t)` (`L-7`, T-10 / T-11), `Grain`, `Halation`. All pure functions of t.
 - **Final:** 1080×1920, 30 fps, H.264, AAC, −14 LUFS, true peak ≤ −1 dBTP; check a contact sheet of the final file: the whole head in every face frame, every caption line ≥ 64 px, the chip on every step.

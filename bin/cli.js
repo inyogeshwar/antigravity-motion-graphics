@@ -27,7 +27,7 @@ The Operating System for Autonomous Motion Design & Vibe Editing
 Usage:
   npx motionos <command> [options] (or: npx antigravity-motion <command>)
 
-Vibe Editing OS (VEOS) Commands:
+Vibe Editing Commands (MotionOS):
   playbook [list|init]  Manage creator styles & brand playbooks (23 authentic styles)
   reel <clips_folder>   Autonomous end-to-end reel pipeline: cut -> storyboard -> render
   setup-models [opts]   Download & bind local AI models (RVM, YuNet, BlazeFace, Whisper)
@@ -47,8 +47,8 @@ Motion Studio Commands:
   help, --help, -h      Show this help message
 
 Examples:
-  npx motionos veos plan input.mp4 --style tech-bento
-  npx motionos veos preview input.mp4
+  npx motionos vibe plan input.mp4 --style tech-bento
+  npx motionos vibe preview input.mp4
   npx motionos render --dur 15 --fps 30
   npx motionos sfx cues.json out/sfx.wav
 `);
@@ -80,14 +80,14 @@ switch (command) {
   case 'reel':
   case 'veos':
   case 'vibe':
-    runScript(path.join(__dirname, 'veos.js'), [command, ...args]);
+    runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
     break;
 
   case 'prep':
   case 'plan':
   case 'preview':
   case 'review':
-    runScript(path.join(__dirname, 'veos.js'), [command, ...args]);
+    runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
     break;
 
   case 'init':
@@ -96,9 +96,9 @@ switch (command) {
     break;
 
   case 'render':
-    // If first argument is a video file ending in .mp4, route to veos render
+    // If first argument is a video file ending in .mp4, route to vibe render
     if (args[0] && (args[0].endsWith('.mp4') || args[0].endsWith('.mov'))) {
-      runScript(path.join(__dirname, 'veos.js'), ['render', ...args]);
+      runScript(path.join(__dirname, 'vibe.js'), ['render', ...args]);
     } else {
       runScript(path.join(ROOT_DIR, 'render.mjs'), args);
     }

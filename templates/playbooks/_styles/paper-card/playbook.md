@@ -14,7 +14,7 @@
 
 **Never pale.** The paper is a background colour, never a look on the person. The creator's footage keeps its own rich colour (or a touch richer): no desaturation, no fade, no lifted or milky blacks, no paper-coloured wash over the face. Skin warm, blacks true.
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 **How to use this file:**
 - Follow §1 (procedure) in order.
@@ -43,7 +43,7 @@ This is **a design editor laying one real thing at a time on a warm desk under a
 | D1 | **Ten times better, same soul.** Keep the calm paper-desk editorial; raise the craft: real paper, cards with weight, a pen that draws itself, cards that glide between places, type that inks in, one hero per frame. Never loud, never a template, never a meme | The feel, §8.0 |
 | D2 | **The speaker moves:** full frame at frame 0 (mid-word), into the face card on the paper when the first thing is shown, gone on type beats, back full frame for the turn; the card opens and folds with an eased move (EV-4). Frame 0 is never empty | §3.8 |
 | D3 | **Seamless motion:** on one ground a card never pops: it glides to its next rect while its content swaps on the word (EV-2); every card keeps drifting; sections still change with a hard cut on the ground | §8.0, §9 |
-| D4 | **Sound is scored like Naman's, at this style's volume:** paper, pen, soft air and a few deep weights on the picture's events; face beats dry. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards, at this style's volume:** paper, pen, soft air and a few deep weights on the picture's events; face beats dry. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible:** hair to chin in every state and card; tight footage full screen or filling the wide face card, never shrunk over its own blurred frame; **never pale** | §2, §12 |
 | D6 | **Captions are seen:** every spoken word is on screen: `CAP-PHRASE` 84 px above the card, **just under the chin** on full-frame face beats; type beats carry their own words | §5 |
 | D7 | **No imposed checks.** This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2 |
@@ -403,7 +403,7 @@ Text on paper/grey is `ink`/`titleInk`, on dark grounds `cream`/`white`; never c
 - Cards keep their source grade (pv1: warm studio, black tweet cards; pv2: every clip's own colour). Don't regrade a user clip to match the paper.
 - In the adaptation, normalise exposure between the user's setups; keep skin as shot or a touch richer (contrast +5–10%, true blacks, warm skin); no LUT, no vignette.
 - **Never pale** (this edition): no desaturation, fade, lifted or milky blacks, or paper-coloured wash on the creator's footage, the face card or the full-frame face. The monochrome grounds make the colourful proof and the warm face pop; they never drain them.
-- No blurred-self fill anywhere: the footage is full screen or fills its card on the paper (Naman, 13 Oct).
+- No blurred-self fill anywhere: the footage is full screen or fills its card on the paper (Studio Standard).
 
 ---
 
@@ -824,7 +824,7 @@ This edition **scores the picture's events** in this style's voice: a design stu
 
 **Never in this style:** comedic or cartoon sounds, meme hits, crowd reactions, game jingles, cash registers, glitches, alarms, risers or drones under the voice, anything under the creator talking to camera, a sound on a caption swap.
 
-### 11.2 The SFX ledger (Naman's rule, unchanged)
+### 11.2 The SFX ledger (Studio Standard Rule, unchanged)
 - **Any file at most 2× in a reel,** except the one **list cue** (here `paper-turn-page` for each new item, letter or spoke).
 - **No file on two consecutive cues;** rotate within each pool.
 - **Density:** about **one cue every 1.5–2.2 s on shown beats** (cards, type, map, letters), each tied to a picture; plain face beats get nothing (one soft crossing at most).
@@ -956,7 +956,7 @@ Not a checklist; the questions the best editor asks while scrubbing:
 ## §16 Build + render
 - **Fonts (bundled, `assets/fonts`):** `Montserrat-VF.ttf`, `InstrumentSerif-Regular.ttf`, `InstrumentSerif-Italic.ttf`, `InterTight-VF.ttf`, `Anton-Regular.ttf`, `BarlowCondensed-Bold.ttf`.
 - **Components:** `Ground` (paper grid / brown / black / grey dots / night dots, with `PaperStock` fibre + lamp falloff, EV-1), `Card` (border, radius, contact shadow, entrance T-02/T-03, overshoot + settle, drift; footage always fills it, never a blurred-self fill), `CardRelay` (T-13), `FaceCard` with `Open` / `Fold` (T-14 / T-15), `Pen` (arrow, underline, circle, tick, "=", pressure, T-16), `Spotlight` (EV-5), `PhraseCaption` (above the card / under the chin), `WordStack`, `InkIn` (EV-8), `PunchType`, `Equation`, `HubMap` (overview/close-up, smash zoom, spin with overshoot, breathe, progress ring, payoff pull-back), `RedactionLabel`, `ThumbCloud`, `LetterAssembly`, `LetterPanel` + `KineticWords` (two planes, letter light), `LettersHome` (EV-7), `EndCard`. All pure functions of t.
-- Render at 30 fps; convert every reference frame count with its fps (§10.1). Look at stills of each landing frame before the full render (§15). Score with `plan/sounds.json` and `veos sfx` (§11).
+- Render at 30 fps; convert every reference frame count with its fps (§10.1). Look at stills of each landing frame before the full render (§15). Score with `plan/sounds.json` and `vibe sfx` (§11).
 - Final: H.264, yuv420p, BT.709, AAC, faststart; duration = the edit.
 
 ---

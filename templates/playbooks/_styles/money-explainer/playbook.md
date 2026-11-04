@@ -24,7 +24,7 @@ This is the edit of a person who is **certain**. He doesn't raise his voice and 
 | D1 | **Calm, not flashy.** Premium, quiet confidence. No shakes, no stickers, no meme sounds, no neon, no bouncing type. The power comes from precision and continuity | §4, §10, the whole file |
 | D2 | **The speaker moves.** Open **full screen** on his face with a big, clear hook object; **shrink into the card** when the maths starts; **come back full screen** for opinions, turns and the ending. Never card-only, never an empty canvas at frame 0 | §3.2 Stage moves, §6 |
 | D3 | **Motion graphics are seamless and powerful.** Nothing appears from nowhere: every element arrives from something that was already on screen, every change happens to the thing itself, and the whole reel feels like **one continuous take of one evolving picture** | §8, §9, §10 |
-| D4 | **Sound effects are scored like Naman's: dense, deliberate, retentive.** Every graphic event has its sound, tuned to this calm palette (paper, coins, pen, soft UI, low weight). **No SFX file more than 2× in a reel** (the one list cue excepted). | §11 |
+| D4 | **Sound effects are scored to studio standards: dense, deliberate, retentive.** Every graphic event has its sound, tuned to this calm palette (paper, coins, pen, soft UI, low weight). **No SFX file more than 2× in a reel** (the one list cue excepted). | §11 |
 | D5 | **No imposed checks.** This file gives taste, recipes and reasons; you make the calls like the best video editor in the world. The only things that never bend are craft: the face is never covered, text never sits on text, sound is in sync with the picture | §2 |
 | D7 | **The face is always fully visible.** No zoom, push or crop ever goes so tight that his hair or chin leaves the frame | §2, §3.3 |
 | D6 | **The screen does the maths.** Every number he says becomes something you can see, at its true size, landing on the word | §8.4 Money machines |
@@ -80,7 +80,7 @@ This is the edit of a person who is **certain**. He doesn't raise his voice and 
 
 ---
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 ## §2 Craft that never bends
 
@@ -266,7 +266,7 @@ Key text inside x 62–1018, y 110–1650. The bottom ≈ 270 px stays empty can
 
 ### 4.4 Footage look (don't fight it)
 - **LEDGER / WIDGET:** natural, slightly warm, medium contrast, a soft key from one side, shallow depth of field. A home-study set (bookshelves, a lamp, a plant) is the reference; any clean, real room works. Keep it as shot; normalise exposure only.
-- **CASE:** the reference graded the speaker near-monochrome with a green cast. **Not here: never pale** (Naman, 12 Oct). The speaker keeps full natural colour and deep blacks, a touch darker and more contrasty than the other looks; the story's green world lives in the backdrop and a soft green rim, not in a washed-out face.
+- **CASE:** the reference graded the speaker near-monochrome with a green cast. **Not here: never pale** (Creator, 12 Oct). The speaker keeps full natural colour and deep blacks, a touch darker and more contrasty than the other looks; the story's green world lives in the backdrop and a soft green rim, not in a washed-out face.
 
 ---
 
@@ -701,7 +701,7 @@ No grain, no vignette, no bloom in LEDGER and WIDGET. Soft shadows under white c
 
 **Never in this style:** meme sounds, cartoon boings, risers that scream, glitches, alarms, record scratches, laughter, "ka-ching" more than once.
 
-### 11.2 The SFX ledger (the rule from Naman's playbook, unchanged)
+### 11.2 The SFX ledger (the rule from Creator's playbook, unchanged)
 Every reel has its sounds in `plan/sounds.json` and a **ledger** in the plan: file → uses → times.
 - **Any file at most 2× in a reel.** The one exception is the **list cue**: one file chosen to mark item 1, 2, 3… (here usually `paper-turn-page` or the 0552611/21/31 set), used once per item.
 - **No file on two consecutive cues.** Rotate within the pool.

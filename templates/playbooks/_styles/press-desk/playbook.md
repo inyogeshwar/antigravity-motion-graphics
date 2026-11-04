@@ -8,7 +8,7 @@
 
 **Measured sizes are floors, not targets.** The references' small print (≈ 16–22 px body, labels, tags) is texture at best; here anything a viewer is meant to read is ≥ 40 px, and the canvas camera pushes in when the line matters.
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Studio Standard): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 **The board is filled, not dotted.** The 12 Oct test drew a royal-blue page with small terminal boxes (≈ 340 px wide, 20 px text) and a last frame that was nearly empty blue. On a phone that reads as empty. So:
 - **The hero object of a beat** (the file, the card, the terminal, the GitHub page) is **≥ 860 px wide** (x ≈ 110–970); its key line ≥ 48 px.
@@ -36,7 +36,7 @@ This is **a journalist pulling documents out of a folder, one by one, and laying
 | D1 | **Ten times better, same soul.** Keep the receipts-first journalism; raise the craft: animation principles on every decode, write-on, tile and map; one hero per frame; a visible case that builds. Never sensational, never a meme | The feel, §8.0 |
 | D2 | **The speaker moves:** the creator full frame for the opening and every 8–15 s between blocks (25–40% of the runtime in `ADAPT`), the blocks full screen in between; frame 0 is never empty | §3.5 |
 | D3 | **Seamless, running motion:** inside a block, every phrase adds or lights one thing and the canvas camera never stops drifting; blocks change by hard cuts on the noun | §8.0, §9 |
-| D4 | **Sound is scored like Naman's:** keys on decodes, a soft type on write-ons, a marker on the lime sweep, ticks on tiles and cards, booms on sections. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
+| D4 | **Sound is scored to studio standards:** keys on decodes, a soft type on write-ons, a marker on the lime sweep, ticks on tiles and cards, booms on sections. **No SFX file more than 2× in a reel** (the one list cue excepted). **No music bed, ever** | §11 |
 | D5 | **The whole face is always visible:** eyes to chin in every speaker frame (a tight selfie stays full screen as shot, never shrunk over its own blurred frame) and hair to chin in every subject photo | §2, §12.2 |
 | D6 | **Captions are seen:** every word; `CAP-STICKER` just under the chin on the speaker, `CAP-MONO` in its fixed box in blocks | §5 |
 | D7 | **No imposed checks.** This file gives taste, recipes and reasons; you decide like the best editor and creative director in the world. Only craft never bends | §2 |
@@ -731,7 +731,7 @@ This edition **scores every graphic event** inside blocks (a newsroom at work: k
 
 **Never in this style:** comedic or cartoon sounds, crowd reactions, vocal samples, game blips, cash registers, glitches, risers building under the voice, anything under the speaker's talking.
 
-### 11.2 The SFX ledger (Naman's rule, unchanged)
+### 11.2 The SFX ledger (Studio Standard Rule, unchanged)
 - **Any file at most 2× in a reel,** except the one **list cue** (here `paper-turn-page` for each card added to the evidence stack).
 - **No file on two consecutive cues;** rotate within each pool.
 - **Density:** about one cue every 1.2–1.8 s **inside blocks**, each tied to a picture; plain photo cuts and speaker beats get nothing (one soft crossing at most).
@@ -761,7 +761,7 @@ This edition **scores every graphic event** inside blocks (a newsroom at work: k
 |---|---|
 | `L-MCU` A / `A-SPEAKER` | Head top y ≈ 170–335, eye line ≈ 500–675, face ≈ 330–430 px wide, face centre x ≈ 350–600 (one third; the mic or gesture on the other). **Hair to chin inside the frame.** From a 16:9 camera, a 9:16 window around the face (≈ 1.78× from 1080p); if that would cut the hair, use a wider window |
 | A′ | The other third, head top ≈ 170, face size ±15%; never tighter than the face allows |
-| Selfie in `A-SPEAKER` | **Full screen as shot, edge to edge** (Naman, 13 Oct): the hair may touch the top edge, eyes to chin always in; the sticker caption sits under the chin; a selfie face may be wider than 450 px. Never shrink it over a blurred copy of the same frame, never crop further |
+| Selfie in `A-SPEAKER` | **Full screen as shot, edge to edge** (Studio Standard): the hair may touch the top edge, eyes to chin always in; the sticker caption sits under the chin; a selfie face may be wider than 450 px. Never shrink it over a blurred copy of the same frame, never crop further |
 | `L-PHOTO` | 9:16 crop on the subject; an ECU brow to chin with the hairline inside (FIX-6); a medium shot's head top y ≈ 150–300 |
 | `L-ARCHIVE` | Centre-crop to 9:16; move the window so a subject face is whole; action may crop limbs |
 | Tiles, card photos, cut-out heads | The faces named are whole inside the tile / card; heads ≈ 110 px on a map |

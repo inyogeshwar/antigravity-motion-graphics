@@ -38,10 +38,11 @@
     "cartesia": "node cartesia.mjs",
     "heygen": "node heygen.mjs",
     "beats": "python beats.py",
-    "veos": "node bin/veos.js",
+    "veos": "node bin/vibe.js",
     "setup-models": "node scripts/setup_models.mjs",
     "remotion:studio": "remotion studio",
-    "remotion:render": "remotion render"
+    "remotion:render": "remotion render",
+    "vibe": "node bin/vibe.js"
   },
   "keywords": [
     "motion-graphics",

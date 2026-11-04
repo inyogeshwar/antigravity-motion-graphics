@@ -1,21 +1,21 @@
-# Naman Reel Editing Playbook (v2, "Infotainment Motion" edition, for Claude Opus 5.5)
+# Creator Reel Editing Playbook (v2, "Infotainment Motion" edition, for Claude Opus 5.5)
 
 > **In this plugin:** this file is the whole playbook. Every measured value and recipe the edit needs is in it; there is no other playbook file to open. The preview page and the `inspiration-analysis/` notes this playbook mentions are not shipped. Where it names the tools of its original run (`render.html`, `drive.py`, `storyboard.py`, `sfx-cues.json`, `SFX/` file names), the edit skill's REFERENCE.md has the plugin's equivalents; sounds are picked by id from SOUNDS.md.
 
-**Purpose:** you (Claude) receive a talking-head video of Naman plus its script. Use this document to **ideate and build** every hook, banner, caption, motion graphic, zoom, sound effect and transition, then edit the Reel so that it **stops the thumb at frame 0** and keeps teaching and entertaining to the last frame.
+**Purpose:** you (Claude) receive a talking-head video of Creator plus its script. Use this document to **ideate and build** every hook, banner, caption, motion graphic, zoom, sound effect and transition, then edit the Reel so that it **stops the thumb at frame 0** and keeps teaching and entertaining to the last frame.
 
-**What v2 is:** a frame-by-frame analysis of 10 of Naman's finished reels (`inspiration/`, per-reel notes in `inspiration-analysis/`), elevated around his own direction of 3 Oct 2026. The measured house moves (canvas split, panel drop, orange leak, chunky captions, the full transition and pattern libraries) are kept here in full. Where a reference reel and a directive disagree, **Naman's directives win**. They are listed first, because every rule below serves them.
+**What v2 is:** a frame-by-frame analysis of 10 of Creator's finished reels (`inspiration/`, per-reel notes in `inspiration-analysis/`), elevated around his own direction of 3 Oct 2026. The measured house moves (canvas split, panel drop, orange leak, chunky captions, the full transition and pattern libraries) are kept here in full. Where a reference reel and a directive disagree, **Creator's directives win**. They are listed first, because every rule below serves them.
 
-**Visual preview** of the new B-roll moves (13 animated frames): `Naman-Playbook-v2-Preview/index.html`.
+**Visual preview** of the new B-roll moves (13 animated frames): `Creator-Playbook-v2-Preview/index.html`.
 
 ### Creator directives (non-negotiable)
 | # | Directive | Where it lives |
 |---|---|---|
 | D1 | **The hook is a visual stopper.** Motion graphics in the first second must make the reel stand out from everything else in the feed | §6.1, §6.3, VS-1…VS-8 |
-| D2 | **Mocking tone gets meme SFX.** When Naman roasts the viewer's bad result or assumption, use the right meme sound | §11.3, tone tags §1 step 6 |
-| D3 | **Result first, always.** The hook shows the viewer's *garbage* result and then Naman's *premium* result ("ye tumhari website hai… ye maine vibe coding se banayi") | §6.2 Result-First Roast |
+| D2 | **Mocking tone gets meme SFX.** When Creator roasts the viewer's bad result or assumption, use the right meme sound | §11.3, tone tags §1 step 6 |
+| D3 | **Result first, always.** The hook shows the viewer's *garbage* result and then Creator's *premium* result ("ye tumhari website hai… ye maine vibe coding se banayi") | §6.2 Result-First Roast |
 | D4 | **The yellow banner is the strongest element.** It is the first thing people read | §5.2, §6.5, Appendix B |
-| D5 | **Numbers, scale and security become elite motion graphics.** 5 users vs 5,000 users, hacks, checks: the viewer *sees* what Naman *says* | §3.5 Data Stage, §8.3 P-40…P-60 |
+| D5 | **Numbers, scale and security become elite motion graphics.** 5 users vs 5,000 users, hacks, checks: the viewer *sees* what Creator *says* | §3.5 Data Stage, §8.3 P-40…P-60 |
 | D6 | **Bright colours:** yellow first, plus a disciplined set of bright accents | §4 |
 | D7 | **No SFX file repeats more than 2× (3× at most)** in a reel. The exception is a parallel list cue (item 1, 2, 3… share one cue) | §11.2 SFX ledger |
 | D8 | **Infotainment:** information + entertainment. Splits, coming back on screen, dynamic zooms and snappy zooms are part of the language | §3, §9, §10.2 zoom system |
@@ -26,11 +26,11 @@
 | Hook | Many formulas, banner + chunky captions | **Result-First Roast** is the default: garbage result → roast → premium result, ≥ 10 visual changes in 3 s, a 3-layer frame 0 |
 | Banner | Flat yellow box, ≤ 14 words, plain | **Headline Slab**: yellow + 6 px ink stroke + hard offset shadow, a keyword chip, ≤ 9 words, readable at thumbnail size, alive (pulse, flip, rocket exit) |
 | Palette | Yellow + role hues measured from reels | **Bright system**: Hype Yellow, Blaze Orange, Alarm Red, Volt Green, Electric Cyan, Ultra Violet, Comedy Pink, each with one job |
-| Worlds | Dark studio + light canvas | **Three worlds**: Studio (Naman), Canvas (explain tools), **Data Stage** (night-neon for numbers, scale, security) |
+| Worlds | Dark studio + light canvas | **Three worlds**: Studio (Creator), Canvas (explain tools), **Data Stage** (night-neon for numbers, scale, security) |
 | Data | Counters, metric card | **Data Theatre**: procedural crowds of 5 → 5,000 people, crash phones, gauges, versus lanes, metaphor machines (book index, bouncer, gift box, data wall) |
 | Comedy | None (meme SFX were banned) | **Comedy layer** gated by tone: meme SFX, freeze-frame roasts, marker circles, stamps, stickers, crash zooms |
 | Camera | Jump cuts; no selfie punch-ins | **Zoom system Z-1…Z-7**: snap punch, crash zoom, pull-out reveal, zoom-through, rotation snap, shake |
-| Splits | Panel drop / return | **Stage moves**: panel drop, **pop-back**, slide-aside versus, reaction bubble, depth sandwich (graphics behind Naman) |
+| Splits | Panel drop / return | **Stage moves**: panel drop, **pop-back**, slide-aside versus, reaction bubble, depth sandwich (graphics behind Creator) |
 | SFX | Few, same whoosh everywhere | **Tone-tagged pools + a ledger**: every cue logged; no file > 2×; meme files 1× each |
 
 ### Quick index
@@ -64,8 +64,8 @@
 3. **Transcribe** with word timestamps (PROC P4). Whisper writes Hindi in Devanagari; keep it for timing only. Captions are romanised Hinglish from `script.md`. Check every brand and tool name.
 4. **Segment** into `HOOK`, `LOOP`, items/steps (ordinal words), `PAYOFF`, `CTA`.
 5. **Classify every sentence** with a line type (§8.4) and mark its **trigger word**.
-6. **Tone-tag every sentence:** `hype` · `mock` · `awe` · `explain` · `warn` · `win` · `cta` (§10.2, §11.1). The tone decides colour, zoom, caption treatment and SFX family. A sentence is `mock` when Naman roasts the viewer's result, assumption or habit ("wo ekdam bekaar hai", "paanch nithalle dost", "hackers ke liye gift").
-7. **Pick the result pair** for the hook (§6.4): what is the viewer's *garbage* state, and what is Naman's *premium / fixed* state? Plan the assets for both.
+6. **Tone-tag every sentence:** `hype` · `mock` · `awe` · `explain` · `warn` · `win` · `cta` (§10.2, §11.1). The tone decides colour, zoom, caption treatment and SFX family. A sentence is `mock` when Creator roasts the viewer's result, assumption or habit ("wo ekdam bekaar hai", "paanch nithalle dost", "hackers ke liye gift").
+7. **Pick the result pair** for the hook (§6.4): what is the viewer's *garbage* state, and what is Creator's *premium / fixed* state? Plan the assets for both.
 8. **Write 3 banners** (§6.5) and **3 hook variants** (§6). Recommend one. Run the stopper test (§6.1).
 9. **Plan the data story** for any number, comparison or security idea: which Data Theatre pattern (P-40…P-60) makes the viewer *see* it (§8.5).
 10. **Fill the beat sheet** (§13): one beat per trigger word, an event every ≤ 1.5 s. Each beat gets mode, pattern, family, caption, tone, zoom, transition and **SFX file names**.
@@ -75,12 +75,12 @@
 
 ---
 
-**Full screen or a box, never any footage or picture over its own blur** (Naman, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
+**Full screen or a box, never any footage or picture over its own blur** (Creator, 13 Oct): the creator's video either fills the whole frame edge to edge, or sits in a designed box (rounded corners, a rim or soft shadow, on this style's own ground) that it fills completely, cropped around the face. The same for every other medium: screen recordings, landscape clips, photos, receipts, diagrams and other people's footage either fill the frame (cover-cropped to the part that matters, or a push-in) or sit in a designed box on the style's own ground or scene (its colour, gradient, texture, grid or drawn set). Never shrink anything over a blurred or darkened copy of itself, never pad a band or box with blurred side bars, never set a card on the creator's blurred frame: a hard rectangle against its own blur looks cheap. A tight selfie stays full screen: move or shrink the text above the head, not the video; the hair may touch the top edge, eyes to chin are always in. When the whole head must be seen, use a box layout where it fits.
 
 ## §2 Hard rules
 
 **MUST**
-- M1. **Frame 0 is a thumbnail and a stopper.** It holds ≥ 3 layers: **banner + result + Naman**. At least one element is moving on f0, and the banner is fully readable on f0.
+- M1. **Frame 0 is a thumbnail and a stopper.** It holds ≥ 3 layers: **banner + result + Creator**. At least one element is moving on f0, and the banner is fully readable on f0.
 - M2. **≥ 10 visual changes in the first 3 s.** Caption steps, flaw circles, stamps, zooms, cards and chip pulses all count.
 - M3. **Result first.** By **2.0 s** the viewer has seen a result: the garbage state, the premium state, or both (D3, §6.2).
 - M4. **The banner obeys §5.2 / §6.5:** ≤ 9 words, ≤ 2 lines (3 only with a number), one keyword chip, readable at 25% scale, and saying the same thing as the result pair on screen.
@@ -90,7 +90,7 @@
 - M8. **Numbers become pictures** (D5). Every spoken quantity, comparison or risk is shown with a Data Theatre pattern: quantity as countable things, comparisons on the same axes, risk as a mechanism. Never just a number on a card.
 - M9. **Tone drives treatment.** Comedy visuals and meme SFX appear only on `mock` beats (and the one allowed `win` meme, §11.3). `awe` beats are clean and premium. `warn` beats are red and tense.
 - M10. **The SFX ledger is clean** (D7): no file used more than 2×, except the parallel list cue (≤ the number of items). Each meme file is used once. No file on two consecutive cues.
-- M11. **Naman stays on screen or one tap away.** B-roll lives in cards, splits, the Data Stage with a panel or bubble, or the depth sandwich. Full-screen graphics without him last ≤ 2.5 s.
+- M11. **Creator stays on screen or one tap away.** B-roll lives in cards, splits, the Data Stage with a panel or bubble, or the depth sandwich. Full-screen graphics without him last ≤ 2.5 s.
 - M12. **The face is never covered.** The banner bottom sits ≥ 40 px above his head top, captions at chest height, stickers never on the face.
 - M13. **Promise integrity.** The banner count equals the items shown. Every "end mein dunga" is paid off on screen. The CTA keyword is on screen.
 - M14. **Facts only from the script or sources.** Illustrative numbers that the script itself presents as hypothetical ("5,000 users aaye toh…") may be shown, but **never decorative fake metrics** (made-up response times, percentages, revenue).
@@ -109,7 +109,7 @@
 - N6. More than 3 bright hues in one frame (yellow + 2). Comedy Pink outside the comedy layer. Coloured words inside subtitles.
 - N7. Hooded hackers, glowing robot brains, Matrix rain, random stock tech footage. Use mechanisms instead (red cursors, gift box, data wall, bouncer).
 - N8. Transitions outside `T-01…T-24` or zooms outside `Z-1…Z-7`. No RGB-split packs, film burns or lens-flare PNGs.
-- N9. Fake UIs presented as real products, fake dashboards, invented revenue or testimonials. The garbage and premium example sites are generic, unbranded mocks, or Naman's own builds.
+- N9. Fake UIs presented as real products, fake dashboards, invented revenue or testimonials. The garbage and premium example sites are generic, unbranded mocks, or Creator's own builds.
 - N10. A black tail > 0.2 s, or an outro louder than the voice.
 - N11. Text layers overlapping (subtitle under a title, sticker over the banner).
 - N12. Visuals that only decorate. Every motion graphic shows the thing being said.
@@ -121,7 +121,7 @@
 ### 3.1 Three worlds
 | World | Look | Carries | Enter / exit |
 |---|---|---|---|
-| **Studio** | Naman's footage (low-key warm room) | Claims, roasts, opinions, asides, CTA | Hard cut, T-17 pop-back, zooms |
+| **Studio** | Creator's footage (low-key warm room) | Claims, roasts, opinions, asides, CTA | Hard cut, T-17 pop-back, zooms |
 | **Canvas** | `#FCFCFC` + dashed `#C5C5C5` grid, 141 px | Tools, sites, prompts, docs, step-by-step explanations | T-04 panel drop in; T-01 or T-17 out |
 | **Data Stage** | Night `#07070C`, faint cyan dot grid (`#00D8FF` at 10%, 60 px), neon glows | Numbers, scale, crashes, money, security, comparisons | T-18 zoom-through or T-04 (dark), out with T-17 or T-01 |
 
@@ -130,21 +130,21 @@ Switching worlds is a beat in itself, so each switch must land on an ordinal or 
 ### 3.2 Screen modes
 | Mode | What | Share (per 60 s) |
 |---|---|---|
-| `HOOK` | Result-First Roast (§6.2): banner + result + Naman | 5–9 s |
+| `HOOK` | Result-First Roast (§6.2): banner + result + Creator | 5–9 s |
 | `F` | Full-frame talking head (selfie or tripod) + `CAP-SUB`, with zooms Z-1…Z-7 | 25–35% |
-| `S` | Canvas split: card(s) on top, Naman in the panel at the bottom (`P-BLEED` top y 1135, or `P-INSET` x 12–1068, y 1008–1881) | 30–45% |
-| `D` | **Data Stage** split or full: the night stage with a Data Theatre pattern; Naman in the panel or in the reaction bubble | 10–30% (higher in data/security reels) |
-| `V` | **Versus split:** left/right halves with the same axes (garbage vs premium, 5 vs 5,000). Naman in the bubble or a centre strip | ≤ 10% |
-| `R` | **Reaction bubble:** a full-screen B-roll or Data Stage with Naman in a circular bubble | ≤ 15% |
+| `S` | Canvas split: card(s) on top, Creator in the panel at the bottom (`P-BLEED` top y 1135, or `P-INSET` x 12–1068, y 1008–1881) | 30–45% |
+| `D` | **Data Stage** split or full: the night stage with a Data Theatre pattern; Creator in the panel or in the reaction bubble | 10–30% (higher in data/security reels) |
+| `V` | **Versus split:** left/right halves with the same axes (garbage vs premium, 5 vs 5,000). Creator in the bubble or a centre strip | ≤ 10% |
+| `R` | **Reaction bubble:** a full-screen B-roll or Data Stage with Creator in a circular bubble | ≤ 15% |
 | `I` | Inset card in the top band over `F` | ≤ 10% |
-| `K` | Card on the canvas (never over Naman's blurred self) | ≤ 10% |
+| `K` | Card on the canvas (never over Creator's blurred self) | ≤ 10% |
 | `U` | Full-screen UI mock (comment or share flow) | ≤ 3 s |
 
 **How each mode plays:**
 - **`F`:** shows `CAP-SUB` plus at most one big keyword (`CAP-GLOW`) per line. It carries opinions, asides, jokes, "ye galti mat karna", objection busters and the CTA. Selfie: jump cuts every 1–2.5 s, with Z-zooms on meaning (§10.2). Tripod: never static. Alternate punch-in/out across jump cuts (±10–50%, e.g. wide → 1.4× → wide), or a slow Ken Burns of ±7–10% over 3–6 s with the direction alternating segment to segment.
 - **`I`:** a card in the top band (x 24–1056, y 60–600; bleeding off the top edge is allowed) over the full-frame talking head, or a small PiP (≈ 300×530, radius 24, top-right) for a phone UI. Enter with T-13 smear, a 4 f fade or a slide-down; exit with a smear or a hard cut. For quick proof that doesn't deserve a layout change.
-- **`K`:** a 1024-wide card (radius 55) centred at y ≈ 590–1330 on the canvas (the stage's own ground: dark grid or the current scene), never on Naman's blurred or darkened frame (Naman, 13 Oct: a card over his own blurred video looks cheap). Voice and subtitles continue. Enter with T-11 (the card grows 60 → 100% as the canvas replaces the footage, 6 f); exit with a hard cut or T-17 pop-back.
-- **`U`:** a full-frame recreation of a real Instagram action (the comment or share flow on Naman's own account) with a cursor, 10 f per step. At most one per reel. Enter with a hard cut; exit with T-07.
+- **`K`:** a 1024-wide card (radius 55) centred at y ≈ 590–1330 on the canvas (the stage's own ground: dark grid or the current scene), never on Creator's blurred or darkened frame (Creator, 13 Oct: a card over his own blurred video looks cheap). Voice and subtitles continue. Enter with T-11 (the card grows 60 → 100% as the canvas replaces the footage, 6 f); exit with a hard cut or T-17 pop-back.
+- **`U`:** a full-frame recreation of a real Instagram action (the comment or share flow on Creator's own account) with a cursor, 10 f per step. At most one per reel. Enter with a hard cut; exit with T-07.
 - **`S-DARK`:** the canvas split on a black canvas with a faint grid, used **once** per reel for the payoff or the best item. Enter with T-14.
 
 ### 3.3 Canvas split layout (`S`)
@@ -158,7 +158,7 @@ Switching worlds is a beat in itself, so each switch must land on an ordinal or 
 │  ╰───────────────────╯  │
 │   black subtitle here   │ ← CAP-SUB black, centre y = panel top − 60
 │╭───────────────────────╮│ ← SPEAKER PANEL top y 1135, top radius 64
-││   Naman (footage)     ││   x 12–1068, bleeds off the bottom
+││   Creator (footage)     ││   x 12–1068, bleeds off the bottom
 └┴───────────────────────┴┘ 1920
 ```
 - **Canvas:** `#FCFCFC` with dashed grid lines `#C5C5C5`, 3 px, dash 14/10, pitch **141 px** (vertical lines at x ≈ 121, 262, 404, 545, 686, 828, 969). A cooler variant: canvas `#E1E7F2` with lines `#BBC1C9`.
@@ -166,19 +166,19 @@ Switching worlds is a beat in itself, so each switch must land on an ordinal or 
 - **Speaker in the panel:** head top = panel top + 60…110, eye line ≈ panel top + 250, face x **340–560**. Keep him left of centre when he gestures, so the hand fills the right side.
 - **Cards:** one idea per card. The card may shift right and half off-frame to make room for a big text list on the left (P-06), or split into two small tiles (P-04). Card swaps inside `S` are always animated (T-11 / T-12), never a still jump.
 
-### 3.4 Stage moves (how Naman moves between layouts)
+### 3.4 Stage moves (how Creator moves between layouts)
 | ID | Move | Recipe | Use |
 |---|---|---|---|
 | **G-1** | **Panel drop** | T-04: full frame slides down into the panel in 6–8 f, canvas/stage revealed, card rises | Into every item |
-| **G-2** | **Pop-back** | T-17: the panel bursts back to full frame. Scale 0.92 → 1.06 → 1.00 over 7 f, vertical blur, a Z-1 punch on the landing word | Back to Naman for a roast, opinion or punchline |
-| **G-3** | **Slide-aside** | T-23: the panel narrows and slides to the left 42% (x 0–450, rounded right edge) in 8 f. The B-roll takes the right side | Naman pointing at a duel, or explaining beside a tall phone mock |
+| **G-2** | **Pop-back** | T-17: the panel bursts back to full frame. Scale 0.92 → 1.06 → 1.00 over 7 f, vertical blur, a Z-1 punch on the landing word | Back to Creator for a roast, opinion or punchline |
+| **G-3** | **Slide-aside** | T-23: the panel narrows and slides to the left 42% (x 0–450, rounded right edge) in 8 f. The B-roll takes the right side | Creator pointing at a duel, or explaining beside a tall phone mock |
 | **G-4** | **Reaction bubble** | T-24: the footage shrinks into a Ø 300 circle (8 px `paper` ring + 12 px ink shadow) at bottom-left (centre x 210, y 1560) in 8 f, with an elastic overshoot. The bubble bounces 1.0 → 1.12 → 1.0 on his punch words | Full-screen Data Stage, versus or UI moments |
-| **G-5** | **Depth sandwich** | Naman's matte is drawn **in front of** the graphic. The graphic sits behind him (layer 6.5), and he overlaps the card's bottom edge or corner. Parallax: the card drifts ±12 px against him | Hook, premium reveal, hero numbers |
-| **G-6** | **Lean-in** | Naman's cut-out slides in from the right edge (10 f, ease-out) pointing at the card, hips cropped by the frame | "Ye dekho", flaw pointing |
+| **G-5** | **Depth sandwich** | Creator's matte is drawn **in front of** the graphic. The graphic sits behind him (layer 6.5), and he overlaps the card's bottom edge or corner. Parallax: the card drifts ±12 px against him | Hook, premium reveal, hero numbers |
+| **G-6** | **Lean-in** | Creator's cut-out slides in from the right edge (10 f, ease-out) pointing at the card, hips cropped by the frame | "Ye dekho", flaw pointing |
 
 ### 3.5 Data Stage (`D`) spec
 - **Background:** `#07070C` with a faint dot grid (`#00D8FF` at 10%, pitch 60 px). A 700 px radial glow behind the hero element (`#FF6A00` or `#00D8FF` at 14%) drifts ±20 px.
-- **Layout:** the graphic zone is x 40–1040, y 160–1080. Naman sits in a `P-INSET` panel (dark-rimmed) or the G-4 bubble. Captions are white `CAP-SUB` at y = panel top − 60.
+- **Layout:** the graphic zone is x 40–1040, y 160–1080. Creator sits in a `P-INSET` panel (dark-rimmed) or the G-4 bubble. Captions are white `CAP-SUB` at y = panel top − 60.
 - **Neon rule:** glows only on the hero element and the state change (OK → crash). Everything else stays flat.
 - **Scale honesty:** quantities are drawn as countable things: 5 avatars, 5,000 dots (literally 5,000, seeded positions), N shield segments.
 
@@ -222,7 +222,7 @@ Shadows: subtitles on footage `rgba(0,0,0,.55)` blur 10; light cards on the canv
 ### 4.2 Meaning (both worlds)
 - **Yellow** = read this / the hook / do this.
 - **Red** = their garbage, danger, crash, blocked.
-- **Green** = Naman's premium, fixed, secure, money.
+- **Green** = Creator's premium, fixed, secure, money.
 - **Orange** = premium energy and light.
 - **Cyan** = tech, data, users.
 - **Violet** = the concept or tool name.
@@ -304,7 +304,7 @@ Shadows: subtitles on footage `rgba(0,0,0,.55)` blur 10; light cards on the canv
 - **KT-TYPE (sentences):** bold black sans ~60–70 px on the canvas. Typewriter at 1 char/frame, with the upcoming letters pre-shown in light grey (ghost letters).
 - **KT-PIXEL (product names):** Silkscreen, salmon `#D47557` with a darker pixel shadow ("CLAUDE CODE"). Fades in from 30% over 6 f.
 - **KT-ACRONYM:** Anton, `hype` with a black extrude ≈ 10 px, cap ≈ 300 px. Builds one letter per spoken syllable ("A." → "A.E." → "A.E.O"); the expansion wipes in underneath in small white text over ~30 f.
-- **KT-ARC (hook only):** words wrapped on an arc around Naman's head (matte in front), coloured with glow. Letters reveal with the syllables at ~1 letter/f, hold ≈ 1 s, hard off ("60 seconds", "Claude se").
+- **KT-ARC (hook only):** words wrapped on an arc around Creator's head (matte in front), coloured with glow. Letters reveal with the syllables at ~1 letter/f, hold ≈ 1 s, hard off ("60 seconds", "Claude se").
 
 ### 5.8 Comedy marker (`CAP-MARKER`, `mock` beats only)
 - Permanent Marker, 56–72 px, `alarm` red on light backgrounds or `meme` pink with a white outline on dark ones, rotated −4…+6°.
@@ -335,22 +335,22 @@ Shadows: subtitles on footage `rgba(0,0,0,.55)` blur 10; light cards on the canv
 ## §6 Hook system
 
 ### 6.1 The stopper test (run it on frame 0 and on 0–3 s)
-1. **Thumbnail test:** frame 0 at 25% scale still shows *what this is about*: the banner is readable, and the result plus Naman are visible.
+1. **Thumbnail test:** frame 0 at 25% scale still shows *what this is about*: the banner is readable, and the result plus Creator are visible.
 2. **Mute test:** with sound off, the first 3 s still tell the story (garbage → premium, or failure → fix).
 3. **1-second read:** the banner reads in ≤ 1.5 s (≤ 9 words).
 4. **Change count:** ≥ 10 visual changes in 0–3 s, and ≥ 1 moving element on f0.
 5. **Feed-contrast test:** in a strip of 6 random reel thumbnails, ours has the highest contrast element (the yellow slab with its ink shadow) and a clear "two states" picture.
 
 ### 6.2 The Result-First Roast (default hook for every "build" reel)
-Spoken pattern (Naman): "*Ye tumhari website hai* [garbage]… *aur ye maine vibe coding se banayi* [premium]."
+Spoken pattern (Creator): "*Ye tumhari website hai* [garbage]… *aur ye maine vibe coding se banayi* [premium]."
 
 | t | Beat | Tone | Visual | Caption | Zoom / move | SFX (from pools, §11) |
 |---|---|---|---|---|---|---|
-| **f0** | Stopper frame | hype | **Banner slab** settled-in (B-VERSUS) + the **garbage result** (browser or phone mock, tilted 4°) mid-frame + **Naman cut-out** overlapping its bottom corner (G-5), already pointing | — | Slab 1.06 → 1, card tilt-in | Hit on f0 (`ABSTRACT_HIT_Sub_Bass_07`) |
-| 0.1–1.4 | "Ye tumhari website hai…" | mock | Card pushes in (1.00 → 1.08). **Flaw markup (P-62):** 2–3 red marker circles draw on the real flaws, with labels ("purple gradient", "same 3 cards", "centred text") | CHUNKY "ye tumhari / **WEBSITE**" | Naman Z-7 rotation snap −3° | Marker swipe per circle (different files) |
-| 1.4–2.1 | Punchline ("…ekdam garbage / AI slop") | mock | **Stamp verdict (P-63)** "AI SLOP" slams onto the card (rotation −12°, scale 1.7 → 1) + Z-5 shake + 💀 sticker. Optional Z-2 crash zoom on Naman's smirk (5–8 f) | CHUNKY "**GARBAGE**" in red | Z-2 or shake | **Meme hit in the gap after the word** (`Vine_boom` *or* `Fahh`) |
+| **f0** | Stopper frame | hype | **Banner slab** settled-in (B-VERSUS) + the **garbage result** (browser or phone mock, tilted 4°) mid-frame + **Creator cut-out** overlapping its bottom corner (G-5), already pointing | — | Slab 1.06 → 1, card tilt-in | Hit on f0 (`ABSTRACT_HIT_Sub_Bass_07`) |
+| 0.1–1.4 | "Ye tumhari website hai…" | mock | Card pushes in (1.00 → 1.08). **Flaw markup (P-62):** 2–3 red marker circles draw on the real flaws, with labels ("purple gradient", "same 3 cards", "centred text") | CHUNKY "ye tumhari / **WEBSITE**" | Creator Z-7 rotation snap −3° | Marker swipe per circle (different files) |
+| 1.4–2.1 | Punchline ("…ekdam garbage / AI slop") | mock | **Stamp verdict (P-63)** "AI SLOP" slams onto the card (rotation −12°, scale 1.7 → 1) + Z-5 shake + 💀 sticker. Optional Z-2 crash zoom on Creator's smirk (5–8 f) | CHUNKY "**GARBAGE**" in red | Z-2 or shake | **Meme hit in the gap after the word** (`Vine_boom` *or* `Fahh`) |
 | 2.1–2.6 | Pivot ("…aur ye") | awe | **Garbage exits (T-19 Shatter):** the card cracks and falls in 9–14 shards with gravity and spin, or crumples into a trash icon | — | Z-3 snap pull-out | Riser into the reveal (`Zoom In Riser`) |
-| 2.6–4.6 | "…maine vibe coding se banayi" | awe | **Premium result reveal (T-20 Light-sweep):** an orange light bar sweeps L → R, revealing the premium site in 3D tilt (rotateY 18° → 0 over 14 f) with live motion inside. **Banner flip (T-21)** "SLOP" → "PREMIUM" (red → green). Naman stays in front (G-5) | CHUNKY "vibe coding / **SE**" | Z-4 push-in drift | Cinematic hit + shine on the flip (`Cinematic Hit 4` + `Short Shine 2`) |
+| 2.6–4.6 | "…maine vibe coding se banayi" | awe | **Premium result reveal (T-20 Light-sweep):** an orange light bar sweeps L → R, revealing the premium site in 3D tilt (rotateY 18° → 0 over 14 f) with live motion inside. **Banner flip (T-21)** "SLOP" → "PREMIUM" (red → green). Creator stays in front (G-5) | CHUNKY "vibe coding / **SE**" | Z-4 push-in drift | Cinematic hit + shine on the flip (`Cinematic Hit 4` + `Short Shine 2`) |
 | 4.6–7.5 | Count + loop ("ye 3 skills…, end tak dekhna") | hype | Feature chips **orbit** the premium card (P-66). Count tiles rise | CHUNKY "**3 skills** / end tak dekhna" | Z-1 punch on the count | Pop (pool) |
 | ≤ 9 | Exit | — | The banner rockets up; T-04 panel drop into item 1 on "Pehla" | — | — | Whoosh (pool, not used yet) |
 
@@ -360,7 +360,7 @@ Spoken pattern (Naman): "*Ye tumhari website hai* [garbage]… *aur ye maine vib
 | ID | Device | Recipe |
 |---|---|---|
 | VS-1 | **Garbage card with flaw markup** | P-62 on a browser or phone mock, red circles + marker notes |
-| VS-2 | **Depth sandwich** | Naman's matte in front of the result card (G-5), with parallax |
+| VS-2 | **Depth sandwich** | Creator's matte in front of the result card (G-5), with parallax |
 | VS-3 | **Stamp verdict** | P-63 stamp + shake + meme hit |
 | VS-4 | **Shatter → light-sweep** | T-19 + T-20, garbage to premium in 1 s |
 | VS-5 | **Versus from f0** | Mode V: left garbage (red frame), right premium (green frame); a diagonal wipe divider animates on f0–8 |
@@ -371,7 +371,7 @@ Spoken pattern (Naman): "*Ye tumhari website hai* [garbage]… *aur ye maine vib
 **House hook visuals** (proven in the reference reels; stack them with a VS device and a result):
 | ID | Hook visual | Recipe |
 |---|---|---|
-| H-1 | **Clone skit** | Locked-off high-angle wide (setup D). Two takes mask-split at x ≈ 540. The second Naman strobes in (T-02) on f1–6. Chunky captions sit under whoever speaks; take changes hide under T-01 |
+| H-1 | **Clone skit** | Locked-off high-angle wide (setup D). Two takes mask-split at x ≈ 540. The second Creator strobes in (T-02) on f1–6. Chunky captions sit under whoever speaks; take changes hide under T-01 |
 | H-2 | **Zoom-blur slam selfie** | f0 at 2.5–3× on the eyes → 1.0 by f6 with radial blur (T-03). The first chunky caption flies in; the banner lands |
 | H-3 | **Result-first card** | The finished site or animation plays in a rounded card (y 248–820) over the selfie or on the canvas, under the banner, while he says the hook |
 | H-5 | **Proof footage** | A phone-filmed monitor showing the revenue or listing (moiré is fine, it reads real), then a currency conversion. Exposure pop (T-08) on the number |
@@ -431,10 +431,10 @@ Add-ons that stack with any formula: the **objection buster** ("agar tumhe ye fa
 
 ### 6.8 CTA formula (matches `POSTING_ORDER.md`)
 1. **Early loop** (5–12 s, `CAP-CHUNKY`): "reel end tak dekhna… saare prompts DM mein".
-2. **End CTA:** Naman pops back (G-2) for "comment kar do **KEYWORD**".
+2. **End CTA:** Creator pops back (G-2) for "comment kar do **KEYWORD**".
    - **P-68 Key-cap CTA:** the KEYWORD on a 3D yellow keyboard key that presses down (8 f) with a click, then the PDF card (its real title) flies into a DM bubble (14 f).
    - The keyword is on screen ≥ 1.5 s.
-3. **Community chip** "Ship Without Code · link in bio" pops in the top band (P-29).
+3. **Community chip** "MotionOS Studio · link in bio" pops in the top band (P-29).
 4. **"Peace out"**, then a hard end ≤ 6 f after the last word (T-16). The CTA is tone `cta`: no meme SFX.
 
 ---
@@ -459,7 +459,7 @@ Add-ons that stack with any formula: the **objection buster** ("agar tumhe ye fa
 2. Marker 0.6–1.2 s.
 3. Title + card or Data Theatre pattern on the tool or risk name (±1 f).
 4. 2–4 beats of evolving visuals, one per noun, every ≤ 1.5 s.
-5. **Pop-back (G-2)** to Naman for the opinion, aside or mock line, with a Z-1 or Z-2.
+5. **Pop-back (G-2)** to Creator for the opinion, aside or mock line, with a Z-1 or Z-2.
 6. Optional reaction bubble (G-4) when the visual must stay full screen while he reacts.
 7. Optional **aside cut:** a joke or aside ("freebie hai", "dimaag chalana hi nahi hai") gets its own 1–1.2 s full-frame shot between items.
 
@@ -493,7 +493,7 @@ If an item exits without a pop-back, pick one exit style for the whole reel (T-0
 | B-8 | Proof / data card | Phone-filmed revenue screen, currency conversion, counters, metric card (10/100 → 40/100) | Counter roll, exposure pop, card scale from a point (8 f) |
 | B-9 | Flow diagram | Dot grid (4 → 40 dots), chips, dotted orange connectors, envelope; sitemap tree | Dots multiply, lines draw, chips slide |
 | B-10 | Icon pop | DOCX/PDF icon, emoji, Apple-style glyphs | Starts small near his shoulder, scales up and moves to rest in ~6 f; exits shrink + fade in 2 f |
-| B-11 | UI mock | IG comment / share flow on Naman's account, with a cursor | Full screen, cursor-driven, ≤ 3 s |
+| B-11 | UI mock | IG comment / share flow on Creator's account, with a cursor | Full screen, cursor-driven, ≤ 3 s |
 | **B-12** | **Data Theatre** | Procedural people, requests, packets, gauges, shields on the Data Stage. Thousands of seeded elements, synced to words |
 | **B-13** | **Metaphor machine** | A physical metaphor that *does the mechanism*: book index, bouncer gate, gift box, vault, data wall, shape sorter |
 | **B-14** | **Comedy layer** | Marker notes, stamps, stickers, freeze-frames, crash zooms. `mock` tone only |
@@ -541,8 +541,8 @@ Lead −2 f → land ≤ 5 f → read 0.6–1.5 s (something moves inside) → *
 | P-26 | **Number badge** | SM-1 | Violet chapter badge | §7.1 |
 | P-27 | **Doc / PDF pop** | B-10 | A DOCX/PDF icon or a 1-page doc card with the reel's real PDF title | Grow from the shoulder 6 f; exit 2 f |
 | P-28 | **Emoji pop** | B-10 | 🔥 (CTA emoji keyword) | Scale 30 → 110 → 100% over 4 f, 0.2 s before the word |
-| P-29 | **Community chip** | B-4 | `paper` chip "Ship Without Code · link in bio" in the top band | 5 f overshoot pop; holds to the end |
-| P-30 | **CTA UI mock** | B-11 | IG comment or share flow on Naman's account | Cursor 10 f per step |
+| P-29 | **Community chip** | B-4 | `paper` chip "MotionOS Studio · link in bio" in the top band | 5 f overshoot pop; holds to the end |
+| P-30 | **CTA UI mock** | B-11 | IG comment or share flow on Creator's account | Cursor 10 f per step |
 | P-31 | **Tile flip teaser** | SM-5 | The last tile 3D-flips (Y axis, 4 f) into a teaser card | 4 f flip |
 | P-32 | **Top inset proof** | Mode I | A card in the top band over full frame | T-13 smear in/out, or slide-down 8 f |
 | P-33 | **Canvas card** | Mode K | A card centred on the canvas (never over his blurred talking head) | T-11, 6 f |
@@ -582,9 +582,9 @@ New in this edition:
 | **P-61** | **Garbage → premium** | The hook core: garbage card → shatter (T-19) → light-sweep premium (T-20) | §6.2 |
 | **P-62** | **Flaw markup** | Red marker circles + Permanent Marker notes on the real flaws | Circle 8 f, note 10 f, 6 f stagger |
 | **P-63** | **Stamp verdict** | Rubber-stamp text ("AI SLOP", "BEKAAR", "BLOCKED", "SECURE ✓") in `alarm` or `volt`, 6 px rough-edge border | Scale 1.7 → 1 in 5 f, rotate −12°, Z-5 shake, ink splatter 3 dots |
-| **P-64** | **Freeze-frame roast** | Naman's footage freezes (desaturated 60%, 1.25× crash zoom), a pink marker circle + arrow + note ("ye tum ho 😭"), a pause icon "⏸" top-left | Freeze on the word, 18–30 f hold, unfreeze with a Z-3 |
+| **P-64** | **Freeze-frame roast** | Creator's footage freezes (desaturated 60%, 1.25× crash zoom), a pink marker circle + arrow + note ("ye tum ho 😭"), a pause icon "⏸" top-left | Freeze on the word, 18–30 f hold, unfreeze with a Z-3 |
 | **P-65** | **Meme sticker** | A STICKER (§5.10) near the subject | Pop 6 f, wobble 12 f |
-| **P-66** | **Depth hero + orbit** | The premium result behind Naman (G-5); 3–4 feature chips orbit around it on an ellipse | Orbit 1 rev / 4 s; chips scale by depth |
+| **P-66** | **Depth hero + orbit** | The premium result behind Creator (G-5); 3–4 feature chips orbit around it on an ellipse | Orbit 1 rev / 4 s; chips scale by depth |
 | **P-67** | **Banner flip** | T-21 on the banner chip | 4 f |
 | **P-68** | **Key-cap CTA** | The keyword on a 3D yellow keyboard key; press 8 f; the PDF card flies into a DM bubble | Press, then a 14 f arc flight |
 
@@ -649,7 +649,7 @@ New in this edition:
 ### 8.7 Asset rules
 - **Real captures** for tools, sites and prompts: record the sites and tools yourself (1080-wide crops at 2×, 30 fps, smooth scroll), or use supplied files.
 - **Prompts:** the exact prompt from the script or its PDF.
-- **Result mocks** (garbage/premium sites, phone apps) may be built live in the renderer as **generic, unbranded** designs, or captured from Naman's actual builds (preferred for premium).
+- **Result mocks** (garbage/premium sites, phone apps) may be built live in the renderer as **generic, unbranded** designs, or captured from Creator's actual builds (preferred for premium).
 - **Logos:** real marks in brand colours. If one is missing, use a text wordmark in Inter Tight 800. Never redraw a logo.
 - **Silhouettes (B-6):** flat black people on transparency, no baked-in text; labels are live text.
 - No AI stock scenes. Blur or crop private data (emails, API keys, account numbers) in every capture.
@@ -660,13 +660,13 @@ New in this edition:
 ## §9 Transition system (`T`)
 
 ### 9.1 Library (30 fps)
-Transitions are the punctuation of the reel. An orange leak is a full stop between acts, a panel drop opens a new step, a pop-back brings Naman back to say what he thinks, and a jump cut is a breath that was removed.
+Transitions are the punctuation of the reel. An orange leak is a full stop between acts, a panel drop opens a new step, a pop-back brings Creator back to say what he thinks, and a jump cut is a breath that was removed.
 
 **The house transitions (measured from the reference reels):**
 | ID | Transition | Frames | Recipe | SFX role |
 |---|---|---|---|---|
 | **T-01** | **Orange leak flash** (signature) | 6–7 | **f1:** the outgoing shot is graded hot; a yellow-white flare band (`#FCEF2D`) enters from the **left edge** over an orange wash. **f2–3:** full orange wash (`#F94F00` core, darks lifted to `#8C1700`; frame mean ≈ `#DD591E`). **The hard cut sits on f4**, inside the wash. **f4–6:** the same wash over the incoming shot, decaying; for split → full it can push straight into a T-04. **f7:** clean. Screen/add blend; the cut is never visible raw | Flash hit or whoosh, optional (silent flashes are fine) |
-| **T-02** | **Silhouette strobe** (frame 0) | 6–8 | A flat white `#FCFCFC` matte of Naman (or the arriving clone) on f1, f3, f5; real footage on f2, f4, f6. The hook keyword alternates white/yellow in sync. f0 may be the empty set ("teleport in"); the first caption on f7 | Opening hit at ~0.2 s |
+| **T-02** | **Silhouette strobe** (frame 0) | 6–8 | A flat white `#FCFCFC` matte of Creator (or the arriving clone) on f1, f3, f5; real footage on f2, f4, f6. The hook keyword alternates white/yellow in sync. f0 may be the empty set ("teleport in"); the first caption on f7 | Opening hit at ~0.2 s |
 | **T-03** | **Zoom-blur slam** (open) | 6–7 | f0 at 2.5–3× on the eyes/mouth with radial zoom blur → 1.0 by f6, ease-out. The banner lands f3–6; the first caption slides in f2–5; a B-roll card fades up | Zoom whoosh at 0.00 |
 | **T-04** | **Panel drop** (full → split) | 6–8 (+ card 8–12) | f0: the full-frame shot. f1–6: the whole frame scales to panel width and **slides down** with heavy vertical motion blur; its top corners round to 64 px; the canvas is revealed above. Lands at panel top y 1135 with a 10 px overshoot on f6–7. Banner and captions blur out on f0–2. **The card rises from behind the panel or grows from ~20%** over f+4…f+12, ease-out; a marker (SM-1) may rise with it | Whoosh starting **8 f before** the cut |
 | **T-05** | **Warm leak lift** (full → split, long) | 15 | f0–1 a red radial leak sweeping as an arc from the top-left (`#FC623C`). f2–3 orange-yellow (`#FCC051`). f5–6 deep red (`#EA342B`). f7–8 cream white-out (`#FCE4AB`): **the layout cut is here, at the peak**. f9 the panel slides up from below with motion blur. f10–13 a residual tint while the marker enters. f14 clean | Soft whoosh |
@@ -687,7 +687,7 @@ New in this edition:
 | ID | Transition | Frames | Recipe | SFX role |
 |---|---|---|---|---|
 | **T-17** | **Pop-back** (G-2) | 7 | Panel → full frame: scale 0.92 → 1.06 → 1.00, vertical motion blur f1–3. The canvas/stage collapses behind. The landing frame takes a Z-1 punch on the next word | Swoosh-up (pool) |
-| **T-18** | **Zoom-through** | 10–12 | The camera dives into an object (phone screen, Naman's pointing hand, a card node): 1 → 6× with radial blur on the last 4 f. The object's fill becomes the next scene's background (e.g. phone screen → Data Stage) | Zoom whoosh (pool) |
+| **T-18** | **Zoom-through** | 10–12 | The camera dives into an object (phone screen, Creator's pointing hand, a card node): 1 → 6× with radial blur on the last 4 f. The object's fill becomes the next scene's background (e.g. phone screen → Data Stage) | Zoom whoosh (pool) |
 | **T-19** | **Shatter** (garbage exit) | 10–14 | The card freezes, a white impact flash (1 f), then 9–14 Voronoi-style shards with seeded velocity, spin ±40° and gravity fall off-frame. Their edges catch a 2 px white highlight | Glass/impact + (if `mock`) a meme hit before it |
 | **T-20** | **Light-sweep reveal** (premium entry) | 12–16 | An orange (`blaze`) light bar, 120 px wide with a white core, sweeps L → R at 15°. Behind it the premium card resolves from blur 20 → 0 and rotateY 18° → 0. A bloom flare on exit | Riser into a cinematic hit |
 | **T-21** | **Banner flip** | 4 | The banner chip rotates on the X axis 0 → 90° (2 f), swaps text and colour, 90 → 0 (2 f). The slab does a 1.04 bump | Shine (pool) |
@@ -702,10 +702,10 @@ New in this edition:
 | Garbage → premium (hook) | **T-19 → T-20** (+ T-21 on the banner) | Crossfade, hard cut |
 | Hook → item 1 | T-04 (canvas) or **T-18** (into the Data Stage) | — |
 | New item | T-04 / T-18 + marker on the ordinal word | Hard cut |
-| Item → Naman (opinion, mock) | **T-17 Pop-back** (default) or T-01 | — |
-| Naman → full-screen graphic while he keeps talking | T-24 bubble | — |
+| Item → Creator (opinion, mock) | **T-17 Pop-back** (default) or T-01 | — |
+| Creator → full-screen graphic while he keeps talking | T-24 bubble | — |
 | Comparison | T-23 slide-aside or Mode V wipe | — |
-| Mock punchline on Naman | T-22 freeze (≤ 2 per reel) or Z-2 | — |
+| Mock punchline on Creator | T-22 freeze (≤ 2 per reel) or Z-2 | — |
 | Card → card | T-11 / T-12 / evolve | A still jump |
 | Number lands | Z-5 shake + T-08 | — |
 | Last word | T-16 | Black tail |
@@ -722,7 +722,7 @@ transitions:
 ```
 
 ### 9.4 Budget (per 60 s)
-- T-01 ≤ 4 (it was the reference reels' workhorse; prefer T-17 for returns to Naman).
+- T-01 ≤ 4 (it was the reference reels' workhorse; prefer T-17 for returns to Creator).
 - T-04 / T-18 one per item.
 - T-19 / T-20 once (hook), plus once more only for a payoff.
 - T-22 ≤ 2. T-07 ≤ 1. T-24 ≤ 3.
@@ -788,7 +788,7 @@ transitions:
 1. Background (canvas / night stage / footage)
 2. Glow
 3. Card(s) and Data Theatre
-4. **Naman matte (depth sandwich)** *or* the speaker panel
+4. **Creator matte (depth sandwich)** *or* the speaker panel
 5. Labels and stacked words
 6. Markers and badges
 7. `CAP-SUB`
@@ -829,7 +829,7 @@ Every reel has an `sfx-cues.json` plus a **ledger**: a table of file → uses �
 - **QA prints the ledger.** Any file over the limit fails the build.
 
 ### 11.3 Meme SFX (D2, `mock` tone only)
-**When:** Naman mocks the viewer's result, assumption or habit ("wo ekdam bekaar hai", "paanch nithalle dost", "hackers ke liye gift", "Kya bro…"). **Not** on explanations, premium reveals or CTAs.
+**When:** Creator mocks the viewer's result, assumption or habit ("wo ekdam bekaar hai", "paanch nithalle dost", "hackers ke liye gift", "Kya bro…"). **Not** on explanations, premium reveals or CTAs.
 
 **How:**
 - The hit lands in the **gap right after the punch word** (0–4 f after the word ends), never over a word.
@@ -918,7 +918,7 @@ The studio look is low-key and warm: crushed blacks, warm skin, wood slats, a ma
 - **Clone composite:** two locked-off passes, mask-split at x ≈ 540 (feather 20 px), matched exposure. The strobe (T-02) uses the arriving clone's matte filled `#FCFCFC`.
 
 ### 12.4 Reaction bank (ask at the shoot)
-For the comedy layer, ask Naman to record 2–3 s each of:
+For the comedy layer, ask Creator to record 2–3 s each of:
 - a smirk at camera
 - a facepalm
 - a slow head-shake
@@ -950,7 +950,7 @@ These feed T-22 freezes, the G-4 bubble and the G-6 lean-in when the main take h
   stage_move: G-5                # G-1…G-6 or null
   family: B-14
   pattern: P-63                  # §8.3
-  visual: "AI SLOP stamp slams on the garbage card, -12°, ink splatter; 💀 sticker by Naman's shoulder"
+  visual: "AI SLOP stamp slams on the garbage card, -12°, ink splatter; 💀 sticker by Creator's shoulder"
   on_screen_text: ["AI SLOP"]
   caption: {style: CAP-CHUNKY, text: ["wahi", "AI SLOP"], colour: alarm}
   banner: {text: "Your Claude website 🤢 vs MINE 🔥", chip_state: "SLOP"}
@@ -975,10 +975,10 @@ sfx_ledger:
 - name: "Result-First Roast: slop vs premium"
   formula: HF-6 (Result-First Roast)
   banner: "Your Claude website 🤢 vs MINE 🔥"          # passes the stopper test
-  result_pair: {garbage: "purple-gradient AI-slop site", premium: "Naman's motion site"}
+  result_pair: {garbage: "purple-gradient AI-slop site", premium: "Creator's motion site"}
   stoppers: [VS-1, VS-2, VS-3, VS-4]
   captions: {style: CAP-CHUNKY, cards: ["ye tumhari / WEBSITE", "AI SLOP", "vibe coding / SE"]}
-  storyboard: "f0 slab + garbage card + Naman cut-out | 0.3 flaw circles ×3 | 1.6 stamp + vine boom | 2.1 shatter | 2.6 light sweep + banner flip | 4.6 chips orbit"
+  storyboard: "f0 slab + garbage card + Creator cut-out | 0.3 flaw circles ×3 | 1.6 stamp + vine boom | 2.1 shatter | 2.6 light sweep + banner flip | 4.6 chips orbit"
   sound: [sub hit, marker swipe ×3 (3 files), vine boom, riser, cinematic hit, shine]
   stopper_test: {thumbnail: pass, mute: pass, read_s: 1.2, changes_3s: 14}
 ```
@@ -1011,7 +1011,7 @@ Times are estimates; replace them with `words.json` onsets.
 
 | t (s) | Spoken | Tone | Visual | Caption | Zoom | SFX (ledger) |
 |---|---|---|---|---|---|---|
-| f0 | — | hype | Slab + garbage site card (tilted 4°) + Naman cut-out pointing at it (G-5) | — | slab settle | `ABSTRACT_HIT_Sub_Bass_07.wav` |
+| f0 | — | hype | Slab + garbage site card (tilted 4°) + Creator cut-out pointing at it (G-5) | — | slab settle | `ABSTRACT_HIT_Sub_Bass_07.wav` |
 | 0.2 | "Haan bhai, Claude se website bana li" | mock | Card push-in; circle 1 "purple gradient" | CHUNKY "Claude se / **WEBSITE**" (Claude in brand colour) | Z-7 | `Marker Swipe 9.wav` |
 | 1.0 | "wahi purple gradient" | mock | Circle 2 "same 3 cards", circle 3 "centred text" | CHUNKY "wahi purple / **GRADIENT**" | — | `Selection Click.wav`, `Digital Click.wav` |
 | 1.7 | "wahi AI slop" | mock | **Stamp "AI SLOP"** + Z-5 + 💀 sticker | CHUNKY "**AI SLOP**" in red | Z-5 | **`Vine_boom_sound_effect_128k.mp3`** (+2 f after "slop") |
@@ -1040,7 +1040,7 @@ Times are estimates; replace them with `words.json` onsets.
 
 | Item | Spoken | Pattern |
 |---|---|---|
-| Hook | "Kya bro, Claude ne app banaya hai toh secure bhi hoga bro?" (mock quote) | Naman Z-7 + `Funny Effect 20` deflate; the app card wobbles |
+| Hook | "Kya bro, Claude ne app banaya hai toh secure bhi hoga bro?" (mock quote) | Creator Z-7 + `Funny Effect 20` deflate; the app card wobbles |
 | Hook | "Hackers ke liye toh gift hai ye." | **P-49 gift box** opened by red cursors + `Windows XP Error Meme` (trimmed) → T-21 banner chip "GIFT" pulses |
 | 1 Rate limiting | "koi tumhari API ko spam na kar paaye" | **P-50 bouncer gate** |
 | 2 Input validation | "jo format se match na kare, seedha reject" | **P-51 shape sorter** |
@@ -1059,10 +1059,10 @@ This edition keeps the references' best moves (panel drop, orange leak, chunky c
 ## §15 QA checklist
 
 **Footage frame**
-- [ ] Naman's video and every recording, clip or photo is full screen or in a designed box/panel it fills on the canvas; never a sharp rectangle over its own blur, never blurred side bars, never a card on his blurred frame (Mode K sits on the canvas).
+- [ ] Creator's video and every recording, clip or photo is full screen or in a designed box/panel it fills on the canvas; never a sharp rectangle over its own blur, never blurred side bars, never a card on his blurred frame (Mode K sits on the canvas).
 
 **Stopper hook**
-- [ ] Frame 0: banner readable + result visible + Naman visible; ≥ 1 element moving. Passes the thumbnail test at 25%.
+- [ ] Frame 0: banner readable + result visible + Creator visible; ≥ 1 element moving. Passes the thumbnail test at 25%.
 - [ ] ≥ 10 visual changes in 0–3 s. A result is visible by 2.0 s. The premium/fixed state appears by ~4.6 s.
 - [ ] Banner: ≤ 9 words, ≤ 2 lines, one chip, stroke + hard shadow, readable in ≤ 1.5 s, matches the result pair, flips at most once, rockets out (no pop-off mid-word).
 - [ ] The mute test passes (the story reads without sound).
@@ -1071,7 +1071,7 @@ This edition keeps the references' best moves (panel drop, orange leak, chunky c
 - [ ] No dead air. Cuts on word boundaries ±1 f.
 - [ ] An event every ≤ 1.5 s; nothing static > 2.5 s.
 - [ ] Every number, comparison and risk uses a Data Theatre pattern (M8, §8.5). Quantities are countable, comparisons share axes, numbers are real or script-stated.
-- [ ] Every item uses the identical ritual + marker. Pop-backs (G-2) bring Naman back for opinions and roasts.
+- [ ] Every item uses the identical ritual + marker. Pop-backs (G-2) bring Creator back for opinions and roasts.
 - [ ] An entertainment beat every 6–10 s; never two comedy beats back to back.
 - [ ] Zoom events every 2.5–5 s in Mode F; never the same Z twice in a row; Z-2 ≤ 2.
 - [ ] ≤ yellow + 2 bright hues per frame; pink only in the comedy layer; red → green before/after axis.
@@ -1083,7 +1083,7 @@ This edition keeps the references' best moves (panel drop, orange leak, chunky c
 - [ ] The hook is dry; there's a short silence (no new SFX) before the big payoff; −14 LUFS; true peak ≤ −1.5 dBTP.
 
 **Truth, text, end**
-- [ ] Facts, numbers and screenshots are real or script-stated; the result mocks are generic or Naman's own.
+- [ ] Facts, numbers and screenshots are real or script-stated; the result mocks are generic or Creator's own.
 - [ ] Spelling is exact for English words and brands.
 - [ ] Promises are paid off on screen; the CTA keyword is on a key-cap ≥ 1.5 s; the PDF title is correct; the community chip is shown.
 - [ ] 1080×1920, 30 fps CFR, ends ≤ 6 f after the last word, no black tail.
@@ -1130,10 +1130,10 @@ This edition keeps the references' best moves (panel drop, orange leak, chunky c
 ## Appendix A. Evidence map
 | Element | Source |
 |---|---|
-| Result-first hook, banner as the strongest element, meme SFX on mocking tone, data motion graphics, bright palette, no repeated SFX, zooms and splits | **Naman's directives, 3 Oct 2026 (D1–D8)** |
+| Result-first hook, banner as the strongest element, meme SFX on mocking tone, data motion graphics, bright palette, no repeated SFX, zooms and splits | **Creator's directives, 3 Oct 2026 (D1–D8)** |
 | Yellow banner `#FCF700` (7/10 reels), chunky captions with hard shadow (r11–r14, r20–r22), canvas split (9/10), panel drop (9/10), orange leak (r11–r13, r15, r17), silhouette strobe (r11, r13, r15), zoom-blur slam (r12, r17, r20, r22), invert (r20, r22, r24), dry hook (8/10), DM lead-magnet CTA (10/10) | The 10 reference reels |
 | Fixes: promises, true peak, black tails, typos, short banners, dark logos | r13, r15, r17, r20, r21, r22 |
-| The "same whoosh everywhere" problem (D7) | Reported by Naman; r17's 9 whooshes and r22's 11 whoosh events were similar stereo swishes |
+| The "same whoosh everywhere" problem (D7) | Reported by Creator; r17's 9 whooshes and r22's 11 whoosh events were similar stereo swishes |
 
 ## Appendix B. Banner bank, October reels (draft; verify against each `script.md`)
 | Reel | Keyword | Primary banner (≤ 9 words) | Alternate |
@@ -1153,8 +1153,8 @@ This edition keeps the references' best moves (panel drop, orange leak, chunky c
 
 ## Starter prompt (paste with a new video)
 ```text
-You are the editor and motion designer for Naman's Instagram Reel.
-Read Naman-Reel-Editing-Playbook-v2.md fully, then follow §1 exactly. Process: Video-Edit-Production-Process.md; storyboard: Storyboard-Template.md (30 fps).
+You are the editor and motion designer for Creator's Instagram Reel.
+Read Creator-Reel-Editing-Playbook-v2.md fully, then follow §1 exactly. Process: Video-Edit-Production-Process.md; storyboard: Storyboard-Template.md (30 fps).
 Footage: <file(s)>. Script: <Reel N/script.md>. Keyword + PDF: <POSTING_ORDER.md>.
 Result pair for the hook: <garbage state> → <premium/fixed state> (captured or built live).
 Stop at the §13.4 checkpoint (3 banners + stopper test + SFX ledger) and wait for my approval.

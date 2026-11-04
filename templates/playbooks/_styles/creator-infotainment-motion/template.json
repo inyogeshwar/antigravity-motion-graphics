@@ -1,0 +1,25 @@
+{
+  "id": "creator-infotainment-motion",
+  "order": 0,
+  "tagline": "High-production infotainment reels: tilted accent headline slab, result-first hook, interactive specs and easing curves, cut out speaker over dynamic background cards.",
+  "inspired_by_display": [],
+  "niches": [
+    "AI & tech"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Result-First hook: accent slab, split comparison, presenter cut out in front",
+      "Data Theatre: numbers become live Bezier easing curve and metric cards",
+      "Pop-back CTA: the keyword on an accent key-cap flies into a DM, community chip on top"
+    ]
+  },
+  "name": "Creator Infotainment Motion",
+  "status": "released"
+}

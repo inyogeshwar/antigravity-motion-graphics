@@ -71,11 +71,11 @@ the storyboard.
 - Speed comes from deciding: one decided plan, never a menu; write each file once and patch it with small Edits; look at
   contact sheets, never frame by frame; long jobs in the background; never re-read a file you just wrote.
 - Everything goes to disk as you go. Interrupted or resumed: read what is in `P/plan/` and carry on from there.
-- REFERENCE.md has every command and file format: read it once at the start. `P` is the project folder (`veos project
+- REFERENCE.md has every command and file format: read it once at the start. `P` is the project folder (`vibe project
   show`, or the reel skill passed it).
 
 ## 1. Read
-1. `veos project show` → playbook id, `source_type`, phase; `veos paths` → `playbooks`.
+1. `vibe project show` → playbook id, `source_type`, phase; `vibe paths` → `playbooks`.
 2. `<playbooks>/<id>/playbook.md` in full: consecutive Reads to the last line, every time. It is the whole
    playbook. Then `learned.md` if it exists: it outranks the playbook.
 3. `P/plan/brief.md` if it exists: the creator's own words about this reel. Theirs wins on what the reel is for, yours on
@@ -83,16 +83,16 @@ the storyboard.
    there, name it when you show the storyboard.
 4. This skill's GUIDE.md (how you draw), PLAN-PATTERN.md (the shape of the plan), PLAN-EXAMPLE.md (a real plan: its
    depth, never its look), SOUNDS.md (every sound with what it sounds like and what it's best for).
-5. `veos kit start`. If it names a `last_plan`, read it: how this style's last approved reel was planned.
+5. `vibe kit start`. If it names a `last_plan`, read it: how this style's last approved reel was planned.
 
 ## 2. Watch it, hear it, fix the words
-1. `veos look`, and read every sheet. `veos context --part all`: every word with its time, the pauses, the face. Notice
+1. `vibe look`, and read every sheet. `vibe context --part all`: every word with its time, the pauses, the face. Notice
    where they speed up, lean in, pause before the point, where the joke lands, what they hold up or point at. That's
    your rhythm and your raw material. **The footage is the truth:** ideate from what was actually said; a script, if
    there is one, is only a reference for spellings, the keyword and the deliverable.
 2. Footage frames and faces exist (REFERENCE §1); make them if not.
 3. Fix the words (REFERENCE §2): misheard words, names and brands exact, the playbook's script and romanisation. Then
-   `veos project set phase=captions`.
+   `vibe project set phase=captions`.
 
 ## 3. Get what the reel needs
 When the reel talks about a real product, app, logo, post, article or screen and the creator didn't give it to you,
@@ -120,10 +120,10 @@ biggest moment, which beats only fill time. Upgrade the plan in place. One revie
 ## 6. Draw it
 `P/plan/reel.js` (GUIDE.md), starting from `P/plan/kit.js`: the hook's section first, saved, then each section in turn,
 saved, with a line to the creator after each; then `SEGS` and the cuts, shakes and flashes. Build what the plan says,
-exactly, in the playbook's look; make every move a move. When the cut-out finishes, `veos prep-frames`.
+exactly, in the playbook's look; make every move a move. When the cut-out finishes, `vibe prep-frames`.
 
 ## 7. Look at it, fix it
-`veos stills` at every beat's focus frame and every signature move frame by frame (REFERENCE §6). Read every sheet,
+`vibe stills` at every beat's focus frame and every signature move frame by frame (REFERENCE §6). Read every sheet,
 first as a stranger with a thumb over the next reel, then as the editor whose name is on it:
 - Would a stranger stop at frame 0? Is it clear with the sound off? Does every moment show the thing?
 - Is it boring anywhere, busy anywhere? Does anything sit after its point has landed? Does each move land?
@@ -135,27 +135,27 @@ Fix, then look again at just what you changed. Usually two or three quick rounds
 `P/plan/sounds.json` from the plan's sounds (REFERENCE §7): every cue on the frame its picture lands, at its level,
 the list ritual on one file, every other file at most twice and never twice in a row, memes once in a speech gap,
 silence (no new cue) for a breath before the biggest reveal. **Sound effects only, never a music bed** under the voice,
-whatever a playbook or a reference reel says. `veos sfx` and read its ledger.
+whatever a playbook or a reference reel says. `vibe sfx` and read its ledger.
 
 ## 9. Show the storyboard
-`P/plan/storyboard.json` (REFERENCE §8: a still per beat at its focus frame, 8–12 motion strips), then `veos storyboard`
+`P/plan/storyboard.json` (REFERENCE §8: a still per beat at its focus frame, 8–12 motion strips), then `vibe storyboard`
 in the background. **Publish it as an artifact** (REFERENCE §8a) so they can share it and ask for changes on exact frames,
 and **open it in their browser** (not only the app's side panel); if you have no Artifact tool, open `review/mockup.html`
-instead. `veos project set phase=storyboard`, and say in a few
+instead. `vibe project set phase=storyboard`, and say in a few
 lines: the link, the hook and its title (and the two you didn't pick: "use the second title" swaps it), what you fetched
 from the web, the asks from their brief and where they land, and anything you'd like them to check. Tell them: "Pause on
 any moment and press Change; tell me when you're done." Then: "Approve it, or tell me what to change." Wait.
 - **Changes:** read the open changes on the storyboard first (REFERENCE §8a), then anything they said in chat. Restate each in one line
   with its time, understand what they mean in the context of the reel (the line, the beat, what comes before and after,
   anything that repeats), patch reel.js (and the plan and sounds) wherever the change really lands, look at those
-  moments (`veos stills --at …`), mark the change done with a one-line reply, rebuild the storyboard, republish it to the same
+  moments (`vibe stills --at …`), mark the change done with a one-line reply, rebuild the storyboard, republish it to the same
   link, and add a revision note to the plan. A change to the cut
-  itself (a take, a line back in): change `work/edl.json`, `veos cut`, `veos prep-frames`, `veos words fix` again, and
+  itself (a take, a line back in): change `work/edl.json`, `vibe cut`, `vibe prep-frames`, `vibe words fix` again, and
   move the plan, reel.js and sounds to the new times.
 - **A lasting preference** in their words ("always…", "I never want…"): offer once to keep it for future reels:
-  `veos learn add --playbook <id> --area <plan|visuals|captions|sound|cut|pacing|other> --text "<the rule>" --reel "<project folder name>" --quote "<their words>"`.
-- **Approve** ("approve", "ok", "theek hai", "render it"): `veos project set approved_at=now phase=approved`,
-  `veos kit save`, delete the storyboard artifact (REFERENCE §8a), then invoke skill `vibe-editing-os:render`.
+  `vibe learn add --playbook <id> --area <plan|visuals|captions|sound|cut|pacing|other> --text "<the rule>" --reel "<project folder name>" --quote "<their words>"`.
+- **Approve** ("approve", "ok", "theek hai", "render it"): `vibe project set approved_at=now phase=approved`,
+  `vibe kit save`, delete the storyboard artifact (REFERENCE §8a), then invoke skill `vibe-editing-os:render`.
 
-If an engine command crashes, run `veos doctor` once, tell them plainly what failed, suggest
+If an engine command crashes, run `vibe doctor` once, tell them plainly what failed, suggest
 `/vibe-editing-os:setup update`, and stop. Never patch the engine, never re-encode video yourself.
