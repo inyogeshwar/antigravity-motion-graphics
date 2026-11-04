@@ -37,6 +37,11 @@ Vibe Editing Commands (MotionOS):
   preview <video>       Extract rapid keyframe stills before full render
   review <video>        Generate visual contact sheet & vision quality score
 
+Instagram Viral Intelligence:
+  hook <text>           Score video hook (0-100) on 5 heuristics (26 formulas)
+  humanize <file|text>  Strip invisible Unicode watermarks & 154 AI slop clichés
+  caption <file|text>   Lint caption for 125-char feed window & 5-hashtag cap
+
 Motion Studio Commands:
   init [dir]            Scaffold a new motion project (or: npx create-antigravity-motion)
   render [options]      Render HTML/canvas composition to MP4 using Playwright & FFmpeg
@@ -87,6 +92,38 @@ switch (command) {
   case 'lyrics':
     runScript(path.join(__dirname, 'lyric.js'), args);
     break;
+
+  case 'hook':
+  case 'hookscore': {
+    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    const hookArg = args.join(' ');
+    const child = spawn(pythonCmd, [path.join(ROOT_DIR, 'scripts', 'hookscore.py'), '--hook', hookArg], {
+      stdio: 'inherit',
+      cwd: process.cwd()
+    });
+    child.on('close', code => process.exit(code || 0));
+    break;
+  }
+
+  case 'humanize': {
+    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    const child = spawn(pythonCmd, [path.join(ROOT_DIR, 'scripts', 'humanize.py'), ...args], {
+      stdio: 'inherit',
+      cwd: process.cwd()
+    });
+    child.on('close', code => process.exit(code || 0));
+    break;
+  }
+
+  case 'caption': {
+    const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+    const child = spawn(pythonCmd, [path.join(ROOT_DIR, 'scripts', 'caption.py'), ...args], {
+      stdio: 'inherit',
+      cwd: process.cwd()
+    });
+    child.on('close', code => process.exit(code || 0));
+    break;
+  }
 
   case 'prep':
   case 'plan':

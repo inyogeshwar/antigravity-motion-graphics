@@ -285,6 +285,31 @@ Inspect `out/contact.png` against our studio benchmark (target score: 8+/10):
 
 ---
 
+---
+
+## 📱 Instagram Viral Intelligence Suite
+
+Powered by the battle-tested heuristics from Jake Schincariol's Instagram Agent Suite, MotionOS includes 3 native viral intelligence tools to optimize your videos before rendering:
+
+```bash
+# 1. Score your video opening hook (0-100) before shooting or rendering
+npx antigravity-motion hook "Nobody tells you that your first 30 reels will fail"
+
+# 2. Strip invisible Unicode watermarks & 154 AI slop clichés from your script
+npx antigravity-motion humanize script.txt --report
+
+# 3. Lint your caption for the 125-char visible feed cutoff & Instagram's 5-hashtag cap
+npx antigravity-motion caption caption.txt --keywords "freelance pricing,client contracts"
+```
+
+### The 5 Hook Heuristics:
+1. **Length:** Spoken in under 3.0s (5–12 words).
+2. **Specificity:** Concrete markers (dollars, percentages, exact numbers, named entities).
+3. **Stakes:** Clear loss, failure, risk, cost, or tension marker.
+4. **Frontload:** Payload delivered in the first 2 words (no greetings, no "Stop scrolling").
+5. **Address:** Direct callout to the target viewer ("you", niche role).
+
+
 ## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for local development instructions, commit standards, and pull request workflows.
