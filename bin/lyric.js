@@ -20,6 +20,7 @@ Usage:
   npx motionos lyric [options]
 
 Options:
+  --font <name>       Custom lyrical font (e.g. billion-dreams, destoria, lemon-milk, bignoodle, bassy)
   --style <name>      Preset style (default: hindi-calligraphy)
                       Available: ${Object.keys(LYRICS_PRESETS).join(', ')}
   --song <path>       Audio file (MP3 or WAV)
@@ -56,6 +57,7 @@ const dur = parseFloat(getArg('dur', '15.0'));
 const title = getArg('title', 'Aesthetic Lyric Edit');
 const artist = getArg('artist', 'MotionOS Studio');
 const watermark = getArg('watermark', '@motionos.studio');
+const font = getArg('font', null);
 const isPreview = args.includes('--preview');
 
 // Read lyrics from file if exists, or use provided string or default sample
@@ -82,7 +84,8 @@ const result = await createLyricReel({
   duration: dur,
   title,
   artist,
-  watermark
+  watermark,
+  customFont: font
 });
 
 if (isPreview) {

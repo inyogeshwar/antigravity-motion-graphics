@@ -89,6 +89,125 @@
       "family": "Apple Color Emoji",
       "weight": "400",
       "format": "truetype"
+    },
+    {
+      "file": "assets/fonts/BillionDreams.ttf",
+      "family": "Billion Dreams",
+      "weight": "400",
+      "format": "truetype",
+      "category": "lyric-calligraphy"
+    },
+    {
+      "file": "assets/fonts/Destoria.otf",
+      "family": "Destoria",
+      "weight": "400",
+      "format": "opentype",
+      "category": "lyric-signature"
+    },
+    {
+      "file": "assets/fonts/Cocogoose.ttf",
+      "family": "Cocogoose",
+      "weight": "300",
+      "format": "truetype",
+      "category": "lyric-modern"
+    },
+    {
+      "file": "assets/fonts/Bassy.ttf",
+      "family": "Bassy",
+      "weight": "400",
+      "format": "truetype",
+      "category": "lyric-script"
+    },
+    {
+      "file": "assets/fonts/Thundercover.otf",
+      "family": "Thundercover",
+      "weight": "700",
+      "format": "opentype",
+      "category": "lyric-brush"
+    },
+    {
+      "file": "assets/fonts/Evogria.otf",
+      "family": "Evogria",
+      "weight": "600",
+      "format": "opentype",
+      "category": "lyric-serif"
+    },
+    {
+      "file": "assets/fonts/SimplyRounded.ttf",
+      "family": "Simply Rounded",
+      "weight": "500",
+      "format": "truetype",
+      "category": "lyric-rounded"
+    },
+    {
+      "file": "assets/fonts/MagistaBrush.ttf",
+      "family": "Magista Brush",
+      "weight": "700",
+      "format": "truetype",
+      "category": "lyric-brush"
+    },
+    {
+      "file": "assets/fonts/Wintersoul.ttf",
+      "family": "Wintersoul",
+      "weight": "400",
+      "format": "truetype",
+      "category": "lyric-handwritten"
+    },
+    {
+      "file": "assets/fonts/TheRickon.ttf",
+      "family": "The Rickon",
+      "weight": "600",
+      "format": "truetype",
+      "category": "lyric-serif"
+    },
+    {
+      "file": "assets/fonts/AmericanCaptain.ttf",
+      "family": "American Captain",
+      "weight": "800",
+      "format": "truetype",
+      "category": "lyric-condensed"
+    },
+    {
+      "file": "assets/fonts/LemonMilk.otf",
+      "family": "Lemon Milk",
+      "weight": "700",
+      "format": "opentype",
+      "category": "lyric-display"
+    },
+    {
+      "file": "assets/fonts/BigNoodleTitling.ttf",
+      "family": "BigNoodleTitling",
+      "weight": "700",
+      "format": "truetype",
+      "category": "lyric-cinema"
+    },
+    {
+      "file": "assets/fonts/CharlotteSouthern.otf",
+      "family": "Charlotte Southern",
+      "weight": "400",
+      "format": "opentype",
+      "category": "lyric-signature"
+    },
+    {
+      "file": "assets/fonts/IAmAPlayer.otf",
+      "family": "I Am A Player",
+      "weight": "700",
+      "format": "opentype",
+      "category": "lyric-brush"
+    },
+    {
+      "file": "assets/fonts/StephenType.ttf",
+      "family": "Stephen Type",
+      "weight": "400",
+      "format": "truetype",
+      "category": "lyric-script"
+    },
+    {
+      "file": "assets/fonts/OceanRush.otf",
+      "family": "Ocean Rush",
+      "weight": "700",
+      "format": "opentype",
+      "category": "lyric-brush"
     }
   ]
 }
