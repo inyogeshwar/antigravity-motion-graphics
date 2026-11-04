@@ -83,6 +83,11 @@ switch (command) {
     runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
     break;
 
+  case 'lyric':
+  case 'lyrics':
+    runScript(path.join(__dirname, 'lyric.js'), args);
+    break;
+
   case 'prep':
   case 'plan':
   case 'preview':
