@@ -112,7 +112,51 @@ export function parseLrcString(lrcContent) {
 }
 
 /**
- * Read track metadata directly from an audio file using ffprobe
+ * Check if a filename or title is generic (e.g. audio_123, video-456, recording.mp3)
+ */
+export function isGenericName(name) {
+  if (!name || name.trim().length === 0) return true;
+  const n = name.toLowerCase().trim();
+  const genericPatterns = [
+    /^audio[_\-\d]*/,
+    /^video[_\-\d]*/,
+    /^track[_\-\d]*/,
+    /^recording[_\-\d]*/,
+    /^voice[_\-\d]*/,
+    /^whatsapp[_\-\d]*/,
+    /^sound[_\-\d]*/,
+    /^untitled/,
+    /^anonymous/,
+    /^\d+$/
+  ];
+  return genericPatterns.some(p => p.test(n));
+}
+
+/**
+ * Acoustically recognize unknown/nameless audio using Shazam fingerprinting
+ */
+export function identifySongAcoustically(filePath) {
+  try {
+    const cmd = `python scripts/identify_song.py "${filePath}"`;
+    const out = execSync(cmd, { encoding: 'utf-8', timeout: 8000 });
+    // find JSON block
+    const match = out.match(/\{[\s\S]*?\}/);
+    if (match) {
+      const data = JSON.parse(match[0]);
+      if (data.title) {
+        console.log(`[AudioRecognition] Shazam identified: "${data.title}" by "${data.artist}"`);
+        return cleanMetadata(data.title, data.artist || '');
+      }
+    }
+  } catch (err) {
+    console.warn(`[AudioRecognition] Acoustic fingerprinting skipped:`, err.message);
+  }
+  return null;
+}
+
+/**
+ * Read track metadata directly from an audio file using ffprobe,
+ * with automatic acoustic Shazam fingerprint fallback for nameless files.
  */
 export function extractAudioMeta(filePath) {
   try {
@@ -122,10 +166,20 @@ export function extractAudioMeta(filePath) {
     const tags = info.format?.tags || {};
     const duration = parseFloat(info.format?.duration || '0');
 
-    const rawTitle = tags.title || path.basename(filePath, path.extname(filePath));
-    const rawArtist = tags.artist || '';
+    let rawTitle = tags.title || path.basename(filePath, path.extname(filePath));
+    let rawArtist = tags.artist || '';
 
-    const { title, artist } = cleanMetadata(rawTitle, rawArtist);
+    let { title, artist } = cleanMetadata(rawTitle, rawArtist);
+
+    // If title is generic or unknown, trigger acoustic Shazam recognition!
+    if (isGenericName(title)) {
+      console.log(`[AudioMeta] Generic name detected ("${title}"). Running acoustic fingerprinting...`);
+      const identified = identifySongAcoustically(filePath);
+      if (identified && identified.title) {
+        title = identified.title;
+        artist = identified.artist || artist;
+      }
+    }
 
     return {
       title,
