@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>कमरिया - Synced Lyric Reel</title>
+  <style>
+    @font-face {
+      font-family: 'AmericanCaptain';
+      src: url('../../assets/fonts/blog/American-Captain.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'BillionDreams';
+      src: url('../../assets/fonts/blog/BillionDreams_PERSONAL.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'CharlotteSouthern';
+      src: url('../../assets/fonts/blog/Charlotte-Southern.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'BigNoodle';
+      src: url('../../assets/fonts/blog/big_noodle_titling_oblique.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'LemonMilk';
+      src: url('../../assets/fonts/blog/LEMONMILK-BoldItalic.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'HindiDisplay';
+      src: url('../../assets/fonts/RozhaOne-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'AppleColorEmoji';
+      src: url('../../assets/fonts/AppleColorEmoji.ttf') format('truetype');
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, #1a0b1e 0%, #060309 85%);
+      color: #FFF;
+      font-family: 'AmericanCaptain', sans-serif;
+      position: relative;
+    }
+    #stage {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      top: 0; left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .top-pill {
+      position: absolute;
+      top: 80px;
+      padding: 12px 30px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 32px;
+      letter-spacing: 3px;
+      color: #FF007F;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .top-pill .dot {
+      width: 10px; height: 10px; border-radius: 50%; background: #FF007F; box-shadow: 0 0 14px #FF007F;
+    }
+    .main-hook {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      width: 960px;
+      text-align: center;
+    }
+    .emojis {
+      font-family: 'AppleColorEmoji', sans-serif;
+      font-size: 80px;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    }
+    .hindi-text {
+      font-family: 'HindiDisplay', serif;
+      font-size: 130px;
+      font-weight: 700;
+      color: #FFF;
+      text-shadow: 0 0 40px rgba(255,0,127,0.7), 0 0 80px rgba(255,100,0,0.4);
+      line-height: 1.2;
+    }
+    .english-sub {
+      font-family: 'BillionDreams', cursive;
+      font-size: 76px;
+      color: #FFD166;
+      text-shadow: 0 0 30px rgba(255,209,102,0.6);
+    }
+    .artist-credit {
+      font-family: 'CharlotteSouthern', cursive;
+      font-size: 44px;
+      color: #00F0FF;
+      margin-top: 20px;
+      text-shadow: 0 0 20px rgba(0,240,255,0.5);
+    }
+    .eq-container {
+      position: absolute;
+      bottom: 80px;
+      display: flex;
+      gap: 10px;
+      height: 70px;
+      align-items: flex-end;
+    }
+    .eq-bar {
+      width: 10px;
+      background: linear-gradient(180deg, #FF007F, #FFB800);
+      border-radius: 999px;
+      height: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <div class="top-pill">
+      <div class="dot"></div>
+      <span>AUTONOMOUS LYRICS SYNC • LRCLIB</span>
+    </div>
+    <div class="main-hook">
+      <div class="emojis" id="emojiEl">🔥 💃 👑</div>
+      <div class="hindi-text" id="lyricText">कमरिया</div>
+      <div class="english-sub" id="subText">Aastha Gill • Stree</div>
+      <div class="artist-credit">MotionOS × Open-Source Providers</div>
+    </div>
+    <div class="eq-container" id="eqContainer"></div>
+  </div>
+
+  <script>
+    const cues = [{"time":51.23,"text":"कमरिया","words":["कमरिया"],"relTime":1.23},{"time":52.33,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":2.33},{"time":53.54,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":3.54},{"time":54.97,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":4.97},{"time":56.25,"text":"नज़रिया","words":["नज़रिया"],"relTime":6.25},{"time":57.39,"text":"मिला दे मिला दे","words":["मिला","दे","मिला","दे"],"relTime":7.39},{"time":58.58,"text":"मिला दे मिला दे","words":["मिला","दे","मिला","दे"],"relTime":8.58},{"time":59.93,"text":"मिला दे मिला दे","words":["मिला","दे","मिला","दे"],"relTime":9.93},{"time":61.26,"text":"कमरिया","words":["कमरिया"],"relTime":11.26},{"time":62.1,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":12.1},{"time":63.47,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":13.47},{"time":64.78,"text":"हिला दे हिल्ला दे","words":["हिला","दे","हिल्ला","दे"],"relTime":14.78}];
+
+    function spring(t, k = 200, d = 22) {
+      if (t <= 0) return 0;
+      const w0 = Math.sqrt(k);
+      const z = d / (2 * w0);
+      if (z < 1) {
+        const wd = w0 * Math.sqrt(1 - z * z);
+        return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+      }
+      return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+    }
+
+    const eqContainer = document.getElementById('eqContainer');
+    for (let i = 0; i < 16; i++) {
+      const b = document.createElement('div');
+      b.className = 'eq-bar';
+      b.id = 'eq_' + i;
+      eqContainer.appendChild(b);
+    }
+
+    window.seek = function(t) {
+      // Find current active cue
+      let active = cues[0];
+      for (let i = 0; i < cues.length; i++) {
+        if (t >= cues[i].relTime) {
+          active = cues[i];
+        }
+      }
+
+      if (active) {
+        const el = document.getElementById('lyricText');
+        el.innerText = active.text;
+        const bounce = spring(t - active.relTime, 280, 22);
+        el.style.transform = 'scale(' + (1.0 + 0.12 * bounce) + ')';
+      }
+
+      // EQ bars animation
+      for (let i = 0; i < 16; i++) {
+        const bar = document.getElementById('eq_' + i);
+        const wave = 0.5 + 0.5 * Math.sin(t * 14 + i * 0.7);
+        bar.style.height = Math.max(8, wave * 65) + 'px';
+      }
+    };
+
+    window.seek(0);
+  </script>
+</body>
+</html>

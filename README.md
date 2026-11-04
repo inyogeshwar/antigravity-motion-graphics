@@ -249,6 +249,17 @@ Please report vulnerabilities privately via our [Security Policy](SECURITY.md). 
 
 ---
 
+## Acknowledgments & Credits
+
+Special credit and gratitude to the open-source and creator communities whose work powers and inspires our lyrical synchronization and typography features:
+
+- **[BitChord](https://github.com/kushagrasinghx/BitChord)** (by [kushagrasinghx](https://github.com/kushagrasinghx)): The brilliant open-source YouTube Music & audio player architecture that inspired our multi-provider synced lyrics and Apple-like typography tracking.
+- **[LRCLIB](https://lrclib.net)**: The amazing open, free community REST API providing millisecond-accurate synchronized lyrics (`.lrc`) across regional, Bollywood, and international tracks without API keys.
+- **[StuffByAbhi](https://stuffbyabhi.blogspot.com/2021/10/trending-top-20-lyrical-fonts-for-edits.html)**: For curated trending lyrical fonts inspiration (*American Captain, Billion Dreams, Charlotte Southern, Big Noodle, Lemon Milk, Cocogoose, Magista Brush, Wintersoul*).
+- **Lyrics Ecosystem**: Credit to [PaxSenix](https://lyrics.paxsenix.org), [lrc.red](https://lrc.red), [BetterLyrics](https://github.com/better-lyrics/better-lyrics), [Megalobiz](https://www.megalobiz.com), [SimpMusic](https://github.com/maxrave-dev/SimpMusic), and [BiniLyrics](https://github.com/binimum).
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

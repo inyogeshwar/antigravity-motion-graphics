@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>MotionOS - Perfectly Synced Lyrical Mega Reel (Trending Blog Fonts)</title>
+  <style>
+    /* =========================================================================
+       TRENDING BLOG LYRICAL FONTS (StuffByAbhi Top 20)
+       ========================================================================= */
+    @font-face {
+      font-family: 'AmericanCaptain';
+      src: url('../../assets/fonts/blog/American-Captain.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'BillionDreams';
+      src: url('../../assets/fonts/blog/BillionDreams_PERSONAL.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'CharlotteSouthern';
+      src: url('../../assets/fonts/blog/Charlotte-Southern.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'BigNoodle';
+      src: url('../../assets/fonts/blog/big_noodle_titling_oblique.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'LemonMilk';
+      src: url('../../assets/fonts/blog/LEMONMILK-BoldItalic.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Cocogoose';
+      src: url('../../assets/fonts/blog/Cocogoose-Pro-Semilight-Italic-trial.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'MagistaBrush';
+      src: url('../../assets/fonts/blog/Magista-Brush.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Thundercover';
+      src: url('../../assets/fonts/blog/Thundercover.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'PoppinsExtraBold';
+      src: url('../../assets/fonts/blog/Poppins-ExtraBold.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Destoria';
+      src: url('../../assets/fonts/blog/Destoria-Free.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Wintersoul';
+      src: url('../../assets/fonts/blog/Wintersoul.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'SimplyRounded';
+      src: url('../../assets/fonts/blog/Simply-Rounded.ttf') format('truetype');
+    }
+
+    /* Core System & Hindi Fallback Fonts */
+    @font-face {
+      font-family: 'SFProDisplay';
+      src: url('../../assets/fonts/SFProDisplay-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'HindiDisplay';
+      src: url('../../assets/fonts/RozhaOne-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'AppleColorEmoji';
+      src: url('../../assets/fonts/AppleColorEmoji.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #060709;
+      color: #FFFFFF;
+      font-family: 'AmericanCaptain', 'SFProDisplay', sans-serif;
+      position: relative;
+    }
+
+    /* Canvas Stage */
+    #stage {
+      width: 1080px;
+      height: 1920px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 40%, #151824 0%, #06070a 80%);
+    }
+
+    /* Starfield / Ambience Canvas */
+    #ambientCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* Top Studio Badge */
+    .top-pill {
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 24px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      font-family: 'Cocogoose', sans-serif;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: rgba(255, 255, 255, 0.9);
+      z-index: 100;
+    }
+    .top-pill .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #1DB954;
+      box-shadow: 0 0 16px #1DB954;
+    }
+
+    /* Scene Containers */
+    .scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1080px;
+      height: 1920px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0.95);
+      will-change: transform, opacity;
+    }
+
+    /* =========================================================================
+       SCENE 1: SPOTIFY GLOW + FIRST VOCAL HOOK (0.0s - 2.3s)
+       ========================================================================= */
+    #scene1 .spotify-card {
+      width: 820px;
+      background: rgba(24, 24, 28, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 40px;
+      padding: 44px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(29, 185, 84, 0.25);
+      backdrop-filter: blur(25px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    #scene1 .search-pill {
+      width: 100%;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      gap: 20px;
+      font-family: 'Cocogoose', sans-serif;
+      font-size: 28px;
+      color: #FFF;
+    }
+    #scene1 .track-meta {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+    }
+    #scene1 .art {
+      width: 180px;
+      height: 180px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #FF0844 0%, #FFB199 100%);
+      box-shadow: 0 16px 40px rgba(255, 8, 68, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+    }
+    #scene1 .track-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    #scene1 .track-title {
+      font-family: 'AmericanCaptain', sans-serif;
+      font-size: 56px;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+    }
+    #scene1 .track-artist {
+      font-family: 'CharlotteSouthern', cursive;
+      font-size: 40px;
+      color: #1DB954;
+      text-shadow: 0 0 16px rgba(29, 185, 84, 0.5);
+    }
+    #scene1 .live-lyric-hook {
+      margin-top: 50px;
+      font-family: 'AmericanCaptain', sans-serif;
+      font-size: 110px;
+      letter-spacing: 6px;
+      color: #FFFAEC;
+      text-align: center;
+      text-shadow: 0 0 40px rgba(255, 200, 100, 0.6), 0 0 80px rgba(255, 60, 0, 0.4);
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    /* =========================================================================
+       SCENE 2: HINDI CALLIGRAPHY + SCRIPT EMBELLISHMENT (2.3s - 5.8s)
+       ========================================================================= */
+    #scene2 .emoji-row {
+      font-family: 'AppleColorEmoji', sans-serif;
+      font-size: 80px;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+    }
+    #scene2 .hindi-main {
+      font-family: 'HindiDisplay', serif;
+      font-size: 120px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow: 0 0 40px rgba(0, 240, 255, 0.7), 0 0 80px rgba(0, 150, 255, 0.4);
+      text-align: center;
+      display: flex;
+      gap: 36px;
+      justify-content: center;
+      line-height: 1.3;
+    }
+    #scene2 .hindi-main span {
+      display: inline-block;
+      margin: 0 12px;
+    }
+    #scene2 .cursive-sub {
+      font-family: 'BillionDreams', cursive;
+      font-size: 72px;
+      color: #FFD166;
+      margin-top: 20px;
+      text-shadow: 0 0 25px rgba(255, 209, 102, 0.6);
+      text-align: center;
+    }
+
+    /* =========================================================================
+       SCENE 3: GOLDEN FLARE & BASS DROP (5.8s - 8.8s)
+       ========================================================================= */
+    #scene3 .flare-beam {
+      position: absolute;
+      top: 50%;
+      left: -200px;
+      width: 1480px;
+      height: 8px;
+      background: linear-gradient(90deg, transparent, rgba(255, 200, 100, 0.9), #FFFFFF, rgba(255, 200, 100, 0.9), transparent);
+      box-shadow: 0 0 60px #FFB800, 0 0 120px #FF6A00;
+      transform: translateY(-50%);
+    }
+    #scene3 .drop-tag {
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 44px;
+      letter-spacing: 6px;
+      color: #FFB800;
+      padding: 10px 30px;
+      border: 2px solid #FFB800;
+      border-radius: 999px;
+      background: rgba(255, 184, 0, 0.1);
+      margin-bottom: 24px;
+    }
+    #scene3 .drop-hero {
+      font-family: 'LemonMilk', sans-serif;
+      font-size: 120px;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+      text-shadow: 0 0 40px rgba(255, 184, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.9);
+      text-align: center;
+      line-height: 1.1;
+    }
+    #scene3 .drop-cursive {
+      font-family: 'CharlotteSouthern', cursive;
+      font-size: 80px;
+      color: #FFFAEC;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+      margin-top: 16px;
+    }
+
+    /* =========================================================================
+       SCENE 4: VIRAL INSTAGRAM AUTO-CAPTION KARAOKE (8.8s - 14.1s)
+       Trending Font: American Captain + Magista Brush + Thundercover
+       ========================================================================= */
+    #scene4 .karaoke-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+      width: 980px;
+    }
+    #scene4 .top-line-badge {
+      font-family: 'Destoria', serif;
+      font-size: 34px;
+      letter-spacing: 4px;
+      color: #00F0FF;
+      text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+      margin-bottom: 10px;
+    }
+    #scene4 .lyrics-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      width: 100%;
+      min-height: 120px;
+      align-items: center;
+    }
+    .k-word {
+      font-family: 'AmericanCaptain', sans-serif;
+      font-size: 96px;
+      letter-spacing: 5px;
+      color: rgba(255, 255, 255, 0.3);
+      transition: none;
+      display: inline-block;
+      position: relative;
+      margin: 0 10px;
+      line-height: 1;
+    }
+    .k-word.active {
+      color: #FFFFFF;
+      transform: scale(1.18);
+      text-shadow: 0 0 35px #FF0055, 0 0 70px #FF5500;
+    }
+    .k-word.highlight-box {
+      background: linear-gradient(135deg, #FF0055, #FF5500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 30px rgba(255, 0, 85, 0.9));
+    }
+    #scene4 .sub-script {
+      font-family: 'MagistaBrush', cursive;
+      font-size: 74px;
+      color: #FFD166;
+      margin-top: 20px;
+      text-shadow: 0 0 25px rgba(255, 209, 102, 0.6);
+      text-align: center;
+    }
+
+    /* =========================================================================
+       SCENE 5: FINALE & MOTIONOS LOCKUP (14.1s - 15.0s)
+       ========================================================================= */
+    #scene5 .brand-logo {
+      font-family: 'Wintersoul', sans-serif;
+      font-size: 110px;
+      letter-spacing: 4px;
+      background: linear-gradient(135deg, #FFB800 0%, #FF0844 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 50px rgba(255, 8, 68, 0.7));
+      text-align: center;
+    }
+    #scene5 .brand-sub {
+      font-family: 'SimplyRounded', sans-serif;
+      font-size: 40px;
+      color: #FFFFFF;
+      letter-spacing: 3px;
+      margin-top: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    #scene5 .fonts-badge {
+      font-family: 'BigNoodle', sans-serif;
+      font-size: 32px;
+      color: #00F0FF;
+      letter-spacing: 2px;
+      margin-top: 24px;
+      text-shadow: 0 0 16px rgba(0, 240, 255, 0.5);
+    }
+
+    /* Equalizer Soundbars at Bottom */
+    .eq-container {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      height: 80px;
+      z-index: 100;
+    }
+    .eq-bar {
+      width: 10px;
+      background: linear-gradient(180deg, #00F0FF, #FF0055);
+      border-radius: 999px;
+      height: 10px;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+    }
+
+    /* Progress Bar */
+    .timeline-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #1DB954, #00F0FF, #FF0055, #FFB800);
+      width: 0%;
+      z-index: 1000;
+      box-shadow: 0 0 16px #00F0FF;
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <!-- Starfield Background Canvas -->
+    <canvas id="ambientCanvas" width="1080" height="1920"></canvas>
+
+    <!-- Top Badge Header -->
+    <div class="top-pill">
+      <div class="dot"></div>
+      <span id="pillText">SPOTIFY SYNC • TRENDING FONTS</span>
+    </div>
+
+    <!-- Scene 1: Spotify UI Glow + First Vocal Line (0.0s - 2.3s) -->
+    <div id="scene1" class="scene">
+      <div class="spotify-card">
+        <div class="search-pill">
+          <span>🔍</span>
+          <span id="searchTypedText">Aaj Ki Raat (Stree 2)</span>
+        </div>
+        <div class="track-meta">
+          <div class="art">🔥</div>
+          <div class="track-info">
+            <div class="track-title">AAJ KI RAAT</div>
+            <div class="track-artist">Sachin-Jigar • Madhubanti</div>
+          </div>
+        </div>
+      </div>
+      <div class="live-lyric-hook">
+        <span id="s1_w1" class="k-word">AAJ</span>
+        <span id="s1_w2" class="k-word">KI</span>
+        <span id="s1_w3" class="k-word">RAAT</span>
+      </div>
+    </div>
+
+    <!-- Scene 2: Hindi Calligraphy & Lyrical Glow (2.3s - 5.8s) -->
+    <div id="scene2" class="scene">
+      <div class="emoji-row">🥺💖✨</div>
+      <div class="hindi-main">
+        <span id="s2_w1">मज़ा</span>
+        <span id="s2_w2">हुस्न</span>
+        <span id="s2_w3">का</span>
+      </div>
+      <div class="hindi-main" style="margin-top: 16px;">
+        <span id="s2_w4">आँखों</span>
+        <span id="s2_w5">से</span>
+        <span id="s2_w6">लीजिए</span>
+      </div>
+      <div class="cursive-sub">Dil Ka Diya Jala Ke...</div>
+    </div>
+
+    <!-- Scene 3: Golden Flare Cinematic Beat Rise (5.8s - 8.8s) -->
+    <div id="scene3" class="scene">
+      <div class="flare-beam"></div>
+      <div class="drop-tag">STREE 2 • BLOCKBUSTER DROP</div>
+      <div class="drop-hero">TURN UP<br>THE BASS</div>
+      <div class="drop-cursive">Sachin-Jigar × Divya Kumar</div>
+    </div>
+
+    <!-- Scene 4: Viral Instagram Auto-Caption Karaoke (8.8s - 14.1s) -->
+    <div id="scene4" class="scene">
+      <div class="karaoke-container">
+        <div class="top-line-badge">✦ OFFICIAL CHORUS ✦</div>
+        
+        <!-- Part 1: AAJ KI RAAT -->
+        <div class="lyrics-line" id="s4_p1">
+          <span id="k_aaj" class="k-word">AAJ</span>
+          <span id="k_ki" class="k-word">KI</span>
+          <span id="k_raat" class="k-word">RAAT</span>
+        </div>
+
+        <!-- Part 2: MAZA HUSN KA -->
+        <div class="lyrics-line" id="s4_p2" style="margin-top: 10px;">
+          <span id="k_maza" class="k-word">MAZA</span>
+          <span id="k_husn" class="k-word">HUSN</span>
+          <span id="k_ka" class="k-word">KA</span>
+        </div>
+
+        <!-- Part 3: AANKHON SE LIJIYE -->
+        <div class="lyrics-line" id="s4_p3" style="margin-top: 10px;">
+          <span id="k_aankhon" class="k-word">AANKHON</span>
+          <span id="k_se" class="k-word">SE</span>
+          <span id="k_lijiye" class="k-word">LIJIYE</span>
+        </div>
+
+        <div class="sub-script">#1 Viral Audio on Reels</div>
+      </div>
+    </div>
+
+    <!-- Scene 5: Finale Lockup (14.1s - 15.0s) -->
+    <div id="scene5" class="scene">
+      <div style="font-size: 90px; margin-bottom: 20px;">🔥👑💃</div>
+      <div class="brand-logo">MotionOS Studio</div>
+      <div class="brand-sub">PERFECT LYRICS SYNC</div>
+      <div class="fonts-badge">POWERED BY TOP 20 LYRICAL FONTS</div>
+    </div>
+
+    <!-- Dynamic Equalizer Bars -->
+    <div class="eq-container" id="eqContainer"></div>
+
+    <!-- Timeline Progress -->
+    <div class="timeline-bar" id="timelineBar"></div>
+  </div>
+
+  <script>
+    // Inlined Deterministic Math & Motion Utilities
+    function clamp(x, a = 0, b = 1) {
+      return Math.min(b, Math.max(a, x));
+    }
+
+    function spring(t, k = 170, d = 26) {
+      if (t <= 0) return 0;
+      const w0 = Math.sqrt(k);
+      const z = d / (2 * w0);
+      if (z < 1) {
+        const wd = w0 * Math.sqrt(1 - z * z);
+        return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+      }
+      return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+    }
+
+    function rng(seed = 123456789) {
+      return () => {
+        seed |= 0;
+        seed = (seed + 0x6D2B79F5) | 0;
+        let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+        t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+        return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+      };
+    }
+
+    // Build 16 Equalizer bars
+    const eqContainer = document.getElementById('eqContainer');
+    for (let i = 0; i < 16; i++) {
+      const bar = document.createElement('div');
+      bar.className = 'eq-bar';
+      bar.id = 'eq_' + i;
+      eqContainer.appendChild(bar);
+    }
+
+    // Starfield Particle Canvas (Deterministic)
+    const canvas = document.getElementById('ambientCanvas');
+    const ctx = canvas.getContext('2d');
+    const stars = [];
+    const rnd = rng(42);
+    for (let i = 0; i < 80; i++) {
+      stars.push({
+        x: rnd() * 1080,
+        y: rnd() * 1920,
+        r: 1 + rnd() * 3,
+        speed: 20 + rnd() * 40,
+        baseAlpha: 0.2 + rnd() * 0.5
+      });
+    }
+
+    // Mathematical Closed-Form Spring
+    function s(t, k = 180, d = 18) {
+      return spring(t, k, d);
+    }
+
+    /* =========================================================================
+       DETERMINISTIC window.seek(t) FUNCTION
+       Pure Function of Time t in seconds (0.0 to 15.0)
+       ========================================================================= */
+    window.seek = function(t) {
+      // 1. Draw Starfield
+      ctx.clearRect(0, 0, 1080, 1920);
+      stars.forEach((st, idx) => {
+        const yPos = (st.y + t * st.speed) % 1920;
+        const twinkle = 0.5 + 0.5 * Math.sin(t * 4 + idx);
+        ctx.fillStyle = `rgba(255, 255, 255, ${st.baseAlpha * twinkle})`;
+        ctx.beginPath();
+        ctx.arc(st.x, yPos, st.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 2. Timeline Progress Bar
+      const progress = Math.min(100, Math.max(0, (t / 15.0) * 100));
+      document.getElementById('timelineBar').style.width = progress + '%';
+
+      // 3. Dynamic Equalizer Soundbars
+      for (let i = 0; i < 16; i++) {
+        const bar = document.getElementById('eq_' + i);
+        const freq = 3.0 + (i % 5) * 1.5;
+        const wave = 0.5 + 0.5 * Math.sin(t * 12 + i * 0.8) * Math.cos(t * 6 + i);
+        const h = Math.max(8, wave * 75);
+        bar.style.height = h + 'px';
+      }
+
+      // DOM Scene References
+      const s1 = document.getElementById('scene1');
+      const s2 = document.getElementById('scene2');
+      const s3 = document.getElementById('scene3');
+      const s4 = document.getElementById('scene4');
+      const s5 = document.getElementById('scene5');
+      const pillText = document.getElementById('pillText');
+
+      // -----------------------------------------------------------------------
+      // SCENE 1: SPOTIFY GLOW (0.0s – 2.3s)
+      // Exact Vocal Timings:
+      // 0.75s: AAJ | 1.15s: KI | 1.45s: RAAT
+      // -----------------------------------------------------------------------
+      if (t < 2.3) {
+        const relT = t - 0.0;
+        const enterSpring = s(relT, 200, 20);
+        const exitAlpha = t > 2.0 ? Math.max(0, 1 - (t - 2.0) / 0.3) : 1;
+        s1.style.opacity = Math.min(enterSpring, exitAlpha);
+        s1.style.transform = `scale(${0.92 + 0.08 * enterSpring})`;
+        pillText.innerText = "SPOTIFY SYNC • AMERICAN CAPTAIN";
+
+        // Word-level sync for line 1
+        const w1 = document.getElementById('s1_w1');
+        const w2 = document.getElementById('s1_w2');
+        const w3 = document.getElementById('s1_w3');
+
+        if (t >= 0.75) {
+          w1.classList.add('active');
+          w1.style.transform = `scale(${1.0 + 0.2 * s(t - 0.75, 260, 22)})`;
+        } else {
+          w1.classList.remove('active');
+          w1.style.transform = 'scale(1)';
+        }
+
+        if (t >= 1.15) {
+          w2.classList.add('active');
+          w2.style.transform = `scale(${1.0 + 0.2 * s(t - 1.15, 260, 22)})`;
+        } else {
+          w2.classList.remove('active');
+          w2.style.transform = 'scale(1)';
+        }
+
+        if (t >= 1.45) {
+          w3.classList.add('active');
+          w3.style.transform = `scale(${1.0 + 0.25 * s(t - 1.45, 260, 22)})`;
+        } else {
+          w3.classList.remove('active');
+          w3.style.transform = 'scale(1)';
+        }
+      } else {
+        s1.style.opacity = 0;
+      }
+
+      // -----------------------------------------------------------------------
+      // SCENE 2: HINDI CALLIGRAPHY & LYRICAL GLOW (2.3s – 5.8s)
+      // Exact Vocal Timings:
+      // 2.35s: मज़ा | 2.90s: हुस्न | 3.40s: का
+      // 4.15s: आँखों | 4.75s: से | 5.15s: लीजिए
+      // -----------------------------------------------------------------------
+      if (t >= 2.2 && t < 5.8) {
+        const relT = t - 2.2;
+        const enterSpring = s(relT, 220, 20);
+        const exitAlpha = t > 5.5 ? Math.max(0, 1 - (t - 5.5) / 0.3) : 1;
+        s2.style.opacity = Math.min(enterSpring, exitAlpha);
+        s2.style.transform = `scale(${0.9 + 0.1 * enterSpring})`;
+        pillText.innerText = "HINDI CALLIGRAPHY • BILLION DREAMS";
+
+        const hWords = [
+          { id: 's2_w1', start: 2.35 },
+          { id: 's2_w2', start: 2.90 },
+          { id: 's2_w3', start: 3.40 },
+          { id: 's2_w4', start: 4.15 },
+          { id: 's2_w5', start: 4.75 },
+          { id: 's2_w6', start: 5.15 },
+        ];
+
+        hWords.forEach(hw => {
+          const el = document.getElementById(hw.id);
+          if (t >= hw.start) {
+            const bounce = s(t - hw.start, 280, 22);
+            el.style.color = '#00F0FF';
+            el.style.textShadow = '0 0 35px #00F0FF, 0 0 70px #0096FF';
+            el.style.transform = `scale(${1.0 + 0.18 * bounce})`;
+            el.style.display = 'inline-block';
+          } else {
+            el.style.color = 'rgba(255, 255, 255, 0.4)';
+            el.style.textShadow = 'none';
+            el.style.transform = 'scale(1)';
+            el.style.display = 'inline-block';
+          }
+        });
+      } else {
+        s2.style.opacity = 0;
+      }
+
+      // -----------------------------------------------------------------------
+      // SCENE 3: GOLDEN FLARE & BASS DROP (5.8s – 8.8s)
+      // Instrumental & Vocal Build-Up
+      // -----------------------------------------------------------------------
+      if (t >= 5.7 && t < 8.8) {
+        const relT = t - 5.7;
+        const enterSpring = s(relT, 200, 20);
+        const exitAlpha = t > 8.5 ? Math.max(0, 1 - (t - 8.5) / 0.3) : 1;
+        s3.style.opacity = Math.min(enterSpring, exitAlpha);
+        s3.style.transform = `scale(${0.92 + 0.08 * enterSpring})`;
+        pillText.innerText = "GOLDEN FLARE • BIG NOODLE & LEMON MILK";
+
+        const flare = s3.querySelector('.flare-beam');
+        flare.style.opacity = 0.5 + 0.5 * Math.sin(relT * 8);
+        flare.style.filter = `blur(${2 + 2 * Math.sin(relT * 10)}px)`;
+      } else {
+        s3.style.opacity = 0;
+      }
+
+      // -----------------------------------------------------------------------
+      // SCENE 4: AUTO-CAPTION KARAOKE CLIMAX (8.8s – 14.1s)
+      // Exact Vocal Timings:
+      // 8.85s: AAJ | 9.35s: KI | 9.80s: RAAT
+      // 10.50s: MAZA | 11.10s: HUSN | 11.65s: KA
+      // 12.30s: AANKHON | 12.90s: SE | 13.35s: LIJIYE
+      // -----------------------------------------------------------------------
+      if (t >= 8.7 && t < 14.1) {
+        const relT = t - 8.7;
+        const enterSpring = s(relT, 220, 20);
+        const exitAlpha = t > 13.8 ? Math.max(0, 1 - (t - 13.8) / 0.3) : 1;
+        s4.style.opacity = Math.min(enterSpring, exitAlpha);
+        s4.style.transform = `scale(${0.95 + 0.05 * enterSpring})`;
+        pillText.innerText = "AUTO-CAPTION KARAOKE • AMERICAN CAPTAIN";
+
+        const karaokeMap = [
+          { id: 'k_aaj', start: 8.85 },
+          { id: 'k_ki', start: 9.35 },
+          { id: 'k_raat', start: 9.80 },
+          { id: 'k_maza', start: 10.50 },
+          { id: 'k_husn', start: 11.10 },
+          { id: 'k_ka', start: 11.65 },
+          { id: 'k_aankhon', start: 12.30 },
+          { id: 'k_se', start: 12.90 },
+          { id: 'k_lijiye', start: 13.35 },
+        ];
+
+        karaokeMap.forEach(km => {
+          const el = document.getElementById(km.id);
+          if (t >= km.start) {
+            const bounce = s(t - km.start, 300, 22);
+            el.classList.add('active');
+            el.classList.add('highlight-box');
+            el.style.transform = `scale(${1.14 + 0.15 * bounce})`;
+          } else {
+            el.classList.remove('active');
+            el.classList.remove('highlight-box');
+            el.style.transform = 'scale(1)';
+          }
+        });
+      } else {
+        s4.style.opacity = 0;
+      }
+
+      // -----------------------------------------------------------------------
+      // SCENE 5: FINALE LOCKUP (14.1s – 15.0s)
+      // -----------------------------------------------------------------------
+      if (t >= 14.0) {
+        const relT = t - 14.0;
+        const enterSpring = s(relT, 240, 22);
+        s5.style.opacity = enterSpring;
+        s5.style.transform = `scale(${0.9 + 0.1 * enterSpring})`;
+        pillText.innerText = "WINTERSOUL & SIMPLY ROUNDED";
+      } else {
+        s5.style.opacity = 0;
+      }
+    };
+
+    // Initialize at t = 0
+    window.seek(0);
+  </script>
+</body>
+</html>
