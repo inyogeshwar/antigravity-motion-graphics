@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1920">
+  <title>MotionOS — Official Typography Reel</title>
+  <style>
+    @font-face {
+      font-family: 'SFPro';
+      src: url('../../assets/fonts/SFPro-ExtraBold.ttf') format('truetype');
+      font-weight: 800;
+    }
+    @font-face {
+      font-family: 'SFPro';
+      src: url('../../assets/fonts/SFPro-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'SFPro';
+      src: url('../../assets/fonts/SFPro-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'InstaNeon';
+      src: url('../../assets/fonts/Insta-Neon.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'InstaStrong';
+      src: url('../../assets/fonts/Insta-Strong.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Mono';
+      src: url('../../assets/fonts/JetBrainsMono-VF.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'AppleEmoji';
+      src: url('../../assets/fonts/AppleColorEmoji.ttf') format('truetype');
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #08090C;
+      font-family: 'SFPro', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #stage {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      background: radial-gradient(circle at 50% 25%, #181c24 0%, #0b0d12 55%, #050608 100%);
+      overflow: hidden;
+    }
+
+    /* Ambient Glow Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(130px);
+      pointer-events: none;
+      opacity: 0.35;
+    }
+    #orb-1 {
+      width: 700px;
+      height: 700px;
+      background: #3B82F6;
+      top: 12%;
+      left: 10%;
+    }
+    #orb-2 {
+      width: 600px;
+      height: 600px;
+      background: #EAB308;
+      bottom: 22%;
+      right: 12%;
+      opacity: 0.25;
+    }
+
+    /* Subtle grid overlay */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-size: 60px 60px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 85%);
+      pointer-events: none;
+    }
+
+    /* Header Brand Pill */
+    #top-nav {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 28px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .brand-pill .logo-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #FACC15;
+      box-shadow: 0 0 16px #FACC15;
+    }
+    .brand-pill .brand-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #F8FAFC;
+    }
+    .brand-pill .brand-tag {
+      font-size: 20px;
+      font-weight: 600;
+      color: #94A3B8;
+      background: rgba(255,255,255,0.08);
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    /* Scene Container */
+    .scene {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0.95);
+      transform-origin: center center;
+    }
+
+    /* Scene 1: Problem Hook */
+    #scene-1 .hook-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 30px;
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      border-radius: 9999px;
+      color: #F87171;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 56px;
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
+    }
+    #scene-1 .hook-words {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px 36px;
+      max-width: 960px;
+      text-align: center;
+    }
+    .big-word {
+      font-size: 96px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -2px;
+      color: #475569;
+      display: inline-block;
+      padding: 6px 20px;
+      border-radius: 22px;
+      background: transparent;
+      transform-origin: center center;
+    }
+    .big-word.active {
+      color: #FFFFFF;
+      text-shadow: 0 0 35px rgba(255, 255, 255, 0.5);
+    }
+    .big-word.highlight {
+      color: #000000 !important;
+      background: #FACC15;
+      box-shadow: 0 0 45px rgba(250, 204, 21, 0.7);
+    }
+
+    /* Scene 2: Meet MotionOS Reveal */
+    #scene-2 .hero-card {
+      position: relative;
+      width: 860px;
+      padding: 64px 48px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.02) 100%);
+      backdrop-filter: blur(40px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.75);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-icon {
+      width: 144px;
+      height: 144px;
+      background: linear-gradient(135deg, #FACC15 0%, #EA580C 100%);
+      border-radius: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      box-shadow: 0 20px 50px rgba(234, 88, 12, 0.5);
+    }
+    .hero-icon svg {
+      width: 84px;
+      height: 84px;
+      fill: #000000;
+    }
+    .hero-title {
+      font-size: 100px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 18px;
+    }
+    .hero-sub {
+      font-size: 34px;
+      font-weight: 600;
+      color: #94A3B8;
+      letter-spacing: 0.5px;
+    }
+
+    /* Scene 3: Clean Code Editor */
+    #scene-3 .editor-window {
+      width: 900px;
+      background: #0D1117;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.85);
+    }
+    .editor-header {
+      background: #161B22;
+      padding: 22px 30px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .mac-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+    }
+    .mac-red { background: #FF5F56; }
+    .mac-yellow { background: #FFBD2E; }
+    .mac-green { background: #27C93F; }
+    .editor-title {
+      font-family: 'Mono', monospace;
+      font-size: 22px;
+      color: #8B949E;
+      margin-left: 20px;
+    }
+    .editor-body {
+      padding: 44px 38px;
+      font-family: 'Mono', monospace;
+      font-size: 30px;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .code-kw { color: #FF7B72; }
+    .code-fn { color: #D2A8FF; }
+    .code-var { color: #79C0FF; }
+    .code-str { color: #A5D6FF; }
+    .code-prop { color: #FFA657; }
+    .code-num { color: #7EE787; }
+
+    /* Scene 4: Kinetic Auto-Captions */
+    #scene-4 .caption-container {
+      width: 940px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .caption-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 24px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 9999px;
+      color: #38BDF8;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .caption-box {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(35px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 38px;
+      padding: 60px 48px;
+      width: 100%;
+      box-shadow: 0 30px 75px rgba(0,0,0,0.65);
+    }
+    .caption-stream {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px 28px;
+      font-size: 68px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .cap-word {
+      display: inline-block;
+      padding: 6px 18px;
+      border-radius: 20px;
+      color: #475569;
+      transform-origin: center center;
+    }
+    .cap-word.active {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .cap-word.highlight {
+      color: #000000 !important;
+      background: #FACC15;
+      box-shadow: 0 0 40px #FACC15;
+    }
+
+    /* Scene 5: Damped Spring Physics */
+    #scene-5 .physics-layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 900px;
+      gap: 36px;
+    }
+    .physics-canvas-box {
+      width: 860px;
+      height: 380px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 32px;
+      padding: 24px;
+      box-shadow: 0 25px 65px rgba(0,0,0,0.7);
+      position: relative;
+    }
+    .physics-formula {
+      font-family: 'Mono', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      padding: 14px 32px;
+      border-radius: 18px;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+    }
+    .spring-demo-card {
+      width: 860px;
+      padding: 38px 44px;
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.14) 0%, rgba(234, 88, 12, 0.14) 100%);
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(24px);
+    }
+    .demo-metric-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #F8FAFC;
+    }
+    .demo-metric-val {
+      font-family: 'Mono', monospace;
+      font-size: 52px;
+      font-weight: 800;
+      color: #FACC15;
+    }
+
+    /* Scene 6: Apple Emojis Showcase */
+    #scene-6 .emoji-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      width: 860px;
+    }
+    .emoji-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 36px;
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.55);
+    }
+    .emoji-symbol {
+      font-family: 'AppleEmoji', sans-serif;
+      font-size: 96px;
+      line-height: 1;
+    }
+    .emoji-label {
+      font-size: 26px;
+      font-weight: 700;
+      color: #E2E8F0;
+      letter-spacing: 1px;
+    }
+
+    /* Scene 7: Pure Speed / Zero Slop & Final CTA */
+    #scene-7 .finale-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 900px;
+      gap: 32px;
+    }
+    .slam-header {
+      font-size: 112px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -3px;
+    }
+    .gradient-speed {
+      background: linear-gradient(135deg, #FACC15 0%, #FB923C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .slop-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 36px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 9999px;
+      color: #4ADE80;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);
+    }
+    .cta-card {
+      width: 860px;
+      margin-top: 36px;
+      padding: 48px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(40px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      box-shadow: 0 35px 80px rgba(0, 0, 0, 0.75);
+    }
+    .github-link {
+      font-family: 'Mono', monospace;
+      font-size: 26px;
+      color: #94A3B8;
+    }
+    .github-link span {
+      color: #38BDF8;
+      font-weight: 700;
+    }
+    .cta-button {
+      padding: 24px 64px;
+      background: #FACC15;
+      color: #000000;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      border-radius: 9999px;
+      box-shadow: 0 15px 40px rgba(250, 204, 21, 0.55);
+    }
+
+    /* Bottom Status Indicator */
+    #bottom-timeline {
+      position: absolute;
+      bottom: 80px;
+      left: 100px;
+      right: 100px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+      z-index: 50;
+    }
+    #timeline-progress {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FACC15, #38BDF8);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="stage">
+  <div class="grid-bg"></div>
+  <div id="orb-1" class="orb"></div>
+  <div id="orb-2" class="orb"></div>
+
+  <!-- Header Nav -->
+  <div id="top-nav">
+    <div class="brand-pill">
+      <div class="logo-dot"></div>
+      <span class="brand-title">MotionOS</span>
+      <span class="brand-tag">v2.4</span>
+    </div>
+  </div>
+
+  <!-- SCENE 1: Problem Hook (0.0s - 2.5s) -->
+  <div id="scene-1" class="scene">
+    <div class="hook-badge">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+      <span>TIRED OF PREMIERE?</span>
+    </div>
+    <div class="hook-words">
+      <span id="w-0" class="big-word">Stop</span>
+      <span id="w-1" class="big-word">editing</span>
+      <span id="w-2" class="big-word">reels</span>
+      <span id="w-3" class="big-word">frame</span>
+      <span id="w-4" class="big-word">by</span>
+      <span id="w-5" class="big-word">frame.</span>
+    </div>
+  </div>
+
+  <!-- SCENE 2: Meet MotionOS Reveal (2.5s - 3.8s) -->
+  <div id="scene-2" class="scene">
+    <div class="hero-card" id="hero-card">
+      <div class="hero-icon" id="hero-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h1 class="hero-title" id="hero-title">MotionOS</h1>
+      <p class="hero-sub" id="hero-sub">The Programmatic Motion Studio</p>
+    </div>
+  </div>
+
+  <!-- SCENE 3: Write Clean Code (3.8s - 5.0s) -->
+  <div id="scene-3" class="scene">
+    <div class="editor-window" id="editor-window">
+      <div class="editor-header">
+        <div class="mac-dot mac-red"></div>
+        <div class="mac-dot mac-yellow"></div>
+        <div class="mac-dot mac-green"></div>
+        <span class="editor-title">motion.studio.ts</span>
+      </div>
+      <div class="editor-body">
+        <div><span class="code-kw">import</span> { <span class="code-fn">spring</span>, <span class="code-fn">caption</span> } <span class="code-kw">from</span> <span class="code-str">"motionos"</span>;</div>
+        <br>
+        <div><span class="code-kw">const</span> <span class="code-var">reel</span> = <span class="code-fn">createVideo</span>({</div>
+        <div style="padding-left: 36px;"><span class="code-prop">fps</span>: <span class="code-num">30</span>,</div>
+        <div style="padding-left: 36px;"><span class="code-prop">springs</span>: <span class="code-kw">true</span>,</div>
+        <div style="padding-left: 36px;"><span class="code-prop">sfxLibrary</span>: <span class="code-str">"installed"</span></div>
+        <div>});</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 4: Kinetic Auto-Captions (5.0s - 6.9s) -->
+  <div id="scene-4" class="scene">
+    <div class="caption-container">
+      <div class="caption-badge">⚡ INSTANT SYNC AUTO-CAPTIONS</div>
+      <div class="caption-box">
+        <div class="caption-stream">
+          <span id="w-11" class="cap-word">Get</span>
+          <span id="w-12" class="cap-word">instant</span>
+          <span id="w-13" class="cap-word">kinetic</span>
+          <span id="w-14" class="cap-word highlight">typography,</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 5: Damped Spring Physics (6.9s - 8.2s) -->
+  <div id="scene-5" class="scene">
+    <div class="physics-layout">
+      <div class="physics-formula">y(t) = 1 - e^(-d·t) · cos(ω·t)</div>
+      <div class="physics-canvas-box">
+        <canvas id="spring-canvas" width="810" height="330"></canvas>
+      </div>
+      <div class="spring-demo-card" id="spring-badge">
+        <div>
+          <div class="demo-metric-title">Spring Dynamics</div>
+          <div style="color: #94A3B8; font-size: 22px; margin-top: 6px;">Zero simulation drift • Analytical exact</div>
+        </div>
+        <div class="demo-metric-val">k: 280, d: 22</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 6: Apple Emojis (8.2s - 9.5s) -->
+  <div id="scene-6" class="scene">
+    <div class="emoji-grid">
+      <div class="emoji-card" id="ec-1">
+        <div class="emoji-symbol">🚀</div>
+        <div class="emoji-label">Velocity</div>
+      </div>
+      <div class="emoji-card" id="ec-2">
+        <div class="emoji-symbol">⚡</div>
+        <div class="emoji-label">Instant</div>
+      </div>
+      <div class="emoji-card" id="ec-3">
+        <div class="emoji-symbol">🔥</div>
+        <div class="emoji-label">Viral</div>
+      </div>
+      <div class="emoji-card" id="ec-4">
+        <div class="emoji-symbol">🎬</div>
+        <div class="emoji-label">Reels</div>
+      </div>
+      <div class="emoji-card" id="ec-5">
+        <div class="emoji-symbol">✨</div>
+        <div class="emoji-label">Polished</div>
+      </div>
+      <div class="emoji-card" id="ec-6">
+        <div class="emoji-symbol">💎</div>
+        <div class="emoji-label">Studio</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 7: Finale & CTA (9.5s - 12.0s) -->
+  <div id="scene-7" class="scene">
+    <div class="finale-content">
+      <div id="pure-speed" class="slam-header gradient-speed">PURE SPEED.</div>
+      <div id="zero-slop" class="slop-box">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span>ZERO SLOP</span>
+      </div>
+      <div class="cta-card" id="cta-card">
+        <div class="github-link">github.com/<span>inyogeshwar</span>/antigravity</div>
+        <div class="cta-button">Star on GitHub ★</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Timeline Progress -->
+  <div id="bottom-timeline">
+    <div id="timeline-progress"></div>
+  </div>
+</div>
+
+<script>
+  // Closed-Form Damped Spring Formula
+  function spring(t, k = 170, d = 26) {
+    if (t <= 0) return 0;
+    const w0 = Math.sqrt(k);
+    const z = d / (2 * w0);
+    if (z < 1) {
+      const wd = w0 * Math.sqrt(1 - z * z);
+      return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+    }
+    return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+  }
+
+  function clamp(x, a = 0, b = 1) {
+    return Math.min(b, Math.max(a, x));
+  }
+
+  // Word Timestamps from Cartesia sonic-3.6 alignment
+  const WORDS = [
+    { word: "Stop", start: 0.12, end: 0.60, id: "w-0" },
+    { word: "editing", start: 0.60, end: 1.00, id: "w-1" },
+    { word: "reels", start: 1.00, end: 1.40, id: "w-2" },
+    { word: "frame", start: 1.40, end: 1.72, id: "w-3" },
+    { word: "by", start: 1.80, end: 1.88, id: "w-4" },
+    { word: "frame.", start: 1.88, end: 2.36, id: "w-5" },
+    { word: "Meet", start: 2.58, end: 2.84 },
+    { word: "MotionOS.", start: 2.84, end: 3.72 },
+    { word: "Write", start: 3.80, end: 4.12 },
+    { word: "clean", start: 4.20, end: 4.44 },
+    { word: "code.", start: 4.44, end: 4.92 },
+    { word: "Get", start: 5.00, end: 5.24, id: "w-11" },
+    { word: "instant", start: 5.24, end: 5.72, id: "w-12" },
+    { word: "kinetic", start: 5.72, end: 6.12, id: "w-13" },
+    { word: "typography,", start: 6.12, end: 6.84, id: "w-14" },
+    { word: "damped", start: 6.93, end: 7.32 },
+    { word: "spring", start: 7.40, end: 7.64 },
+    { word: "physics,", start: 7.64, end: 8.20 },
+    { word: "and", start: 8.28, end: 8.44 },
+    { word: "Apple", start: 8.52, end: 8.76 },
+    { word: "emojis.", start: 8.76, end: 9.40 },
+    { word: "Pure", start: 9.55, end: 9.88 },
+    { word: "speed.", start: 9.88, end: 10.28 },
+    { word: "Zero", start: 10.44, end: 10.84 },
+    { word: "slop.", start: 10.84, end: 11.32 }
+  ];
+
+  const TOTAL_DURATION = 12.0;
+
+  // Cache DOM elements
+  const elProgress = document.getElementById('timeline-progress');
+  const sc1 = document.getElementById('scene-1');
+  const sc2 = document.getElementById('scene-2');
+  const sc3 = document.getElementById('scene-3');
+  const sc4 = document.getElementById('scene-4');
+  const sc5 = document.getElementById('scene-5');
+  const sc6 = document.getElementById('scene-6');
+  const sc7 = document.getElementById('scene-7');
+
+  const heroCard = document.getElementById('hero-card');
+  const heroIcon = document.getElementById('hero-icon');
+  const editorWindow = document.getElementById('editor-window');
+  const springBadge = document.getElementById('spring-badge');
+  const springCanvas = document.getElementById('spring-canvas');
+  const springCtx = springCanvas.getContext('2d');
+
+  const emojiCards = [
+    document.getElementById('ec-1'),
+    document.getElementById('ec-2'),
+    document.getElementById('ec-3'),
+    document.getElementById('ec-4'),
+    document.getElementById('ec-5'),
+    document.getElementById('ec-6')
+  ];
+
+  const pureSpeed = document.getElementById('pure-speed');
+  const zeroSlop = document.getElementById('zero-slop');
+  const ctaCard = document.getElementById('cta-card');
+
+  /**
+   * Deterministic window.seek(t) pure function
+   */
+  window.seek = function(t) {
+    // 1. Timeline Progress
+    const prog = clamp(t / TOTAL_DURATION, 0, 1);
+    elProgress.style.width = (prog * 100) + '%';
+
+    // 2. SCENE 1: Problem Hook (0.00s to 2.50s)
+    if (t < 2.50) {
+      const s1In = spring(t - 0.05, 220, 24);
+      const s1Out = t > 2.25 ? 1 - spring(t - 2.25, 260, 26) : 1;
+      sc1.style.opacity = clamp(s1In * s1Out, 0, 1);
+      sc1.style.transform = `scale(${0.92 + 0.08 * s1In}) translateY(${(1 - s1In) * 40}px)`;
+
+      // Words activation
+      for (let i = 0; i <= 5; i++) {
+        const item = WORDS[i];
+        const el = document.getElementById(item.id);
+        if (!el) continue;
+
+        if (t >= item.start) {
+          const wSpring = spring(t - item.start, 340, 20);
+          el.classList.add('active');
+          if (t >= item.start && t <= item.end) {
+            el.classList.add('highlight');
+            el.style.transform = `scale(${1.0 + 0.16 * wSpring})`;
+          } else {
+            el.classList.remove('highlight');
+            el.style.transform = `scale(1)`;
+          }
+        } else {
+          el.classList.remove('active', 'highlight');
+          el.style.transform = `scale(1)`;
+        }
+      }
+    } else {
+      sc1.style.opacity = 0;
+    }
+
+    // 3. SCENE 2: Meet MotionOS (2.45s to 3.80s)
+    if (t >= 2.45 && t < 3.80) {
+      const s2In = spring(t - 2.50, 240, 22);
+      const s2Out = t > 3.55 ? 1 - spring(t - 3.55, 260, 26) : 1;
+      sc2.style.opacity = clamp(s2In * s2Out, 0, 1);
+      const scale = 0.88 + 0.12 * s2In;
+      sc2.style.transform = `scale(${scale})`;
+
+      const iconPop = spring(t - 2.65, 300, 18);
+      heroIcon.style.transform = `scale(${iconPop}) rotate(${(1 - iconPop) * -15}deg)`;
+    } else {
+      sc2.style.opacity = 0;
+    }
+
+    // 4. SCENE 3: Write Clean Code (3.75s to 5.00s)
+    if (t >= 3.75 && t < 5.00) {
+      const s3In = spring(t - 3.80, 220, 24);
+      const s3Out = t > 4.75 ? 1 - spring(t - 4.75, 260, 26) : 1;
+      sc3.style.opacity = clamp(s3In * s3Out, 0, 1);
+      editorWindow.style.transform = `translateY(${(1 - s3In) * 60}px) scale(${0.92 + 0.08 * s3In})`;
+    } else {
+      sc3.style.opacity = 0;
+    }
+
+    // 5. SCENE 4: Kinetic Auto-Captions (4.95s to 6.90s)
+    if (t >= 4.95 && t < 6.90) {
+      const s4In = spring(t - 5.00, 240, 22);
+      const s4Out = t > 6.65 ? 1 - spring(t - 6.65, 260, 26) : 1;
+      sc4.style.opacity = clamp(s4In * s4Out, 0, 1);
+      sc4.style.transform = `scale(${0.94 + 0.06 * s4In})`;
+
+      for (let i = 11; i <= 14; i++) {
+        const item = WORDS[i];
+        const el = document.getElementById(item.id);
+        if (!el) continue;
+
+        if (t >= item.start) {
+          const capSpring = spring(t - item.start, 360, 19);
+          if (t >= item.start && t <= item.end) {
+            el.className = 'cap-word highlight';
+            el.style.transform = `scale(${1.0 + 0.22 * capSpring})`;
+          } else {
+            el.className = 'cap-word active';
+            el.style.transform = `scale(1)`;
+          }
+        } else {
+          el.className = 'cap-word';
+          el.style.transform = `scale(1)`;
+        }
+      }
+    } else {
+      sc4.style.opacity = 0;
+    }
+
+    // 6. SCENE 5: Damped Spring Physics (6.85s to 8.20s)
+    if (t >= 6.85 && t < 8.20) {
+      const s5In = spring(t - 6.90, 220, 24);
+      const s5Out = t > 8.00 ? 1 - spring(t - 8.00, 260, 26) : 1;
+      sc5.style.opacity = clamp(s5In * s5Out, 0, 1);
+      sc5.style.transform = `scale(${0.92 + 0.08 * s5In})`;
+
+      // Dynamic Spring Curve Canvas Draw
+      const w = springCanvas.width;
+      const h = springCanvas.height;
+      springCtx.clearRect(0, 0, w, h);
+
+      // Grid line
+      springCtx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+      springCtx.lineWidth = 1;
+      springCtx.beginPath();
+      springCtx.moveTo(0, h * 0.5);
+      springCtx.lineTo(w, h * 0.5);
+      springCtx.stroke();
+
+      // Draw mathematical curve
+      const localT = (t - 6.90) / 1.1; // 0 to 1
+      const maxDrawX = clamp(localT, 0, 1) * w;
+
+      springCtx.strokeStyle = '#38BDF8';
+      springCtx.lineWidth = 5;
+      springCtx.lineCap = 'round';
+      springCtx.beginPath();
+
+      for (let x = 0; x <= maxDrawX; x += 3) {
+        const simTime = (x / w) * 1.5;
+        const spVal = spring(simTime, 280, 22);
+        const y = (h * 0.85) - spVal * (h * 0.5);
+        if (x === 0) springCtx.moveTo(x, y);
+        else springCtx.lineTo(x, y);
+      }
+      springCtx.stroke();
+
+      // Leading tracer dot
+      if (maxDrawX > 0) {
+        const curSimTime = (maxDrawX / w) * 1.5;
+        const curSp = spring(curSimTime, 280, 22);
+        const curY = (h * 0.85) - curSp * (h * 0.5);
+
+        springCtx.fillStyle = '#FACC15';
+        springCtx.shadowColor = '#FACC15';
+        springCtx.shadowBlur = 20;
+        springCtx.beginPath();
+        springCtx.arc(maxDrawX, curY, 10, 0, Math.PI * 2);
+        springCtx.fill();
+        springCtx.shadowBlur = 0;
+      }
+
+      const badgeSpring = spring(t - 7.30, 260, 18);
+      springBadge.style.transform = `scale(${0.9 + 0.1 * badgeSpring})`;
+    } else {
+      sc5.style.opacity = 0;
+    }
+
+    // 7. SCENE 6: Apple Emojis (8.15s to 9.50s)
+    if (t >= 8.15 && t < 9.50) {
+      const s6In = spring(t - 8.20, 240, 22);
+      const s6Out = t > 9.30 ? 1 - spring(t - 9.30, 260, 26) : 1;
+      sc6.style.opacity = clamp(s6In * s6Out, 0, 1);
+
+      emojiCards.forEach((card, idx) => {
+        const delay = 8.22 + idx * 0.08;
+        const eSp = spring(t - delay, 340, 18);
+        card.style.opacity = clamp((t - delay) / 0.06, 0, 1);
+        card.style.transform = `scale(${0.65 + 0.35 * eSp}) translateY(${(1 - eSp) * 40}px)`;
+      });
+    } else {
+      sc6.style.opacity = 0;
+    }
+
+    // 8. SCENE 7: Finale & CTA (9.45s to 12.00s)
+    if (t >= 9.45) {
+      const s7In = spring(t - 9.50, 220, 24);
+      sc7.style.opacity = clamp(s7In, 0, 1);
+
+      // Pure speed slam
+      const speedSp = spring(t - 9.55, 380, 18);
+      pureSpeed.style.transform = `scale(${0.7 + 0.3 * speedSp}) translateY(${(1 - speedSp) * 30}px)`;
+
+      // Zero slop badge
+      const slopSp = spring(t - 10.40, 320, 20);
+      zeroSlop.style.transform = `scale(${0.8 + 0.2 * slopSp})`;
+
+      // CTA Card
+      const ctaSp = spring(t - 10.75, 260, 22);
+      ctaCard.style.opacity = clamp((t - 10.75) / 0.12, 0, 1);
+      ctaCard.style.transform = `translateY(${(1 - ctaSp) * 50}px) scale(${0.92 + 0.08 * ctaSp})`;
+    } else {
+      sc7.style.opacity = 0;
+    }
+  };
+
+  // Initial draw
+  window.seek(0);
+</script>
+</body>
+</html>

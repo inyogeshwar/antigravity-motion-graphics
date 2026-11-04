@@ -139,6 +139,15 @@ npm run render -- --dur 15 --fps 30 --w 1080 --h 1920 --out out/silent.mp4
 npm run sfx cues.json out/sfx.wav
 ```
 
+### 6. Kinetic Typography & Auto-Caption Reel Showcase
+```bash
+# Render the official MotionOS 9:16 vertical typography reel (1080x1920)
+node render.mjs --html compositions/motionos_reel/index.html --out out/motionos_typography_silent.mp4 --dur 12 --fps 30
+
+# Mux with Cartesia voice narration & creator SFX
+ffmpeg -y -i out/motionos_typography_silent.mp4 -i scratch/motionos_reel_audio.m4a -c:v copy -c:a aac out/motionos_typography_reel.mp4
+```
+
 ---
 
 ## Project Structure
