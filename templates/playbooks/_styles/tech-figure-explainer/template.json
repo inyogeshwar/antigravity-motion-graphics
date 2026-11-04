@@ -1,0 +1,27 @@
+{
+  "id": "tech-figure-explainer",
+  "order": 2,
+  "name": "Tech Figure Explainer",
+  "tagline": "Every line becomes a moving figure: counters, diagrams, terminals and portraits carry the reel, you anchor the turns. Dark editorial figures, cream neo-brutalist windows or flat pink diagrams.",
+  "inspired_by_display": [
+    "100xEngineers"
+  ],
+  "niches": [
+    "AI & tech"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The kit is the proof: a window flips in, the headline types",
+      "A stopwatch and a receipt count to the spoken numbers",
+      "Tiles multiply as the number steps to hundreds"
+    ]
+  },
+  "status": "released"
+}

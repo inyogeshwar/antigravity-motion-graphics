@@ -38,6 +38,22 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Video Files
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Large AI Models (> 100MB exceeds GitHub push limit)
+models/whisper/model.bin
+models/**/*.bin
+models/**/*.onnx
+*.onnx
+.agent/skills/effects/models/*.onnx
+*.bin
+models/whisper/.cache/
+
+
 # Playwright & Testing Artifacts
 test-results/
 playwright-report/

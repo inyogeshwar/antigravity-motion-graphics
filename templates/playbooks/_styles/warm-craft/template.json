@@ -1,0 +1,28 @@
+{
+  "id": "warm-craft",
+  "order": 21,
+  "name": "Warm Craft",
+  "tagline": "Warm, filmic and unhurried: white captions with one glowing gold italic word, your hands or screen on the real thing while your voice runs on, a small mono STEP chip, and you back on camera for the opinion.",
+  "inspired_by_display": [
+    "Peter McKinnon"
+  ],
+  "niches": [
+    "Creators & editing",
+    "Lifestyle, brands & fun"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The finished thing first, gold keyword",
+      "You at the desk for the opinion",
+      "STEP chip over the hands-on shot"
+    ]
+  }
+}

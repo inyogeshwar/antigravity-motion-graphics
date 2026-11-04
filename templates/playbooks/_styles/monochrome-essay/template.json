@@ -1,0 +1,28 @@
+{
+  "id": "monochrome-essay",
+  "order": 8,
+  "name": "Monochrome Essay",
+  "tagline": "Calm, centred essay reels in black and white: a voice-over page, you full frame with small gold serif captions, and white line-art scenes carried by one dot that stands for 'you'. Few cuts, no effects.",
+  "inspired_by_display": [
+    "Dan Koe"
+  ],
+  "niches": [
+    "Career & self-growth",
+    "Business & marketing"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "White line art on black, one dot for 'you'",
+      "The dot moves through a phone of stacked cards",
+      "Scenes flicker on and off like an old screen"
+    ]
+  }
+}

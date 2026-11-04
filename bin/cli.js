@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * antigravity-motion CLI
+ * MotionOS CLI (Antigravity Edition)
  * 
- * Command line suite for Antigravity Motion Studio operations.
+ * The Operating System for Autonomous Motion Design & Vibe Editing.
  * Usage:
- *   npx antigravity-motion <command> [options]
+ *   npx motionos <command> [options]
  */
 
 import { spawn } from 'node:child_process';
@@ -21,25 +21,36 @@ const args = process.argv.slice(3);
 
 function printHelp() {
   console.log(`
-▲ Antigravity Motion Studio CLI
+▲ Antigravity Motion Studio CLI (MotionOS)
+The Operating System for Autonomous Motion Design & Vibe Editing
 
 Usage:
-  npx antigravity-motion <command> [options]
+  npx motionos <command> [options] (or: npx antigravity-motion <command>)
 
-Commands:
-  init [dir]         Scaffold a new motion graphics project (or: npx create-antigravity-motion)
-  render [options]   Render HTML/canvas composition to MP4 using Playwright & FFmpeg
-  sfx [options]      Synthesize procedural UI audio cues (clicks, whooshes) to WAV
-  voice [options]    Generate AI voice narration (Cartesia, HeyGen, OpenAI, ElevenLabs)
-  beats [options]    Extract beat grid or generate synthetic 120 BPM grid
-  test               Run deterministic motion engine unit tests
-  help, --help, -h   Show this help message
+Vibe Editing Commands (MotionOS):
+  playbook [list|init]  Manage creator styles & brand playbooks (23 authentic styles)
+  reel <clips_folder>   Autonomous end-to-end reel pipeline: cut -> storyboard -> render
+  setup-models [opts]   Download & bind local AI models (RVM, YuNet, BlazeFace, Whisper)
+  veos <action> [opts]  Run VEOS workflow (prep, plan, preview, render, review, styles)
+  prep <video>          Transcribe speech & detect silence gaps
+  plan <video>          Generate AI storyboard plan with 51 CV effects & SFX cues
+  preview <video>       Extract rapid keyframe stills before full render
+  review <video>        Generate visual contact sheet & vision quality score
+
+Motion Studio Commands:
+  init [dir]            Scaffold a new motion project (or: npx create-antigravity-motion)
+  render [options]      Render HTML/canvas composition to MP4 using Playwright & FFmpeg
+  sfx [options]         Synthesize procedural UI audio cues (clicks, whooshes) to WAV
+  voice [options]       Generate AI voice narration (Cartesia, HeyGen, OpenAI, ElevenLabs)
+  beats [options]       Extract beat grid or generate synthetic 120 BPM grid
+  test                  Run deterministic motion engine unit tests
+  help, --help, -h      Show this help message
 
 Examples:
-  npx antigravity-motion init my-reel
-  npx antigravity-motion render --dur 15 --fps 30
-  npx antigravity-motion sfx cues.json out/sfx.wav
-  npx antigravity-motion voice --provider cartesia --text "Hello world"
+  npx motionos vibe plan input.mp4 --style tech-bento
+  npx motionos vibe preview input.mp4
+  npx motionos render --dur 15 --fps 30
+  npx motionos sfx cues.json out/sfx.wav
 `);
 }
 
@@ -60,13 +71,37 @@ function runScript(scriptPath, scriptArgs) {
 }
 
 switch (command) {
+  case 'setup-models':
+  case 'models':
+    runScript(path.join(ROOT_DIR, 'scripts', 'setup_models.mjs'), args);
+    break;
+
+  case 'playbook':
+  case 'reel':
+  case 'veos':
+  case 'vibe':
+    runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
+    break;
+
+  case 'prep':
+  case 'plan':
+  case 'preview':
+  case 'review':
+    runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
+    break;
+
   case 'init':
   case 'create':
     runScript(path.join(__dirname, 'create.js'), args);
     break;
 
   case 'render':
-    runScript(path.join(ROOT_DIR, 'render.mjs'), args);
+    // If first argument is a video file ending in .mp4, route to vibe render
+    if (args[0] && (args[0].endsWith('.mp4') || args[0].endsWith('.mov'))) {
+      runScript(path.join(__dirname, 'vibe.js'), ['render', ...args]);
+    } else {
+      runScript(path.join(ROOT_DIR, 'render.mjs'), args);
+    }
     break;
 
   case 'sfx':
@@ -98,6 +133,6 @@ switch (command) {
   }
 
   default:
-    console.error(`Unknown command: "${command}". Run "npx antigravity-motion --help" for available commands.`);
+    console.error(`Unknown command: '${command}'.\nRun 'npx motionos --help' for available commands.`);
     process.exit(1);
 }

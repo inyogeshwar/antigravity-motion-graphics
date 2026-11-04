@@ -1,0 +1,27 @@
+{
+  "id": "glow-steps",
+  "order": 13,
+  "name": "Glow Steps",
+  "tagline": "Polished studio teaching: white script-plus-bold captions that build on your chest, glowing numbered diamond badges, and full-screen step slides; you step out for the slide and come straight back.",
+  "inspired_by_display": [
+    "Josephswork"
+  ],
+  "niches": [
+    "Creators & editing"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Script-and-bold caption stack with the numbered diamonds",
+      "A full-screen step slide, built item by item",
+      "The hook, you full frame"
+    ]
+  }
+}

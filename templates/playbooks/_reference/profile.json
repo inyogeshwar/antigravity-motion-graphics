@@ -1,0 +1,35 @@
+{
+ "version": 1,
+ "profile": {
+  "language": {
+   "speech": "hinglish"
+  },
+  "numbers": {
+   "currency": "INR"
+  }
+ },
+ "captions": {
+  "choice": "romanised"
+ },
+ "template": "creator-infotainment-motion",
+ "creator": {
+  "name": "Motion Creator",
+  "handle": "@motion.studio",
+  "language": "hinglish",
+  "cta": {
+   "pattern": "comment kar do {KEYWORD}",
+   "deliverable": "Asset pack in DM",
+   "community_chip": "MotionOS · link in bio",
+   "signoff": "peace out"
+  },
+  "glossary": [
+   "MotionOS",
+   "Antigravity",
+   "Remotion",
+   "Vercel",
+   "Supabase",
+   "Playwright",
+   "FFmpeg"
+  ]
+ }
+}

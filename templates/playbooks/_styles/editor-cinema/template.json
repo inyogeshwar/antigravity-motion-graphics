@@ -1,0 +1,27 @@
+{
+  "id": "editor-cinema",
+  "order": 15,
+  "name": "Editor Cinema",
+  "tagline": "Cinematic creator tutorial: one word at a time sized by importance, serif italic step numbers by your side, the screen on top while you slide down, blue for the win and red for the miss.",
+  "inspired_by_display": [
+    "ant.lon"
+  ],
+  "niches": [
+    "Creators & editing"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Step marker in serif italic beside you",
+      "The screen on top, you slid down below",
+      "A count-up ring and word cards"
+    ]
+  }
+}

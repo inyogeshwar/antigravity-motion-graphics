@@ -1,0 +1,27 @@
+{
+  "id": "high-stakes",
+  "order": 17,
+  "name": "High Stakes",
+  "tagline": "Challenge-show energy: full frame, one or two comic words at a time coloured by who speaks, every number a neon-green picture the instant it's said, a red X on a miss, a green flash on a win, hard stop.",
+  "inspired_by_display": [
+    "MrBeast"
+  ],
+  "niches": [
+    "Lifestyle, brands & fun"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Comic captions on the chest, coloured by speaker",
+      "The stake lands in neon green",
+      "The hook, mid-action"
+    ]
+  }
+}

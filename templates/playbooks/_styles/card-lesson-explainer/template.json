@@ -1,0 +1,28 @@
+{
+  "id": "card-lesson-explainer",
+  "order": 3,
+  "name": "Card Lesson Explainer",
+  "tagline": "A lesson on a fixed frame: a promise title with an orange underline, one rounded card where the real tool, a whiteboard and your face take turns, uppercase captions underneath.",
+  "inspired_by_display": [
+    "Editing Explained"
+  ],
+  "niches": [
+    "Creators & editing",
+    "AI & tech"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The challenge: the two options circled while he asks which one",
+      "A number rolls in on the word, his face in the box below",
+      "The verdict slams in: THIS IS WRONG"
+    ]
+  },
+  "status": "released"
+}

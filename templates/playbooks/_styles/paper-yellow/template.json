@@ -1,0 +1,28 @@
+{
+  "id": "paper-yellow",
+  "order": 16,
+  "name": "Paper & Yellow",
+  "tagline": "Laid-back creator vlog: big yellow condensed titles behind you, a cream page where your examples sit as rounded cards, script words for the small ones, serif subtitles; you full frame for every rule.",
+  "inspired_by_display": [
+    "omgadrian"
+  ],
+  "niches": [
+    "Creators & editing",
+    "Lifestyle, brands & fun"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Examples as rounded cards on the cream page",
+      "You full frame for the rule",
+      "A yellow title card on the page"
+    ]
+  }
+}

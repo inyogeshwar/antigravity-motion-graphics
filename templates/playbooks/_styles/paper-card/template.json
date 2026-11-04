@@ -1,0 +1,27 @@
+{
+  "id": "paper-card",
+  "order": 20,
+  "name": "Paper Card",
+  "tagline": "Calm editorial explainer on warm paper: your clip as a centred card with a short serif-and-sans caption above it, the ground switching paper → brown → black by section, a hexagon hub or giant letters for frameworks.",
+  "inspired_by_display": [
+    "peter.visuals"
+  ],
+  "niches": [
+    "Creators & editing"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The card on paper with a hand-drawn arrow",
+      "Brown section: the claim",
+      "Proof cards on paper"
+    ]
+  }
+}

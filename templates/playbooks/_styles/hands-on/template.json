@@ -1,0 +1,28 @@
+{
+  "id": "hands-on",
+  "order": 19,
+  "name": "Hands On",
+  "tagline": "Clean tech-reviewer pace: you full frame, the real thing full frame on its word, joined by motion-blur whips; quiet white subtitles and just one loud element per reel, like a live counter.",
+  "inspired_by_display": [
+    "Mrwhosetheboss"
+  ],
+  "niches": [
+    "AI & tech",
+    "Lifestyle, brands & fun"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "You and the live counter",
+      "The real result, full frame",
+      "The reaction"
+    ]
+  }
+}

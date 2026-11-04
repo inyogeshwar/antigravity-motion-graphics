@@ -1,0 +1,28 @@
+{
+  "id": "split-diagram-explainer",
+  "order": 4,
+  "name": "Split Diagram Explainer",
+  "tagline": "Your idea drawn as you say it: one living diagram on a canvas above you, a virtual camera moving over it, full-frame face beats for every aside, one-word captions.",
+  "inspired_by_display": [
+    "Kallaway"
+  ],
+  "niches": [
+    "Business & marketing",
+    "Creators & editing"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Hook",
+      "Body",
+      "Payoff"
+    ]
+  },
+  "status": "released"
+}

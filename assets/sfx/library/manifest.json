@@ -1,0 +1,367 @@
+[
+  {
+    "id": "swoosh-fast",
+    "path": "assets/sfx/library/whoosh/swoosh-fast.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "swoosh",
+      "transition",
+      "fast"
+    ],
+    "originalName": "clean-fast-swooshaiff-14784.mp3",
+    "sizeBytes": 19680,
+    "sizeKb": 19.22
+  },
+  {
+    "id": "whoosh-short",
+    "path": "assets/sfx/library/whoosh/whoosh-short.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "short",
+      "flutter"
+    ],
+    "originalName": "whoosh-blow-flutter-shortwav-14678.mp3",
+    "sizeBytes": 17760,
+    "sizeKb": 17.34
+  },
+  {
+    "id": "swish-whoosh",
+    "path": "assets/sfx/library/whoosh/swish-whoosh.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "swish",
+      "transition"
+    ],
+    "originalName": "Swish whoosh.mp3",
+    "sizeBytes": 654580,
+    "sizeKb": 639.24
+  },
+  {
+    "id": "whoosh-dreamy",
+    "path": "assets/sfx/library/whoosh/whoosh-dreamy.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "dreamy",
+      "slow"
+    ],
+    "originalName": "Remembering whoosh.mp3",
+    "sizeBytes": 1188706,
+    "sizeKb": 1160.85
+  },
+  {
+    "id": "jet-whoosh",
+    "path": "assets/sfx/library/whoosh/jet-whoosh.wav",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "heavy",
+      "jet",
+      "cinematic"
+    ],
+    "originalName": "Jet Woosh.wav",
+    "sizeBytes": 1417094,
+    "sizeKb": 1383.88
+  },
+  {
+    "id": "whoosh-wind",
+    "path": "assets/sfx/library/whoosh/whoosh-wind.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "wind",
+      "ambient"
+    ],
+    "originalName": "Whoosh wind.mp3",
+    "sizeBytes": 1932685,
+    "sizeKb": 1887.39
+  },
+  {
+    "id": "whoosh-quick-a",
+    "path": "assets/sfx/library/whoosh/whoosh-quick-a.wav",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "quick",
+      "snap"
+    ],
+    "originalName": "15 Quick A.wav",
+    "sizeBytes": 1443010,
+    "sizeKb": 1409.19
+  },
+  {
+    "id": "whoosh-quick-b",
+    "path": "assets/sfx/library/whoosh/whoosh-quick-b.wav",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "quick",
+      "b"
+    ],
+    "originalName": "15 Quick B.wav.wav",
+    "sizeBytes": 649104,
+    "sizeKb": 633.89
+  },
+  {
+    "id": "click-mouse",
+    "path": "assets/sfx/library/ui/click-mouse.mp3",
+    "category": "ui",
+    "tags": [
+      "click",
+      "mouse",
+      "subtle",
+      "ui"
+    ],
+    "originalName": "mouse click.mp3",
+    "sizeBytes": 16213,
+    "sizeKb": 15.83
+  },
+  {
+    "id": "click-hd",
+    "path": "assets/sfx/library/ui/click-hd.mp3",
+    "category": "ui",
+    "tags": [
+      "click",
+      "hd",
+      "ui",
+      "tap"
+    ],
+    "originalName": "Click - Sound Effect (HD).mp3",
+    "sizeBytes": 152734,
+    "sizeKb": 149.15
+  },
+  {
+    "id": "notification-iphone",
+    "path": "assets/sfx/library/ui/notification-iphone.mp3",
+    "category": "ui",
+    "tags": [
+      "notification",
+      "iphone",
+      "pop",
+      "alert"
+    ],
+    "originalName": "IPhone Notification Sound Spam.mp3",
+    "sizeBytes": 511092,
+    "sizeKb": 499.11
+  },
+  {
+    "id": "keyboard-typing",
+    "path": "assets/sfx/library/ui/keyboard-typing.mp3",
+    "category": "ui",
+    "tags": [
+      "keyboard",
+      "typing",
+      "keys"
+    ],
+    "originalName": "keyboard 1.mp3",
+    "sizeBytes": 351405,
+    "sizeKb": 343.17
+  },
+  {
+    "id": "ui-beep",
+    "path": "assets/sfx/library/ui/ui-beep.mp3",
+    "category": "ui",
+    "tags": [
+      "beep",
+      "digital",
+      "tone"
+    ],
+    "originalName": "Beep.mp3",
+    "sizeBytes": 820223,
+    "sizeKb": 801
+  },
+  {
+    "id": "impact-punch",
+    "path": "assets/sfx/library/impact/impact-punch.mp3",
+    "category": "impact",
+    "tags": [
+      "punch",
+      "impact",
+      "hit",
+      "slam"
+    ],
+    "originalName": "punch-Impacful.mp3",
+    "sizeBytes": 24064,
+    "sizeKb": 23.5
+  },
+  {
+    "id": "riser-cinematic",
+    "path": "assets/sfx/library/impact/riser-cinematic.mp3",
+    "category": "impact",
+    "tags": [
+      "riser",
+      "tension",
+      "buildup"
+    ],
+    "originalName": "Riser SFX.mp3",
+    "sizeBytes": 162168,
+    "sizeKb": 158.37
+  },
+  {
+    "id": "glitch-accent",
+    "path": "assets/sfx/library/impact/glitch-accent.mp3",
+    "category": "impact",
+    "tags": [
+      "glitch",
+      "digital",
+      "cyber"
+    ],
+    "originalName": "glitch 1.mp3",
+    "sizeBytes": 46530,
+    "sizeKb": 45.44
+  },
+  {
+    "id": "camera-shutter-fast",
+    "path": "assets/sfx/library/camera/camera-shutter-fast.mp3",
+    "category": "camera",
+    "tags": [
+      "camera",
+      "shutter",
+      "snap",
+      "screenshot"
+    ],
+    "originalName": "camera-shutter-6305.mp3",
+    "sizeBytes": 10867,
+    "sizeKb": 10.61
+  },
+  {
+    "id": "camera-shutter-crunch",
+    "path": "assets/sfx/library/camera/camera-shutter-crunch.mp3",
+    "category": "camera",
+    "tags": [
+      "camera",
+      "shutter",
+      "crunch",
+      "photo"
+    ],
+    "originalName": "Camera Shutter 1A - 'Crunch' Click (-15 db) - Submitted by Ivan Khan.mp3",
+    "sizeBytes": 23756,
+    "sizeKb": 23.2
+  },
+  {
+    "id": "camera-flash",
+    "path": "assets/sfx/library/camera/camera-flash.mp3",
+    "category": "camera",
+    "tags": [
+      "camera",
+      "flash",
+      "photo"
+    ],
+    "originalName": "Camera Flash.mp3",
+    "sizeBytes": 2125164,
+    "sizeKb": 2075.36
+  },
+  {
+    "id": "cash-register-kaching",
+    "path": "assets/sfx/library/finance/cash-register-kaching.mp3",
+    "category": "finance",
+    "tags": [
+      "cash",
+      "register",
+      "kaching",
+      "money"
+    ],
+    "originalName": "Cash Register (Kaching) - Sound Effect (HD).mp3",
+    "sizeBytes": 185793,
+    "sizeKb": 181.44
+  },
+  {
+    "id": "coin-drop",
+    "path": "assets/sfx/library/finance/coin-drop.mp3",
+    "category": "finance",
+    "tags": [
+      "coin",
+      "drop",
+      "money"
+    ],
+    "originalName": "Sound of coin.mp3",
+    "sizeBytes": 938376,
+    "sizeKb": 916.38
+  },
+  {
+    "id": "digital-counter",
+    "path": "assets/sfx/library/finance/digital-counter.mp3",
+    "category": "finance",
+    "tags": [
+      "counter",
+      "counting",
+      "numbers",
+      "stats",
+      "ticker"
+    ],
+    "originalName": "Digital counting.mp3",
+    "sizeBytes": 2466117,
+    "sizeKb": 2408.32
+  },
+  {
+    "id": "magic-reveal",
+    "path": "assets/sfx/library/novelty/magic-reveal.mp3",
+    "category": "novelty",
+    "tags": [
+      "magic",
+      "reveal",
+      "sparkle",
+      "chime"
+    ],
+    "originalName": "Magic reveal.mp3",
+    "sizeBytes": 611485,
+    "sizeKb": 597.15
+  },
+  {
+    "id": "wrong-buzzer",
+    "path": "assets/sfx/library/novelty/wrong-buzzer.mp3",
+    "category": "novelty",
+    "tags": [
+      "wrong",
+      "buzzer",
+      "error",
+      "alert"
+    ],
+    "originalName": "wrong answer.mp3",
+    "sizeBytes": 28442,
+    "sizeKb": 27.78
+  },
+  {
+    "id": "paper-rustle",
+    "path": "assets/sfx/library/novelty/paper-rustle.mp3",
+    "category": "novelty",
+    "tags": [
+      "paper",
+      "rustle",
+      "document",
+      "slide"
+    ],
+    "originalName": "Paper_Sound_Effects(128k).mp3",
+    "sizeBytes": 188219,
+    "sizeKb": 183.81
+  },
+  {
+    "id": "gear-sound",
+    "path": "assets/sfx/library/novelty/gear-sound.wav",
+    "category": "novelty",
+    "tags": [
+      "gear",
+      "mechanical",
+      "tech"
+    ],
+    "originalName": "gear sound effect.wav",
+    "sizeBytes": 249624,
+    "sizeKb": 243.77
+  },
+  {
+    "id": "gear-turning",
+    "path": "assets/sfx/library/novelty/gear-turning.wav",
+    "category": "novelty",
+    "tags": [
+      "gear",
+      "turning",
+      "mechanical"
+    ],
+    "originalName": "Gears 1.wav",
+    "sizeBytes": 565556,
+    "sizeKb": 552.3
+  }
+]

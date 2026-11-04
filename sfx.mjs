@@ -1,17 +1,21 @@
-// sfx.mjs - Synthesize UI Sound Effects and Audio Cues directly to 16-bit 48kHz WAV
-// Usage: node sfx.mjs cues.json out/sfx.wav
-// Cues format: [{"t": 0.5, "type": "click"}, {"t": 1.2, "type": "whoosh"}]
+// sfx.mjs - Studio SFX Mixer & Procedural Synthesizer for 16-bit 48kHz WAV
+// Usage: node sfx.mjs [cues.json] [out/sfx.wav] [--library]
 
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-// Procedural synthesizer voices for UI animations
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname);
+
+// Procedural synthesizer voices (Fallback / Zero Dependency)
 export const VOICES = {
   click: [0.05, t => Math.sin(2 * Math.PI * 1800 * t) * Math.exp(-t * 90) * 0.5],
   pop: [0.15, t => Math.sin(2 * Math.PI * (600 + 900 * t) * t) * Math.exp(-t * 30) * 0.4],
   thump: [0.50, t => Math.sin(2 * Math.PI * (90 - 60 * t) * t) * Math.exp(-t * 9) * 0.9],
   whoosh: [0.35, t => {
-    // Deterministic linear congruential generator for noise burst
     let s = Math.floor(t * 48000) * 1664525 + 1013904223;
     const n = ((s >>> 0) / 4294967296) * 2 - 1;
     return n * Math.sin(Math.PI * Math.min(1, t / 0.35)) * 0.25;
@@ -19,30 +23,120 @@ export const VOICES = {
   ding: [0.60, t => Math.sin(2 * Math.PI * 880 * t) * Math.exp(-t * 5) * 0.4 + Math.sin(2 * Math.PI * 1760 * t) * Math.exp(-t * 8) * 0.2]
 };
 
+// Authentic Audio Samples Mapping from assets/sfx/library/
+export const LIBRARY_MAP = {
+  whoosh: 'assets/sfx/library/whoosh/swoosh-fast.mp3',
+  swoosh: 'assets/sfx/library/whoosh/swoosh-fast.mp3',
+  'whoosh-short': 'assets/sfx/library/whoosh/whoosh-short.mp3',
+  swish: 'assets/sfx/library/whoosh/swish-whoosh.mp3',
+  'jet-whoosh': 'assets/sfx/library/whoosh/jet-whoosh.wav',
+  click: 'assets/sfx/library/ui/click-hd.mp3',
+  'click-mouse': 'assets/sfx/library/ui/click-mouse.mp3',
+  pop: 'assets/sfx/library/ui/notification-iphone.mp3',
+  notification: 'assets/sfx/library/ui/notification-iphone.mp3',
+  keyboard: 'assets/sfx/library/ui/keyboard-typing.mp3',
+  beep: 'assets/sfx/library/ui/ui-beep.mp3',
+  punch: 'assets/sfx/library/impact/impact-punch.mp3',
+  impact: 'assets/sfx/library/impact/impact-punch.mp3',
+  thump: 'assets/sfx/library/impact/impact-punch.mp3',
+  riser: 'assets/sfx/library/impact/riser-cinematic.mp3',
+  glitch: 'assets/sfx/library/impact/glitch-accent.mp3',
+  camera: 'assets/sfx/library/camera/camera-shutter-crunch.mp3',
+  shutter: 'assets/sfx/library/camera/camera-shutter-crunch.mp3',
+  flash: 'assets/sfx/library/camera/camera-flash.mp3',
+  cash: 'assets/sfx/library/finance/cash-register-kaching.mp3',
+  kaching: 'assets/sfx/library/finance/cash-register-kaching.mp3',
+  coin: 'assets/sfx/library/finance/coin-drop.mp3',
+  counter: 'assets/sfx/library/finance/digital-counter.mp3',
+  counting: 'assets/sfx/library/finance/digital-counter.mp3',
+  magic: 'assets/sfx/library/novelty/magic-reveal.mp3',
+  wrong: 'assets/sfx/library/novelty/wrong-buzzer.mp3',
+  buzzer: 'assets/sfx/library/novelty/wrong-buzzer.mp3',
+  paper: 'assets/sfx/library/novelty/paper-rustle.mp3',
+  gear: 'assets/sfx/library/novelty/gear-turning.wav'
+};
+
 /**
- * Synthesize cues array into a WAV buffer / file
- * 
- * @param {Object} options
- * @param {Array<{t: number, type: string}>} options.cues - List of audio cues
- * @param {string} [options.outputFile] - Optional output file path
- * @param {number} [options.sampleRate=48000] - Audio sample rate (Hz)
- * @returns {Buffer} WAV audio buffer
+ * Mix authentic SFX sample audio files using FFmpeg
+ */
+export function mixLibrarySfx({ cues = [], outputFile = 'out/sfx.wav', volume = 0.85 }) {
+  if (!Array.isArray(cues) || cues.length === 0) {
+    return synthesizeSfx({ cues, outputFile });
+  }
+
+  // Filter valid cues that have audio files
+  const validCues = [];
+  for (const c of cues) {
+    const cueType = (c.type || c.voice || 'click').toLowerCase();
+    const relPath = LIBRARY_MAP[cueType] || LIBRARY_MAP.click;
+    const fullPath = path.resolve(ROOT_DIR, relPath);
+    if (existsSync(fullPath)) {
+      validCues.push({
+        time: typeof c.t === 'number' ? c.t : (typeof c.time === 'number' ? c.time : 0),
+        file: fullPath,
+        volume: c.volume || volume
+      });
+    }
+  }
+
+  if (validCues.length === 0) {
+    return synthesizeSfx({ cues, outputFile });
+  }
+
+  const inputs = [];
+  const filterParts = [];
+  validCues.forEach((cue, idx) => {
+    inputs.push('-i', cue.file);
+    const delayMs = Math.max(0, Math.round(cue.time * 1000));
+    filterParts.push(`[${idx}:a]adelay=${delayMs}|${delayMs},volume=${cue.volume}[a${idx}]`);
+  });
+
+  const mixInputs = validCues.map((_, idx) => `[a${idx}]`).join('');
+  const filterComplex = `${filterParts.join(';')};${mixInputs}amix=inputs=${validCues.length}:normalize=0[outa]`;
+
+  mkdirSync(path.dirname(outputFile), { recursive: true });
+
+  const args = [
+    '-y',
+    ...inputs,
+    '-filter_complex', filterComplex,
+    '-map', '[outa]',
+    '-c:a', 'pcm_s16le',
+    '-ar', '48000',
+    outputFile
+  ];
+
+  try {
+    const res = spawnSync('ffmpeg', args, { stdio: 'pipe' });
+    if (res.status === 0 && existsSync(outputFile)) {
+      console.log(`[SFX Studio] Mixed ${validCues.length} creator SFX cues -> ${outputFile}`);
+      return readFileSync(outputFile);
+    }
+  } catch (err) {
+    console.warn(`[SFX Studio] FFmpeg sample mix error: ${err.message}, falling back to synth.`);
+  }
+
+  return synthesizeSfx({ cues, outputFile });
+}
+
+/**
+ * Synthesize cues array into a procedural WAV buffer
  */
 export function synthesizeSfx({ cues = [], outputFile = null, sampleRate = 48000 }) {
   const SR = sampleRate;
-  const maxT = cues.length > 0 ? Math.max(...cues.map(c => c.t || 0)) : 1;
+  const maxT = cues.length > 0 ? Math.max(...cues.map(c => c.t || c.time || 0)) : 1;
   const buf = new Float32Array(Math.ceil((maxT + 2) * SR));
 
   for (const c of cues) {
-    const voice = VOICES[c.type] || VOICES.click;
+    const voiceKey = c.type || c.voice || 'click';
+    const voice = VOICES[voiceKey] || VOICES.click;
     const [len, fn] = voice;
-    const start = Math.floor((c.t || 0) * SR);
+    const start = Math.floor((c.t || c.time || 0) * SR);
     for (let i = 0; i < len * SR && start + i < buf.length; i++) {
       buf[start + i] += fn(i / SR);
     }
   }
 
-  // Write 16-bit Mono WAV format
   const n = buf.length;
   const b = Buffer.alloc(44 + n * 2);
   b.write('RIFF', 0);
@@ -50,11 +144,11 @@ export function synthesizeSfx({ cues = [], outputFile = null, sampleRate = 48000
   b.write('WAVEfmt ', 8);
   b.writeUInt32LE(16, 16);
   b.writeUInt16LE(1, 20); // PCM
-  b.writeUInt16LE(1, 22); // 1 channel (mono)
-  b.writeUInt32LE(SR, 24); // sample rate
-  b.writeUInt32LE(SR * 2, 28); // byte rate
-  b.writeUInt16LE(2, 32); // block align
-  b.writeUInt16LE(16, 34); // bits per sample
+  b.writeUInt16LE(1, 22); // mono
+  b.writeUInt32LE(SR, 24);
+  b.writeUInt32LE(SR * 2, 28);
+  b.writeUInt16LE(2, 32);
+  b.writeUInt16LE(16, 34);
   b.write('data', 36);
   b.writeUInt32LE(n * 2, 40);
 
@@ -66,7 +160,7 @@ export function synthesizeSfx({ cues = [], outputFile = null, sampleRate = 48000
   if (outputFile) {
     mkdirSync(path.dirname(outputFile), { recursive: true });
     writeFileSync(outputFile, b);
-    console.log(`[SFX] Synthesized ${cues.length} cues -> ${outputFile}`);
+    console.log(`[SFX Synth] Synthesized ${cues.length} cues -> ${outputFile}`);
   }
 
   return b;
@@ -76,12 +170,15 @@ export function synthesizeSfx({ cues = [], outputFile = null, sampleRate = 48000
 if (process.argv[1] && process.argv[1].endsWith('sfx.mjs')) {
   if (process.argv.includes('--help') || process.argv.includes('-h')) {
     console.log(`
-Antigravity Motion Graphics - SFX Synthesizer
+Antigravity Motion Graphics - SFX Engine & Synthesizer
 
 Usage:
-  node sfx.mjs [cues.json] [out/sfx.wav]
+  node sfx.mjs [cues.json] [out/sfx.wav] [--library]
 
-Available Voice Effects:
+Authentic Creator SFX:
+  ${Object.keys(LIBRARY_MAP).join(', ')}
+
+Procedural Voices:
   ${Object.keys(VOICES).join(', ')}
 `);
     process.exit(0);
@@ -94,14 +191,17 @@ Available Voice Effects:
   try {
     cues = JSON.parse(readFileSync(inputFile, 'utf8'));
   } catch {
-    console.warn(`[SFX] Could not read cues file "${inputFile}", using fallback UI test cues.`);
     cues = [
-      { t: 0.1, type: "whoosh" },
-      { t: 0.5, type: "click" },
-      { t: 1.0, type: "pop" },
-      { t: 1.5, type: "thump" }
+      { t: 0.1, type: 'whoosh' },
+      { t: 0.5, type: 'click' },
+      { t: 1.0, type: 'pop' },
+      { t: 1.5, type: 'cash' }
     ];
   }
 
-  synthesizeSfx({ cues, outputFile });
+  if (existsSync('assets/sfx/library')) {
+    mixLibrarySfx({ cues, outputFile });
+  } else {
+    synthesizeSfx({ cues, outputFile });
+  }
 }

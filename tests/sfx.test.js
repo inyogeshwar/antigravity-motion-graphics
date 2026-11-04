@@ -1,15 +1,35 @@
 // tests/sfx.test.js - Unit tests for procedural SFX synthesis
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { synthesizeSfx, VOICES } from '../sfx.mjs';
+import { synthesizeSfx, mixLibrarySfx, VOICES, LIBRARY_MAP } from '../sfx.mjs';
 
-describe('SFX Procedural Synthesizer - sfx.mjs', () => {
+describe('SFX Procedural Synthesizer & Library - sfx.mjs', () => {
   test('exposes standard UI audio voice algorithms', () => {
     assert.ok(VOICES.click, 'Missing click voice');
     assert.ok(VOICES.pop, 'Missing pop voice');
     assert.ok(VOICES.thump, 'Missing thump voice');
     assert.ok(VOICES.whoosh, 'Missing whoosh voice');
     assert.ok(VOICES.ding, 'Missing ding voice');
+  });
+
+  test('exposes authentic creator sound effect library map', () => {
+    assert.ok(LIBRARY_MAP.whoosh, 'Missing whoosh sample');
+    assert.ok(LIBRARY_MAP.click, 'Missing click sample');
+    assert.ok(LIBRARY_MAP.pop, 'Missing pop sample');
+    assert.ok(LIBRARY_MAP.kaching, 'Missing kaching sample');
+    assert.ok(LIBRARY_MAP.riser, 'Missing riser sample');
+    assert.ok(LIBRARY_MAP.shutter, 'Missing shutter sample');
+  });
+
+  test('mixLibrarySfx handles sample mixing gracefully', () => {
+    const cues = [
+      { t: 0.1, type: 'whoosh' },
+      { t: 0.5, type: 'click' },
+      { t: 0.8, type: 'pop' }
+    ];
+    const buf = mixLibrarySfx({ cues });
+    assert.ok(Buffer.isBuffer(buf), 'Output must be a Buffer');
+    assert.ok(buf.length > 44, 'Buffer must contain audio data');
   });
 
   test('synthesizes valid 16-bit 48kHz WAV buffer', () => {
