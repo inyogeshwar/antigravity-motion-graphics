@@ -1,13 +1,15 @@
 {
   "name": "antigravity-motion-graphics",
-  "version": "1.0.1",
-  "description": "Deterministic Programmatic Motion Design Studio in Google Antigravity",
+  "version": "1.1.0",
+  "description": "MotionOS: Deterministic Motion Design & Vibe Editing OS in Google Antigravity",
   "main": "lib/motion.js",
   "type": "module",
   "bin": {
+    "motionos": "bin/cli.js",
+    "motion-os": "bin/cli.js",
+    "antigravity-motion": "bin/cli.js",
     "antigravity-motion-graphics": "bin/create.js",
-    "create-antigravity-motion": "bin/create.js",
-    "antigravity-motion": "bin/cli.js"
+    "create-antigravity-motion": "bin/create.js"
   },
   "files": [
     "bin",
@@ -36,6 +38,8 @@
     "cartesia": "node cartesia.mjs",
     "heygen": "node heygen.mjs",
     "beats": "python beats.py",
+    "veos": "node bin/veos.js",
+    "setup-models": "node scripts/setup_models.mjs",
     "remotion:studio": "remotion studio",
     "remotion:render": "remotion render"
   },

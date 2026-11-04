@@ -1,0 +1,28 @@
+{
+  "id": "tool-countdown",
+  "order": 22,
+  "name": "Tool Countdown",
+  "tagline": "AI-news countdown: big white serif-italic punchlines on your chest, a lime #NN tag per item, the thing on top and you in your own box below, a film-burn flash between items.",
+  "inspired_by_display": [
+    "Vaibhav"
+  ],
+  "niches": [
+    "AI & tech",
+    "News & current affairs"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The big serif-italic line over a graphic behind you",
+      "The lime #10 tag",
+      "Welcome to the episode"
+    ]
+  }
+}

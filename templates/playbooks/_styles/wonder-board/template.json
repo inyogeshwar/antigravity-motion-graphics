@@ -1,0 +1,28 @@
+{
+  "id": "wonder-board",
+  "order": 11,
+  "name": "Wonder Board",
+  "tagline": "Curious science explainer: a fast run of full-frame pictures, a comparison board that comes back as the idea deepens, lime labels and pointers, small bold captions, you in short punches at the open and the end.",
+  "inspired_by_display": [
+    "Cleo Abram"
+  ],
+  "niches": [
+    "Science & curiosity",
+    "AI & tech"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The comparison board with lime labels",
+      "The same board, X-ray pass",
+      "The real thing, pointed at"
+    ]
+  }
+}

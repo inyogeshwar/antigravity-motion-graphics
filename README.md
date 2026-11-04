@@ -1,8 +1,8 @@
 <div align="center">
 
-# Antigravity Motion Studio
+# MotionOS (Antigravity Edition)
 
-**High-Performance Programmatic Motion Design & Deterministic Video Engine**
+**The Autonomous Operating System for Motion Design & Vibe Editing**
 
 [![npm version](https://img.shields.io/npm/v/antigravity-motion-graphics.svg)](https://www.npmjs.com/package/antigravity-motion-graphics)
 [![CI](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml/badge.svg)](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml)
@@ -11,14 +11,13 @@
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-brightgreen.svg)](package.json)
 [![Python Version](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](beats.py)
 
-*Turn code into cinematic, broadcast-grade motion graphics, UI showreels, and talking-head visual effects with zero non-determinism.*
+*Turn raw footage into viral creator videos and write code for cinematic, broadcast-grade motion graphics with zero non-determinism.*
 
+[Vibe Editing OS (VEOS)](#vibe-editing-os-veos-workflow) •
 [Key Features](#key-features) •
-[Architecture](#architecture) •
 [Quickstart](#quickstart) •
-[The Render Contract](#the-render-contract) •
-[Documentation](#documentation) •
-[Contributing](#contributing)
+[Documentation Guide](docs/MOTIONOS_GUIDE.md) •
+[The Render Contract](#the-render-contract)
 
 </div>
 
@@ -26,11 +25,41 @@
 
 ## Overview
 
-**Antigravity Motion Studio** is an open-source, code-driven video synthesis studio designed for engineers and motion designers. It bridges the gap between web technologies (HTML5, Canvas, WebGL, React, GSAP) and broadcast video production by enforcing a strict mathematical **Render Contract**:
+**MotionOS** is an open-source, code-driven video synthesis and editing operating system. It unifies two world-class paradigms:
+1. **The Vibe Editing OS (VEOS):** Automated talking-head video editing that transcribes raw footage, cuts pauses, applies 51 computer-vision effects behind the speaker's head, and generates storyboard previews for creator approval.
+2. **The 0xMovez Deterministic Motion Engine:** High-performance mathematical motion graphics where every frame is a pure function of time:
 
-$$\text{Frame State} = f(t)$$
+$$\text{Frame State} = \text{window.seek}(t)$$
 
-Every animation is a pure, closed-form function of time $t$. By replacing wall-clock transitions and non-deterministic event loops with analytical harmonic spring equations and seeded pseudo-randomness, renders are **bit-identical**, parallelizable, and capable of rendering frame 1,000 in $O(1)$ constant time without simulating prior frames.
+---
+
+## Vibe Editing OS (VEOS) Workflow
+
+MotionOS provides a 4-step automated pipeline inspired by the VEOS workflow:
+
+```mermaid
+flowchart LR
+    A["Raw Footage<br>(MP4)"] -->|"veos prep"| B["Words & Silences<br>(faster-whisper)"]
+    B -->|"veos plan"| C["AI Storyboard<br>(51 CV Effects + SFX)"]
+    C -->|"veos preview"| D["Approval Gate<br>(Stills Contact Sheet)"]
+    D -->|"veos render"| E["Broadcast 4K Video<br>(Face-Matting + SFX)"]
+```
+
+```bash
+# 1. Prep speech & detect silences
+npx motionos veos prep "raw.mp4"
+
+# 2. Plan storyboard with style preset (tech-bento, bold-creator, minimal, neon-glow)
+npx motionos veos plan "raw.mp4" --style tech-bento
+
+# 3. Fast preview gate (review still frames before rendering)
+npx motionos veos preview "raw.mp4"
+
+# 4. Render broadcast video with face matting & SFX
+npx motionos veos render "raw.mp4" --out "out/final.mp4"
+```
+
+Read the full [MotionOS Guide & Production Manual](docs/MOTIONOS_GUIDE.md).
 
 ---
 
@@ -124,13 +153,19 @@ antigravity-motion-graphics/
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── copilot-instructions.md # Coding agent standards and Render Contract rules
 ├── docs/                      # Architectural and engine documentation
+│   ├── MOTIONOS_GUIDE.md      # Official MotionOS & VEOS workflow manual
 │   ├── architecture.md        # Complete multi-engine studio design
 │   ├── motion-studio-course.md # The 0xMovez Autonomous Motion Studio Masterclass
 │   ├── render-contract.md     # Pure time mathematics & anti-slop rules
 │   ├── voice-engines.md       # Cartesia & HeyGen TTS integration guide
 │   └── effects-pipeline.md    # Face tracking and 51 video effects guide
 ├── lib/
-│   └── motion.js              # Closed-form springs, PRNG, and tracker physics
+│   ├── motion.js              # Closed-form springs, PRNG, and tracker physics
+│   └── veos.js                # MotionOS Vibe Editing OS engine & style presets
+├── bin/
+│   ├── cli.js                 # Unified 'motionos' CLI entry point
+│   ├── veos.js                # VEOS sub-command runner (prep, plan, preview, render)
+│   └── create.js              # Interactive & non-interactive project scaffolder
 ├── tests/                     # Test suites (Node.js test runner & Python unittest)
 │   ├── motion.test.js         # Spring dynamics & PRNG tests
 │   ├── sfx.test.js            # Audio synthesis & WAV header tests

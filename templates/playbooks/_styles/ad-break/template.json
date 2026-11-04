@@ -1,0 +1,27 @@
+{
+  "id": "ad-break",
+  "order": 18,
+  "name": "Ad Break",
+  "tagline": "Playful handmade-ad energy: the real thing in hand from frame 0, a 'we interrupt this video' static break into your own mini commercial with blinking benefit words, deadpan silent punch-ins, an iris-out to a silent end card.",
+  "inspired_by_display": [
+    "Emma Chamberlain"
+  ],
+  "niches": [
+    "Lifestyle, brands & fun"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The show on a TV inside the set",
+      "Static: the ad break begins",
+      "The deadpan reaction beat"
+    ]
+  }
+}

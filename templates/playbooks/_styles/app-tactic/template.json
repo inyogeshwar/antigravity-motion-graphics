@@ -1,0 +1,28 @@
+{
+  "id": "app-tactic",
+  "order": 12,
+  "name": "App Tactic",
+  "tagline": "Fast, neon-lit growth explainer: you full frame with bold colour-coded captions, then the real app on screen with a glowing tap cursor; you come back as a grid tile, a circle or a cut-out.",
+  "inspired_by_display": [
+    "Devin Jatho"
+  ],
+  "niches": [
+    "Business & marketing",
+    "Creators & editing"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The hook, title on from frame 0",
+      "You shrink into your own profile grid",
+      "Full frame, colour-coded captions on the chest"
+    ]
+  }
+}

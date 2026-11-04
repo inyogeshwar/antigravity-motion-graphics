@@ -1,0 +1,28 @@
+{
+  "id": "hot-seat",
+  "order": 7,
+  "name": "Hot Seat",
+  "tagline": "Straight-talk advice edits: a red question title on the first frame, captions coloured by whose voice it is, a hard-seam split to keep the reaction in view, a live board, hard cuts, raw room sound.",
+  "inspired_by_display": [
+    "Alex Hormozi"
+  ],
+  "niches": [
+    "Business & marketing",
+    "Career & self-growth"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The question in a red title box on the first frame",
+      "Two faces stacked at a hard seam, the caption on the seam",
+      "Bold digits and colour by voice in the captions"
+    ]
+  }
+}

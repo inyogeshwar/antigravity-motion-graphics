@@ -1,0 +1,27 @@
+{
+  "id": "newsroom-explainer",
+  "order": 6,
+  "name": "Newsroom Explainer",
+  "tagline": "Hard-hitting news explainers: you on a backdrop themed to the story, every claim backed by a receipt in a divided split or behind you as a framed card, numbers that count, burn-flash cuts.",
+  "inspired_by_display": [
+    "Dhruv Rathee"
+  ],
+  "niches": [
+    "News & current affairs"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "You full frame on a backdrop themed to the story",
+      "The receipt on top, you in your own box below",
+      "A data card with prices counting, your face framed beside it"
+    ]
+  }
+}

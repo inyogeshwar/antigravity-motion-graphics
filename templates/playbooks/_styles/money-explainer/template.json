@@ -1,0 +1,28 @@
+{
+  "id": "money-explainer",
+  "order": 1,
+  "name": "Money Explainer",
+  "tagline": "Calm, numbers-first explainers where the screen does the maths: you open full screen, shrink into a card as a ledger, a data race or a case file builds, and come back for every opinion. Quiet, tactile sound.",
+  "inspired_by_display": [
+    "Ankur Warikoo"
+  ],
+  "niches": [
+    "Money & finance",
+    "Career & self-growth"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Option cards above the speaker, the trap primed",
+      "The loan race: odometers roll on every spoken year",
+      "Mechanism blocks explain why the cheaper rate costs more"
+    ]
+  },
+  "status": "released"
+}

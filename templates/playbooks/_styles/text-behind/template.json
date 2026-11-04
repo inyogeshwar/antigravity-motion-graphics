@@ -1,0 +1,28 @@
+{
+  "id": "text-behind",
+  "order": 14,
+  "name": "Text Behind",
+  "tagline": "Punchy career explainer with zero dead air: huge words and numbers behind your head, a split for tables and proof, full-screen scenes for each step, one bold word at a time on your chest.",
+  "inspired_by_display": [
+    "Tharun Speaks"
+  ],
+  "niches": [
+    "Career & self-growth",
+    "Money & finance"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Big grunge words behind your head",
+      "Split: the proof on top, you below",
+      "A count behind you, the key word big"
+    ]
+  }
+}

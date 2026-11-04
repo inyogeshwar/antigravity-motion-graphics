@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "profile": {
+  "language": {
+   "speech": "hinglish"
+  },
+  "numbers": {
+   "currency": "INR"
+  }
+ },
+ "captions": {
+  "choice": "romanised"
+ },
+ "template": "naman-infotainment-motion"
+}

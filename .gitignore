@@ -38,6 +38,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Large AI Models (> 100MB exceeds GitHub push limit)
+models/whisper/model.bin
+models/**/*.bin
+*.bin
+models/whisper/.cache/
+
+
 # Playwright & Testing Artifacts
 test-results/
 playwright-report/

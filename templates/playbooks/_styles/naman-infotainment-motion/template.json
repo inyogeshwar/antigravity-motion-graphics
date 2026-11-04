@@ -1,0 +1,25 @@
+{
+  "id": "naman-infotainment-motion",
+  "order": 0,
+  "tagline": "Hype, result-first reels: a tilted yellow headline slab, your bad-vs-premium result in the first second, numbers that turn into moving crowds and machines, and roasts with stamps, stickers and meme sounds.",
+  "inspired_by_display": [],
+  "niches": [
+    "AI & tech"
+  ],
+  "needs": null,
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Result-First Roast hook: yellow slab, bad site marked up in red, AI SLOP stamp, presenter cut out in front",
+      "Data Theatre: 5 users become 5,000 dots on the night stage, the gauge hits red, the phone cracks",
+      "Pop-back CTA: the keyword on a yellow key-cap flies into a DM, community chip on top"
+    ]
+  },
+  "name": "Naman Infotainment Motion",
+  "status": "released"
+}

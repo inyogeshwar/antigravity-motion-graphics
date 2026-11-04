@@ -1,0 +1,28 @@
+{
+  "id": "press-desk",
+  "order": 9,
+  "name": "Press Desk",
+  "tagline": "Investigative explainers on a royal-blue desk: real headlines that type on with the key words lit as you say them, maps, comparison decks, monospace captions; you full frame between the receipts.",
+  "inspired_by_display": [
+    "Johnny Harris"
+  ],
+  "niches": [
+    "News & current affairs",
+    "Science & curiosity"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The hook on real press images",
+      "A real headline types on, the key words lit as they are said",
+      "A map card on the blue desk"
+    ]
+  }
+}

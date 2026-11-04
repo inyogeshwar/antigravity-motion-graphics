@@ -1,0 +1,27 @@
+{
+  "id": "field-lab",
+  "order": 10,
+  "name": "Field Lab",
+  "tagline": "Calm science documentary: you full frame, then the idea full screen as a drawn picture on deep navy, real places and objects, serif captions. No sound effects, just a quiet bed.",
+  "inspired_by_display": [
+    "Veritasium"
+  ],
+  "niches": [
+    "Science & curiosity"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "You full frame, serif captions",
+      "The idea as a drawn picture on navy",
+      "The real place, named"
+    ]
+  }
+}

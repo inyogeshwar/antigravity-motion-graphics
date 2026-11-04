@@ -1,0 +1,72 @@
+{
+  "effects": [
+    {
+      "fx": "backdrop-word",
+      "start": 0.2,
+      "end": 2.4,
+      "text": "WORKFLOW",
+      "color": "#F59E0B",
+      "font": "bold"
+    },
+    {
+      "fx": "reject-stamp",
+      "start": 2.5,
+      "end": 4.1,
+      "text": "JOB GONE",
+      "color": "#EF4444",
+      "angle": -12,
+      "y": 0.4
+    },
+    {
+      "fx": "liquid-glass-graph",
+      "start": 4.5,
+      "end": 7.5,
+      "text": "REELS EDITED",
+      "from": "0",
+      "to": "30 REELS",
+      "color": "#10B981"
+    },
+    {
+      "fx": "apple-toggles",
+      "start": 13.8,
+      "end": 17.5,
+      "text": "Primary Color|Accent Color|Canvas Dark",
+      "ticks": "14.5|15.8|16.8",
+      "color": "#F59E0B"
+    },
+    {
+      "fx": "checklist",
+      "start": 19.8,
+      "end": 23.5,
+      "title": "FONT SYSTEM",
+      "text": "Display: Anton|Body: Poppins|Captions: Bold"
+    },
+    {
+      "fx": "timeline",
+      "start": 27.5,
+      "end": 31.0,
+      "text": "MOTION GRAPHICS",
+      "sub": "DAMPED SPRINGS (k=170, d=26)",
+      "tc": "00:00:28:15"
+    },
+    {
+      "fx": "slow-push",
+      "start": 36.5,
+      "end": 39.5,
+      "zoom": 1.35
+    },
+    {
+      "fx": "comment-box",
+      "start": 42.6,
+      "end": 45.4,
+      "text": "LOCK"
+    },
+    {
+      "fx": "tap",
+      "start": 46.5,
+      "end": 48.8,
+      "at": 47.5,
+      "color": "#F59E0B"
+    }
+  ]
+}

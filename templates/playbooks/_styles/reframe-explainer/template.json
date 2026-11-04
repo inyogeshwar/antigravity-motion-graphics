@@ -1,0 +1,28 @@
+{
+  "id": "reframe-explainer",
+  "order": 5,
+  "name": "Reframe Explainer",
+  "tagline": "Clean, bright productivity explainers: you stay full frame and the picture moves to make room above your head for each app, idea or receipt; grey-to-black karaoke captions.",
+  "inspired_by_display": [
+    "Ali Abdaal"
+  ],
+  "niches": [
+    "Career & self-growth",
+    "AI & tech"
+  ],
+  "needs": null,
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Listicle opener: app icons and the title above your head",
+      "The app's own screen in a glowing card, you pushed down below it",
+      "A concept scene: goals as progress bars"
+    ]
+  }
+}

@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-11-03
+
+### Added
+- **MotionOS Rebranding & Autonomous Vibe Editing OS (VEOS):**
+  - Officially rebranded and upgraded the framework to **MotionOS (Antigravity Edition)**.
+  - Added native `motionos` and `motion-os` CLI bin targets in `package.json`.
+- **Vibe Editing OS (VEOS) Pipeline Engine (`lib/veos.js`):**
+  - `analyzeTranscript()`: automatic speech-to-text word metrics, WPM, and silence gap detection for jump cuts.
+  - `generateVibePlan()`: intelligent storyboard generation scheduling 51 computer-vision effects (backdrop words, liquid glass graphs, checklists, apple toggles) and procedural audio cues.
+  - 4 Curated Creator Style Presets: `tech-bento` (sky blue glass), `bold-creator` (high contrast amber), `minimal` (editorial terracotta), and `neon-glow` (emerald cinematic).
+- **VEOS CLI Suite (`bin/veos.js` & `bin/cli.js`):**
+  - `npx motionos veos prep <video.mp4>`
+  - `npx motionos veos plan <video.mp4> --style <style>`
+  - `npx motionos veos preview <video.mp4>` (rapid keyframe still extraction for approval before render)
+  - `npx motionos veos render <video.mp4>` (broadcast 1080p/4K MP4 with face matting and audio sync)
+  - `npx motionos veos review <video.mp4>` (6x5 contact sheet and mobile phone inspection)
+  - `npx motionos veos styles` (lists all available creator style presets)
+- **Comprehensive MotionOS Production Manual (`docs/MOTIONOS_GUIDE.md`):**
+  - Full end-to-end documentation replicating and elevating the VEOS guide for Antigravity.
+- **Unit Test Coverage (`tests/veos.test.js`):**
+  - Added 8 unit tests for transcript analysis, silence detection, hook creation, and keyword-to-effect mapping (bringing total tests to 35 passing).
+
 ## [1.0.1] - 2026-11-03
 
 ### Added
