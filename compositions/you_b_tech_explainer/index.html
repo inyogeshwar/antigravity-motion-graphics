@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You B Tech - Hermes Agent Masterclass (16:9 Remotion Style)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #F8F9FD;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: #111827;
+      position: relative;
+    }
+
+    /* Ambient Glowing Nebula Blobs */
+    .nebula {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(130px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .nebula-1 {
+      top: -120px;
+      right: 180px;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, rgba(139, 92, 246, 0.05) 70%, transparent 100%);
+    }
+
+    .nebula-2 {
+      bottom: -150px;
+      left: 140px;
+      width: 720px;
+      height: 720px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(99, 102, 241, 0.04) 70%, transparent 100%);
+    }
+
+    .nebula-3 {
+      top: 40%;
+      left: 45%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%);
+    }
+
+    /* Subtle Technical Dot Grid */
+    .grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+      background-size: 36px 36px;
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Top Stage Badge / Header */
+    .top-header {
+      position: absolute;
+      top: 60px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #1E293B;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 12px #10B981;
+    }
+
+    .series-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      color: #64748B;
+      background: #F1F5F9;
+      padding: 8px 18px;
+      border-radius: 12px;
+    }
+
+    /* Master Animation Container */
+    .stage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      z-index: 5;
+    }
+
+    /* SCENE 1: Central Agent Node & Flowchart */
+    .scene-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-node {
+      width: 170px;
+      height: 170px;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 40px;
+      box-shadow: 0 25px 60px rgba(99, 102, 241, 0.18), 0 0 0 8px rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 8;
+    }
+
+    .avatar-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 44px;
+      font-weight: 900;
+      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.35);
+    }
+
+    .agent-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #1E293B;
+      margin-top: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .tool-node {
+      position: absolute;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 28px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+      z-index: 8;
+    }
+
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+
+    .tool-info h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0F172A;
+    }
+
+    .tool-info p {
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748B;
+      margin-top: 2px;
+    }
+
+    /* Node Placements */
+    .node-top-left { top: 220px; left: 320px; }
+    .node-bottom-left { bottom: 220px; left: 320px; }
+    .node-top-right { top: 220px; right: 320px; }
+    .node-bottom-right { bottom: 220px; right: 320px; }
+
+    .icon-blue { background: #EFF6FF; color: #2563EB; }
+    .icon-purple { background: #F5F3FF; color: #7C3AED; }
+    .icon-emerald { background: #ECFDF5; color: #059669; }
+    .icon-amber { background: #FFFBEB; color: #D97706; }
+
+    /* SVG Connecting Curves */
+    .flow-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    /* SCENE 2: Roadmap & Donut Ring */
+    .scene-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 90px;
+      opacity: 0;
+    }
+
+    .roadmap-card {
+      width: 650px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 36px;
+      padding: 40px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-header-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .mac-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .mac-dot { width: 14px; height: 14px; border-radius: 50%; }
+    .dot-r { background: #FF5F56; }
+    .dot-y { background: #FFBD2E; }
+    .dot-g { background: #27C93F; }
+
+    .roadmap-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #334155;
+      margin-left: 12px;
+    }
+
+    .roadmap-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .roadmap-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 18px 24px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1E293B;
+    }
+
+    .roadmap-item.active {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: #1D4ED8;
+    }
+
+    .donut-container {
+      width: 480px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 36px;
+      padding: 45px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .donut-circle-wrap {
+      width: 250px;
+      height: 250px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .donut-text-group {
+      position: absolute;
+      text-align: center;
+    }
+
+    .donut-number {
+      font-size: 64px;
+      font-weight: 900;
+      color: #0F172A;
+      letter-spacing: -1px;
+    }
+
+    .donut-label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #64748B;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* SCENE 3: Comparison Cards (PC vs Cloud) */
+    .scene-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+      opacity: 0;
+    }
+
+    .compare-card {
+      width: 520px;
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 36px;
+      padding: 44px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .compare-card.highlight {
+      border-color: #6366F1;
+      box-shadow: 0 35px 80px rgba(99, 102, 241, 0.16);
+    }
+
+    .compare-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 800;
+      color: #6366F1;
+      background: #EEF2FF;
+      padding: 6px 16px;
+      border-radius: 999px;
+      display: inline-block;
+      align-self: flex-start;
+    }
+
+    .compare-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #0F172A;
+      line-height: 1.2;
+    }
+
+    .compare-features {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .check-circle {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #ECFDF5;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    /* SCENE 4: 3D Laptop Mockup & Subscribe Pill */
+    .scene-4 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      opacity: 0;
+    }
+
+    .laptop-frame {
+      width: 860px;
+      height: 520px;
+      background: #1E293B;
+      border-radius: 28px 28px 8px 8px;
+      padding: 16px 16px 0 16px;
+      box-shadow: 0 40px 100px rgba(15, 23, 42, 0.25);
+      position: relative;
+    }
+
+    .laptop-screen {
+      width: 100%;
+      height: 100%;
+      background: #0F172A;
+      border-radius: 18px 18px 0 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      color: #F8FAFC;
+    }
+
+    .screen-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .screen-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+      flex: 1;
+    }
+
+    .dash-box {
+      background: #1E293B;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .laptop-base {
+      width: 1020px;
+      height: 22px;
+      background: #94A3B8;
+      border-radius: 0 0 24px 24px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .subscribe-card {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 999px;
+      padding: 14px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    }
+
+    .sub-channel {
+      font-size: 22px;
+      font-weight: 900;
+      color: #0F172A;
+    }
+
+    .sub-btn {
+      background: #EF4444;
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 10px 24px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Bottom Subtitles / Caption Bar */
+    .caption-bar {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .caption-pill {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid #E2E8F0;
+      border-radius: 40px;
+      padding: 14px 36px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #0F172A;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    .caption-pill span.highlight {
+      color: #6366F1;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Blurred Glowing Nebulae -->
+  <div class="nebula nebula-1"></div>
+  <div class="nebula nebula-2"></div>
+  <div class="nebula nebula-3"></div>
+
+  <!-- Tech Grid Background -->
+  <div class="grid-bg"></div>
+
+  <!-- Top Header Bar -->
+  <div class="top-header">
+    <div class="brand-pill">
+      <div class="status-dot"></div>
+      <span>HERMES AGENT // ZERO TO PRO</span>
+    </div>
+    <div class="series-tag">EPISODE 01 // PC SETUP</div>
+  </div>
+
+  <!-- Master Stage -->
+  <div class="stage">
+
+    <!-- SCENE 1: Central Agent & Connected Flowchart -->
+    <div class="scene-1" id="scene1">
+      <svg class="flow-svg" viewBox="0 0 1920 1080">
+        <!-- Connecting Bezier Curves -->
+        <path id="curveTL" d="M 960 540 Q 640 450 480 300" stroke="#CBD5E1" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+        <path id="curveBL" d="M 960 540 Q 640 630 480 780" stroke="#CBD5E1" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+        <path id="curveTR" d="M 960 540 Q 1280 450 1440 300" stroke="#CBD5E1" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+        <path id="curveBR" d="M 960 540 Q 1280 630 1440 780" stroke="#CBD5E1" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+
+        <!-- Animated Pulse Circles -->
+        <circle id="pulseTL" cx="720" cy="420" r="8" fill="#6366F1"/>
+        <circle id="pulseTR" cx="1200" cy="420" r="8" fill="#8B5CF6"/>
+      </svg>
+
+      <!-- Center Node -->
+      <div class="center-node" id="centerNode">
+        <div class="avatar-img">🤖</div>
+        <div class="agent-title">Hermes Core</div>
+      </div>
+
+      <!-- Node 1: Web Browser -->
+      <div class="tool-node node-top-left" id="nodeTL">
+        <div class="tool-icon icon-blue">🌐</div>
+        <div class="tool-info">
+          <h4>Browser Engine</h4>
+          <p>Autonomous Web Scraping</p>
+        </div>
+      </div>
+
+      <!-- Node 2: Mobile / App Actions -->
+      <div class="tool-node node-bottom-left" id="nodeBL">
+        <div class="tool-icon icon-emerald">📱</div>
+        <div class="tool-info">
+          <h4>Multi-App Control</h4>
+          <p>Native Desktop & Mobile</p>
+        </div>
+      </div>
+
+      <!-- Node 3: AI Brain -->
+      <div class="tool-node node-top-right" id="nodeTR">
+        <div class="tool-icon icon-purple">🧠</div>
+        <div class="tool-info">
+          <h4>Reasoning Model</h4>
+          <p>DeepSeek & Claude 3.7</p>
+        </div>
+      </div>
+
+      <!-- Node 4: Config / Settings -->
+      <div class="tool-node node-bottom-right" id="nodeBR">
+        <div class="tool-icon icon-amber">⚙️</div>
+        <div class="tool-info">
+          <h4>Tools & APIs</h4>
+          <p>Local Config & MCP</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 2: Roadmap Checklist & Animated Donut Chart -->
+    <div class="scene-2" id="scene2">
+      <!-- Left: Roadmap Checklist -->
+      <div class="roadmap-card" id="roadmapCard">
+        <div class="card-header-bar">
+          <div class="mac-dots">
+            <div class="mac-dot dot-r"></div>
+            <div class="mac-dot dot-y"></div>
+            <div class="mac-dot dot-g"></div>
+          </div>
+          <div class="roadmap-title">Hermes Masterclass Roadmap</div>
+        </div>
+        <div class="roadmap-list">
+          <div class="roadmap-item">
+            <span>01. Local PC Environment Setup</span>
+            <span style="color: #10B981;">✓ Complete</span>
+          </div>
+          <div class="roadmap-item active">
+            <span>02. Multi-Tool Function Calling</span>
+            <span style="color: #2563EB;">● Active</span>
+          </div>
+          <div class="roadmap-item">
+            <span>03. Browser Automation Engine</span>
+            <span style="color: #94A3B8;">Pending</span>
+          </div>
+          <div class="roadmap-item">
+            <span>04. 24/7 Production Deployment</span>
+            <span style="color: #94A3B8;">Pending</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Donut Chart -->
+      <div class="donut-container" id="donutCard">
+        <div class="donut-circle-wrap">
+          <svg width="250" height="250" viewBox="0 0 250 250">
+            <!-- Background Ring -->
+            <circle cx="125" cy="125" r="95" stroke="#E2E8F0" stroke-width="20" fill="none"/>
+            <!-- Animated Progress Ring -->
+            <circle id="donutStroke" cx="125" cy="125" r="95" stroke="#6366F1" stroke-width="20" fill="none"
+                    stroke-dasharray="597" stroke-dashoffset="597" stroke-linecap="round"
+                    transform="rotate(-90 125 125)"/>
+          </svg>
+          <div class="donut-text-group">
+            <div class="donut-number" id="donutValue">0%</div>
+            <div class="donut-label">Mastery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 3: Comparison (PC vs Cloud) -->
+    <div class="scene-3" id="scene3">
+      <!-- Card 1: Local PC -->
+      <div class="compare-card" id="compare1">
+        <div class="compare-tag">METHOD 01</div>
+        <div class="compare-title">Your Local PC</div>
+        <div class="compare-features">
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>100% Free & Open Source</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>Runs on Windows, Mac & Linux</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>Zero API fees using Ollama</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: 24/7 Cloud -->
+      <div class="compare-card highlight" id="compare2">
+        <div class="compare-tag" style="background: #ECFDF5; color: #059669;">METHOD 02</div>
+        <div class="compare-title">24/7 Cloud Server</div>
+        <div class="compare-features">
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>Always Online 24/7 Without Sleep</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>Direct Remote Desktop (RDP)</span>
+          </div>
+          <div class="feature-item">
+            <div class="check-circle">✓</div>
+            <span>Automated Daily Cron Tasks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 4: 3D Laptop SaaS Dashboard Mockup -->
+    <div class="scene-4" id="scene4">
+      <div class="laptop-frame" id="laptopFrame">
+        <div class="laptop-screen">
+          <div class="screen-top">
+            <div style="font-weight: 800; font-size: 16px;">Hermes Agent Hub</div>
+            <div style="color: #10B981; font-weight: 700; font-size: 14px;">● All Tasks Running</div>
+          </div>
+          <div class="screen-grid">
+            <div class="dash-box">
+              <div style="font-size: 14px; color: #94A3B8; font-weight: 700;">Task Execution Success Rate</div>
+              <div style="font-size: 42px; font-weight: 900; color: #6EE7B7; margin-top: 8px;">99.4%</div>
+            </div>
+            <div class="dash-box">
+              <div style="font-size: 14px; color: #94A3B8; font-weight: 700;">Active Tools</div>
+              <div style="font-size: 42px; font-weight: 900; color: #93C5FD; margin-top: 8px;">16 / 16</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="laptop-base"></div>
+
+      <!-- Subscribe Pill -->
+      <div class="subscribe-card" id="subscribeCard">
+        <div style="font-size: 32px;">💡</div>
+        <div class="sub-channel">You B Tech</div>
+        <div class="sub-btn">
+          <span>🔔</span>
+          <span>SUBSCRIBED</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Synced Dynamic Captions Bar -->
+  <div class="caption-bar">
+    <div class="caption-pill" id="captionText">
+      Hermes Agent ka complete setup...
+    </div>
+  </div>
+
+  <script>
+    // Closed-form analytical damped spring
+    function clamp(val, min, max) {
+      return Math.min(Math.max(val, min), max);
+    }
+
+    function spring(t, k = 180, d = 24) {
+      if (t <= 0) return 0;
+      const m = 1.0;
+      const z = d / (2 * Math.sqrt(k * m));
+      const w0 = Math.sqrt(k / m);
+      if (z < 1) {
+        const wd = w0 * Math.sqrt(1 - z * z);
+        return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + (z * w0 / wd) * Math.sin(wd * t));
+      } else {
+        return 1 - (1 + w0 * t) * Math.exp(-w0 * t);
+      }
+    }
+
+    // Captions Data synced with voiceover
+    const captionsData = [
+      { start: 0.0, end: 3.8, text: "Hermes Agent ka complete zero to pro setup", focus: "zero to pro setup" },
+      { start: 3.8, end: 7.2, text: "ab aap apne PC par free me kar sakte hain.", focus: "free me" },
+      { start: 7.2, end: 11.0, text: "Isme aapko multi-tool automation aur browser integration", focus: "browser integration" },
+      { start: 11.0, end: 14.5, text: "ek hi jagah milti hai AI reasoning ke saath.", focus: "AI reasoning" },
+      { start: 14.5, end: 18.0, text: "Chahe aap ise apne local PC par chalayein,", focus: "local PC" },
+      { start: 18.0, end: 21.5, text: "ya 24/7 cloud server par configure karein,", focus: "24/7 cloud server" },
+      { start: 21.5, end: 26.2, text: "setup sirf 5 minute me complete ho jata hai! ✨", focus: "5 minute me complete" }
+    ];
+
+    window.seek = function(t) {
+      const scene1 = document.getElementById('scene1');
+      const scene2 = document.getElementById('scene2');
+      const scene3 = document.getElementById('scene3');
+      const scene4 = document.getElementById('scene4');
+
+      const centerNode = document.getElementById('centerNode');
+      const nodeTL = document.getElementById('nodeTL');
+      const nodeBL = document.getElementById('nodeBL');
+      const nodeTR = document.getElementById('nodeTR');
+      const nodeBR = document.getElementById('nodeBR');
+
+      const pulseTL = document.getElementById('pulseTL');
+      const pulseTR = document.getElementById('pulseTR');
+
+      const roadmapCard = document.getElementById('roadmapCard');
+      const donutCard = document.getElementById('donutCard');
+      const donutStroke = document.getElementById('donutStroke');
+      const donutValue = document.getElementById('donutValue');
+
+      const compare1 = document.getElementById('compare1');
+      const compare2 = document.getElementById('compare2');
+
+      const laptopFrame = document.getElementById('laptopFrame');
+      const subscribeCard = document.getElementById('subscribeCard');
+      const captionText = document.getElementById('captionText');
+
+      // Update Captions
+      let activeCap = captionsData[0];
+      for (let c of captionsData) {
+        if (t >= c.start && t < c.end) {
+          activeCap = c;
+          break;
+        }
+      }
+      if (t >= captionsData[captionsData.length - 1].end) {
+        activeCap = captionsData[captionsData.length - 1];
+      }
+
+      if (activeCap.focus) {
+        const parts = activeCap.text.split(activeCap.focus);
+        if (parts.length > 1) {
+          captionText.innerHTML = `${parts[0]}<span class="highlight">${activeCap.focus}</span>${parts[1]}`;
+        } else {
+          captionText.innerText = activeCap.text;
+        }
+      } else {
+        captionText.innerText = activeCap.text;
+      }
+
+      // SCENE 1 (0.0s - 7.2s): Central Node & Connected Flowchart
+      if (t < 7.2) {
+        scene1.style.opacity = 1;
+        scene2.style.opacity = 0;
+        scene3.style.opacity = 0;
+        scene4.style.opacity = 0;
+
+        const sCenter = spring(t, 190, 22);
+        centerNode.style.transform = `scale(${0.6 + 0.4 * sCenter})`;
+
+        const sTL = spring(t - 0.4, 210, 24);
+        nodeTL.style.transform = `scale(${0.6 + 0.4 * sTL}) translateY(${(1 - sTL) * 30}px)`;
+
+        const sTR = spring(t - 0.6, 210, 24);
+        nodeTR.style.transform = `scale(${0.6 + 0.4 * sTR}) translateY(${(1 - sTR) * 30}px)`;
+
+        const sBL = spring(t - 0.8, 210, 24);
+        nodeBL.style.transform = `scale(${0.6 + 0.4 * sBL}) translateY(${(1 - sBL) * 30}px)`;
+
+        const sBR = spring(t - 1.0, 210, 24);
+        nodeBR.style.transform = `scale(${0.6 + 0.4 * sBR}) translateY(${(1 - sBR) * 30}px)`;
+
+        // Signal pulses along beziers
+        const pulseCycle = (t * 0.8) % 1.0;
+        pulseTL.setAttribute('cx', 960 + (480 - 960) * pulseCycle);
+        pulseTL.setAttribute('cy', 540 + (300 - 540) * pulseCycle);
+
+        pulseTR.setAttribute('cx', 960 + (1440 - 960) * pulseCycle);
+        pulseTR.setAttribute('cy', 540 + (300 - 540) * pulseCycle);
+      }
+      // SCENE 2 (7.2s - 14.5s): Roadmap Checklist & Animated Donut Chart
+      else if (t < 14.5) {
+        const localT = t - 7.2;
+        scene1.style.opacity = 0;
+        scene2.style.opacity = clamp(localT * 4, 0, 1);
+        scene3.style.opacity = 0;
+        scene4.style.opacity = 0;
+
+        const sRoad = spring(localT, 190, 24);
+        roadmapCard.style.transform = `scale(${0.9 + 0.1 * sRoad}) translateX(${(1 - sRoad) * -60}px)`;
+
+        const sDonut = spring(localT - 0.3, 190, 24);
+        donutCard.style.transform = `scale(${0.9 + 0.1 * sDonut}) translateX(${(1 - sDonut) * 60}px)`;
+
+        // Donut progress calculation (0% to 84%)
+        const progressTarget = 0.84;
+        const progressSpring = spring(localT - 0.5, 120, 20);
+        const currentProgress = clamp(progressTarget * progressSpring, 0, progressTarget);
+
+        const circumference = 597;
+        const offset = circumference * (1 - currentProgress);
+        donutStroke.setAttribute('stroke-dashoffset', offset);
+        donutValue.innerText = Math.round(currentProgress * 100) + '%';
+      }
+      // SCENE 3 (14.5s - 21.0s): Local PC vs 24/7 Cloud Comparison
+      else if (t < 21.0) {
+        const localT = t - 14.5;
+        scene1.style.opacity = 0;
+        scene2.style.opacity = 0;
+        scene3.style.opacity = clamp(localT * 4, 0, 1);
+        scene4.style.opacity = 0;
+
+        const s1 = spring(localT, 200, 24);
+        compare1.style.transform = `scale(${0.9 + 0.1 * s1}) translateX(${(1 - s1) * -50}px)`;
+
+        const s2 = spring(localT - 0.3, 200, 24);
+        compare2.style.transform = `scale(${0.9 + 0.1 * s2}) translateX(${(1 - s2) * 50}px)`;
+      }
+      // SCENE 4 (21.0s - 26.2s): 3D Laptop Dashboard & Subscribe Pill
+      else {
+        const localT = t - 21.0;
+        scene1.style.opacity = 0;
+        scene2.style.opacity = 0;
+        scene3.style.opacity = 0;
+        scene4.style.opacity = clamp(localT * 4, 0, 1);
+
+        const sLaptop = spring(localT, 180, 22);
+        laptopFrame.style.transform = `scale(${0.88 + 0.12 * sLaptop}) translateY(${(1 - sLaptop) * 60}px)`;
+
+        const sSub = spring(localT - 0.4, 220, 24);
+        subscribeCard.style.transform = `scale(${0.85 + 0.15 * sSub}) translateY(${(1 - sSub) * 30}px)`;
+      }
+    };
+  </script>
+</body>
+</html>

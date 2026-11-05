@@ -198,6 +198,14 @@ MotionOS includes battle-tested, high-retention template compositions reproducin
 - **MotionOS Typography Reel:** `compositions/motionos_reel/index.html` — Kinetic typography and sound design showcase.
 
 
+### 5. You B Tech Faceless Tech Tutorial Suite (16:9 Landscape)
+
+| Style Preset | Inspiration & Source | Visual Look & Palette | Key Components | Render Command |
+|---|---|---|---|---|
+| **you-b-tech-faceless** | [You B Tech (@You_B_Tech)](https://www.youtube.com/@You_B_Tech/videos) | 16:9 Landscape, Ambient Soft Cream (#F8F9FD) + Blurred Purple Nebulae (#8B5CF6) | Central Agent node with curved SVG bezier pipelines, macOS roadmap checklist, 84% Donut progress ring, Local PC vs 24/7 Cloud cards, 3D laptop SaaS dashboard. | 
+ode render.mjs --html compositions/you_b_tech_explainer/index.html --w 1920 --h 1080 --dur 26.1 --fps 30 |
+
+
 ## Project Structure
 
 ```

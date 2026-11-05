@@ -1,0 +1,17 @@
+{
+  "id": "you-b-tech-faceless",
+  "order": 42,
+  "name": "You B Tech Faceless",
+  "tagline": "16:9 Landscape YouTube tutorial: soft ambient purple glowing nebulae, central AI node with bezier connection curves, macOS roadmap checklist, animated donut progress rings, and 3D laptop SaaS dashboard.",
+  "inspired_by_display": [
+    "You B Tech",
+    "@You_B_Tech"
+  ],
+  "niches": [
+    "AI Agent Tutorials",
+    "Faceless SaaS Walkthroughs",
+    "Software Engineering"
+  ],
+  "status": "released",
+  "aspect_ratio": "16:9"
+}
