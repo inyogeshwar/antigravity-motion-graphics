@@ -30,6 +30,7 @@ Usage:
 Vibe Editing Commands (MotionOS):
   playbook [list|init]  Manage creator styles & brand playbooks (23 authentic styles)
   reel <clips_folder>   Autonomous end-to-end reel pipeline: cut -> storyboard -> render
+  tutorial <topic>      Generate a 16:9 faceless motion tutorial video (You B Tech style)
   setup-models [opts]   Download & bind local AI models (RVM, YuNet, BlazeFace, Whisper)
   veos <action> [opts]  Run VEOS workflow (prep, plan, preview, render, review, styles)
   prep <video>          Transcribe speech & detect silence gaps
@@ -86,6 +87,11 @@ switch (command) {
   case 'veos':
   case 'vibe':
     runScript(path.join(__dirname, 'vibe.js'), [command, ...args]);
+    break;
+
+  case 'tutorial':
+  case 'explainer':
+    runScript(path.join(ROOT_DIR, 'scripts', 'generate_tutorial.mjs'), args);
     break;
 
   case 'lyric':

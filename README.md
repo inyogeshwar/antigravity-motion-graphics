@@ -200,6 +200,17 @@ MotionOS includes battle-tested, high-retention template compositions reproducin
 
 ### 5. You B Tech Faceless Tech Tutorial Suite (16:9 Landscape)
 
+MotionOS includes a fully automated **Universal Dynamic Tutorial Generator** for the You B Tech faceless style. You can generate a 16:9 landscape tutorial video for **ANY arbitrary topic** (`cursor-ai`, `docker`, `supabase`, `nextjs`, `python`, etc.) with automatic Hindi voiceover, synced captions, procedural SFX, spring animations, and 3D mockups in a single command:
+
+```bash
+# Generate video for any topic
+npx motionos tutorial cursor-ai
+npx motionos tutorial docker
+npx motionos tutorial supabase
+npx motionos tutorial "Next.js 15" out/nextjs_tutorial.mp4
+```
+
+
 | Style Preset | Inspiration & Source | Visual Look & Palette | Key Components | Render Command |
 |---|---|---|---|---|
 | **you-b-tech-faceless** | [You B Tech (@You_B_Tech)](https://www.youtube.com/@You_B_Tech/videos) | 16:9 Landscape, Ambient Soft Cream (#F8F9FD) + Blurred Purple Nebulae (#8B5CF6) | Central Agent node with curved SVG bezier pipelines, macOS roadmap checklist, 84% Donut progress ring, Local PC vs 24/7 Cloud cards, 3D laptop SaaS dashboard. | 
