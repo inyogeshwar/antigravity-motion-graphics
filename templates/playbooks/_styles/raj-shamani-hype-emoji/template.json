@@ -11,5 +11,18 @@
     "Podcast Teasers",
     "Hype Drops"
   ],
-  "status": "released"
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "The Hook",
+      "The Relatable Problem (Punch-in Zoom 1.08x)",
+      "High-Stakes Climax (Deep Punch-in Zoom 1.15x)"
+    ]
+  }
 }

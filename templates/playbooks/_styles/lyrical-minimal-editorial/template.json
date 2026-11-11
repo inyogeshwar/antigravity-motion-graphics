@@ -11,5 +11,18 @@
     "Lofi Bollywood",
     "Poetry"
   ],
-  "status": "released"
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "कमरिया",
+      "नज़रिया",
+      "हिला दे हिल्ला दे"
+    ]
+  }
 }

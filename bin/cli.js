@@ -11,6 +11,7 @@
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isMedia, formatList } from '../lib/formats.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,12 +46,16 @@ Instagram Viral Intelligence:
 
 Motion Studio Commands:
   init [dir]            Scaffold a new motion project (or: npx create-antigravity-motion)
-  render [options]      Render HTML/canvas composition to MP4 using Playwright & FFmpeg
+  render [options]      Render HTML/canvas composition to a video using Playwright & FFmpeg
+  previews [options]    Build the preview page + 3 still frames for every creator style
   sfx [options]         Synthesize procedural UI audio cues (clicks, whooshes) to WAV
   voice [options]       Generate AI voice narration (Cartesia, HeyGen, OpenAI, ElevenLabs)
   beats [options]       Extract beat grid or generate synthetic 120 BPM grid
   test                  Run deterministic motion engine unit tests
   help, --help, -h      Show this help message
+
+Media formats (input): ${formatList('video')} and audio ${formatList('audio')}.
+Output format follows the --out extension (mp4, mov, webm, mkv, gif, wav, mp3, m4a, flac, ogg...).
 
 Examples:
   npx motionos vibe plan input.mp4 --style tech-bento
@@ -144,12 +149,17 @@ switch (command) {
     break;
 
   case 'render':
-    // If first argument is a video file ending in .mp4, route to vibe render
-    if (args[0] && (args[0].endsWith('.mp4') || args[0].endsWith('.mov'))) {
+    // If the first argument is any media file, route to the vibe render pipeline
+    if (args[0] && isMedia(args[0])) {
       runScript(path.join(__dirname, 'vibe.js'), ['render', ...args]);
     } else {
       runScript(path.join(ROOT_DIR, 'render.mjs'), args);
     }
+    break;
+
+  case 'previews':
+  case 'preview-styles':
+    runScript(path.join(ROOT_DIR, 'scripts', 'build_previews.mjs'), args);
     break;
 
   case 'sfx':

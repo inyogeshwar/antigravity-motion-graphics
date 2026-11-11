@@ -3,6 +3,7 @@ import { chromium } from 'playwright';
 import { spawn, execSync } from 'node:child_process';
 import { mkdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
+import { videoEncodeArgs, isGifOutput } from './lib/formats.js';
 
 function printHelp() {
   console.log(`
@@ -17,9 +18,13 @@ Options:
   --sub <number>     Sub-frame sampling multiplier for motion blur (default: 1)
   --w <number>       Output width in pixels (default: 1080)
   --h <number>       Output height in pixels (default: 1920)
-  --out <path>       Output MP4 path (default: out/silent.mp4)
+  --out <path>       Output path (default: out/silent.mp4)
   --html <path>      Path to HTML composition (default: index.html)
   --help, -h         Show this help message
+
+The container/codec follows the --out extension:
+  video: mp4, m4v, mov, mkv, webm, ogv, avi, gif
+  (mp4/mov/mkv/avi -> H.264; webm/ogv -> VP9/Theora; mov supports ProRes alpha; gif -> animated GIF)
 `);
 }
 
@@ -100,23 +105,30 @@ await page.evaluate(() => document.fonts.ready);
 await page.waitForTimeout(500);
 
 // Video filter for motion blur / framerate
-const vf = SUB > 1 
+let vf = SUB > 1
   ? `tmix=frames=${SUB},select='eq(mod(n\\,${SUB})\\,${SUB - 1})',setpts=N/${FPS}/TB`
   : `setpts=N/${FPS}/TB`;
 
-const ff = spawn(ffmpegCmd, [
+// GIF needs a palette pass; the rest are encoded straight from the piped frames.
+const isGif = isGifOutput(OUT);
+if (isGif) {
+  vf += `,fps=${FPS},scale=${W}:-1:flags=lanczos,split[s0][s1];[s0]palettegen=stats_mode=diff[p];[s1][p]paletteuse=dither=bayer`;
+}
+
+const ffArgs = [
   '-y',
   '-f', 'image2pipe',
   '-framerate', String(FPS * SUB),
   '-i', '-',
-  '-vf', vf,
-  '-r', String(FPS),
-  '-c:v', 'libx264',
-  '-preset', 'faster',
-  '-crf', '18',
-  '-pix_fmt', 'yuv420p',
-  OUT
-], { stdio: ['pipe', 'inherit', 'inherit'] });
+  '-vf', vf
+];
+if (isGif) {
+  ffArgs.push('-loop', '0', OUT);
+} else {
+  ffArgs.push('-r', String(FPS), ...videoEncodeArgs(OUT, { crf: 18, preset: 'faster' }), OUT);
+}
+
+const ff = spawn(ffmpegCmd, ffArgs, { stdio: ['pipe', 'inherit', 'inherit'] });
 
 ff.on('error', (err) => {
   console.error('[FFmpeg Error]', err.message);

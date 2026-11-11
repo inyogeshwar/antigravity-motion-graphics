@@ -24,6 +24,29 @@ Instead of spending hours inside Premiere Pro, Final Cut, or After Effects manua
 
 ---
 
+## 1.1 Supported Formats
+
+MotionOS is format-agnostic. Input detection is centralized in [`lib/formats.js`](../lib/formats.js), so the vibe pipeline accepts any container FFmpeg can decode:
+
+- **Video in:** `mp4`, `mov`, `mkv`, `webm`, `avi`, `mpeg`, `wmv`, `flv`, `ts`, `3gp`, `ogv`, `gif`, …
+- **Audio in:** `wav`, `mp3`, `m4a`, `aac`, `flac`, `ogg`, `opus`, `wma`, …
+- **Image in:** `png`, `jpg`, `webp`, `avif`, `bmp`, `tiff`, `heic`, `svg`, …
+
+The output container/codec is chosen from the `--out` extension:
+
+- **Video out:** `mp4`/`mov`/`mkv`/`avi` (H.264), `webm` (VP9), `ogv` (Theora), `mov` + alpha (ProRes 4444), animated `gif`.
+- **Audio out:** `wav` (PCM), `mp3`, `m4a`/`aac`, `flac`, `ogg`, `opus`.
+
+```bash
+npx motionos vibe render "clip.mkv" --out out/final.webm
+node render.mjs --out out/reel.gif
+node sfx.mjs cues.json out/sfx.mp3
+```
+
+Unknown extensions fall back to H.264/MP4 (video) or 16-bit PCM WAV (audio).
+
+---
+
 ## 2. Quickstart & Installation
 
 MotionOS runs locally on macOS, Linux, and Windows 10/11:

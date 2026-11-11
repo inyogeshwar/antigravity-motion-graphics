@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { audioEncodeArgs, extensionOf, outputKind } from './lib/formats.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -101,7 +102,7 @@ export function mixLibrarySfx({ cues = [], outputFile = 'out/sfx.wav', volume = 
     ...inputs,
     '-filter_complex', filterComplex,
     '-map', '[outa]',
-    '-c:a', 'pcm_s16le',
+    ...audioEncodeArgs(outputFile),
     '-ar', '48000',
     outputFile
   ];
@@ -159,11 +160,32 @@ export function synthesizeSfx({ cues = [], outputFile = null, sampleRate = 48000
 
   if (outputFile) {
     mkdirSync(path.dirname(outputFile), { recursive: true });
-    writeFileSync(outputFile, b);
+    if (extensionOf(outputFile) === 'wav' || outputKind(outputFile) !== 'audio') {
+      writeFileSync(outputFile, b);
+    } else {
+      transcodeWav(b, outputFile);
+    }
     console.log(`[SFX Synth] Synthesized ${cues.length} cues -> ${outputFile}`);
   }
 
   return b;
+}
+
+/**
+ * Write a synthesized WAV buffer to a non-WAV container (mp3, m4a, flac, ogg, opus...)
+ * by piping it through FFmpeg. Falls back to a .wav file if FFmpeg is unavailable.
+ */
+function transcodeWav(wavBuffer, outputFile) {
+  const res = spawnSync('ffmpeg', [
+    '-y', '-f', 'wav', '-i', 'pipe:0',
+    ...audioEncodeArgs(outputFile),
+    outputFile
+  ], { input: wavBuffer, stdio: ['pipe', 'inherit', 'inherit'] });
+  if (res.status !== 0) {
+    const fallback = outputFile.replace(/\.[^.]+$/, '') + '.wav';
+    console.warn(`[SFX Synth] FFmpeg could not encode ${outputFile}; wrote ${fallback} instead.`);
+    writeFileSync(fallback, wavBuffer);
+  }
 }
 
 // CLI Execution support
@@ -174,6 +196,8 @@ Antigravity Motion Graphics - SFX Engine & Synthesizer
 
 Usage:
   node sfx.mjs [cues.json] [out/sfx.wav] [--library]
+
+Output format follows the file extension: wav, mp3, m4a, aac, flac, ogg, opus (non-WAV is encoded via FFmpeg).
 
 Authentic Creator SFX:
   ${Object.keys(LIBRARY_MAP).join(', ')}
