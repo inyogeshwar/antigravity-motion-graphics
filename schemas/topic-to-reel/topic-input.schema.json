@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Topic-to-Reel Input",
+  "description": "Only topic is required. Every other property is an optional override.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["topic"],
+  "properties": {
+    "topic": {"type": "string", "minLength": 2, "maxLength": 500},
+    "audience": {"type": "string", "maxLength": 300},
+    "language": {"type": "string", "default": "auto", "enum": ["auto", "hi", "en", "hinglish"]},
+    "platform": {"type": "string", "default": "instagram_reels", "enum": ["instagram_reels", "youtube_shorts", "tiktok", "custom"]},
+    "duration_seconds": {"type": "integer", "minimum": 10, "maximum": 180},
+    "aspect_ratio": {"type": "string", "default": "9:16", "enum": ["9:16", "16:9", "1:1", "4:5"]},
+    "width": {"type": "integer", "minimum": 320, "maximum": 7680},
+    "height": {"type": "integer", "minimum": 320, "maximum": 7680},
+    "fps": {"type": "integer", "default": 30, "enum": [24, 25, 30, 50, 60]},
+    "tone": {"type": "string", "maxLength": 100},
+    "visual_preset": {"type": "string", "default": "editorial-collage-kinetic-type"},
+    "brand": {"type": "string", "maxLength": 100},
+    "handle": {"type": "string", "maxLength": 100},
+    "cta": {"type": "string", "maxLength": 300},
+    "voice_provider": {"type": "string", "maxLength": 100},
+    "voice_id": {"type": "string", "maxLength": 200},
+    "reference_urls": {"type": "array", "items": {"type": "string", "format": "uri"}, "maxItems": 10},
+    "approval_required": {"type": "boolean", "const": true, "default": true}
+  }
+}

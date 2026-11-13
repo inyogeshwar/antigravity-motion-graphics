@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "policy": "Metadata and loading recommendations only; this file does not redistribute font binaries. Verify the current upstream license and include the license text before bundling any font file. Existing assets/fonts files must be audited individually.",
+  "recommended_families": [
+    {"family": "Anton", "category": "display", "weights": [400], "use": "Large bold hooks and short headlines", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Anton", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Barlow Condensed", "category": "display", "weights": [500, 600, 700, 800, 900], "use": "Tall condensed headlines and compact labels", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Barlow+Condensed", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Archivo Black", "category": "display", "weights": [400], "use": "Heavy editorial titles and emphasis", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Archivo+Black", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Bangers", "category": "display", "weights": [400], "use": "Comic-style accents, sparingly", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Bangers", "license": "SIL Open Font License; verify upstream license", "priority": "medium"},
+    {"family": "Space Grotesk", "category": "sans", "weights": [400, 500, 600, 700], "use": "Modern technology explainers and UI labels", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Space+Grotesk", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Inter", "category": "sans", "weights": [400, 500, 600, 700, 800, 900], "use": "Body copy, interface labels and captions", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Inter", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "DM Sans", "category": "sans", "weights": [400, 500, 600, 700], "use": "Clean supporting text and UI graphics", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/DM+Sans", "license": "SIL Open Font License; verify upstream license", "priority": "medium"},
+    {"family": "Hind", "category": "sans", "weights": [400, 500, 600, 700], "use": "Hindi/Devanagari captions and body text", "scripts": ["Devanagari", "Latin"], "source": "https://fonts.google.com/specimen/Hind", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Mukta", "category": "sans", "weights": [400, 500, 600, 700, 800], "use": "Hindi/Devanagari UI and explanatory text", "scripts": ["Devanagari", "Latin"], "source": "https://fonts.google.com/specimen/Mukta", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Noto Sans Devanagari", "category": "sans", "weights": [400, 500, 600, 700, 800, 900], "use": "Broad Devanagari coverage and fallback", "scripts": ["Devanagari"], "source": "https://fonts.google.com/noto/specimen/Noto+Sans+Devanagari", "license": "SIL Open Font License; verify upstream license", "priority": "high"},
+    {"family": "Playfair Display", "category": "serif", "weights": [400, 500, 600, 700, 800, 900], "use": "Editorial contrast, quotes and premium accents", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Playfair+Display", "license": "SIL Open Font License; verify upstream license", "priority": "medium"},
+    {"family": "Caveat", "category": "handwritten", "weights": [400, 500, 600, 700], "use": "Occasional handwritten annotations", "scripts": ["Latin"], "source": "https://fonts.google.com/specimen/Caveat", "license": "SIL Open Font License; verify upstream license", "priority": "low"}
+  ],
+  "recommended_stacks": {
+    "editorial_hook": "'Anton', 'Barlow Condensed', sans-serif",
+    "tech_explainer": "'Space Grotesk', 'Inter', sans-serif",
+    "hindi_captions": "'Hind', 'Noto Sans Devanagari', sans-serif",
+    "hindi_ui": "'Mukta', 'Noto Sans Devanagari', sans-serif",
+    "editorial_serif": "'Playfair Display', Georgia, serif",
+    "handwritten_note": "'Caveat', cursive"
+  },
+  "loading": {
+    "prefer_local_verified_fonts": true,
+    "web_fallback": "Google Fonts CSS2 API",
+    "example_css": "https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@500;600;700;800;900&family=Hind:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+    "verify_font_loaded_before_render": true,
+    "fallbacks": ["Arial", "Noto Sans Devanagari", "sans-serif"]
+  }
+}
