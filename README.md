@@ -67,7 +67,9 @@ Read the full [MotionOS Guide & Production Manual](docs/MOTIONOS_GUIDE.md).
 
 - **Deterministic Closed-Form Springs (`lib/motion.js`):** Analytical damped oscillator physics (`spring(t, k, d)`) and continuous target tracking (`track(t, keys)`).
 - **Zero-Dependency Headless Renderer (`render.mjs`):** High-speed Playwright Chromium automation piping raw frames into FFmpeg with sub-frame motion blur sampling.
-- **Procedural Sound Synthesizer (`sfx.mjs`):** Pure algorithmic sound design generating clicks, pops, thumps, whooshes, and dings directly into 16-bit 48kHz WAV audio buffers.
+- **Format-Agnostic Pipeline (`lib/formats.js`):** A single registry of every supported container. Feed it MP4, MOV, MKV, WebM, AVI, MPEG, TS, GIF or any FFmpeg-readable clip, and render out to MP4, MOV (ProRes alpha), WebM, MKV, animated GIF, WAV, MP3, M4A, FLAC, OGG or Opus — the codec follows the `--out` extension.
+- **One-Command Style Previews (`scripts/build_previews.mjs`):** Deterministically renders a preview page plus three captioned still frames for every creator style, straight from the compositions — no FFmpeg required.
+- **Procedural Sound Synthesizer (`sfx.mjs`):** Pure algorithmic sound design generating clicks, pops, thumps, whooshes, and dings directly into 16-bit 48kHz WAV audio buffers (and transcoded to MP3/M4A/FLAC/OGG/Opus on request).
 - **AI Voice Narration (`cartesia.mjs` & `heygen.mjs`):** Seamless integration with Cartesia AI (`sonic-3.6`) and HeyGen Voice Turbo Free for multilingual product promotion.
 - **Behind-the-Head & Face Tracking Effects (`.agent/skills/effects`):** 51 computer-vision effects placing 3D typography, liquid glass widgets, and dynamic brackets around live human video.
 - **Beat Grid Synchronization (`beats.py`):** Onset detection and perceptual beat alignment locking animation milestones to the audio rhythm.
@@ -84,9 +86,36 @@ flowchart LR
     E["AI Voice / Beats<br>(Cartesia / HeyGen)"] --> D
     B -->|"image2pipe"| D
     D --> F["Post-Production FX<br>(MediaPipe & YuNet)"]
-    F --> G["Final Video<br>(out/*.mp4)"]
+    F --> G["Final Video<br>(out/*.mp4 · mov · webm · gif ...)"]
     G --> H["Contact Sheet<br>(Vision Quality Loop)"]
 ```
+
+---
+
+## Supported Formats
+
+MotionOS is format-agnostic: the CLI, the vibe pipeline and the renderer all read any container FFmpeg can decode, and write whichever container your `--out` path asks for. The registry lives in [`lib/formats.js`](lib/formats.js).
+
+| Direction | Formats |
+| --- | --- |
+| **Video in** | `mp4`, `m4v`, `mov`, `mkv`, `webm`, `avi`, `mpg`, `mpeg`, `m2v`, `wmv`, `flv`, `ts`, `m2ts`, `mts`, `3gp`, `3g2`, `ogv`, `vob`, `mxf`, `gif` |
+| **Audio in** | `wav`, `mp3`, `m4a`, `aac`, `flac`, `ogg`, `oga`, `opus`, `wma`, `aiff`, `aif`, `amr`, `ac3`, `mka` |
+| **Image in** | `png`, `jpg`, `jpeg`, `webp`, `avif`, `bmp`, `tif`, `tiff`, `heic`, `heif`, `svg` |
+| **Video out** | `mp4` / `m4v` / `mov` / `mkv` / `avi` (H.264), `webm` (VP9), `ogv` (Theora), `mov` with `--alpha` (ProRes 4444), `gif` (animated) |
+| **Audio out** | `wav` (PCM), `mp3`, `m4a` / `aac`, `flac`, `ogg`, `opus` |
+
+```bash
+# Any input container is accepted...
+npx motionos vibe render "raw_clip.mkv" --out "out/final.mp4"
+npx motionos vibe plan "interview.webm" --style tech-bento
+
+# ...and the output codec follows the extension
+node render.mjs --out out/reel.webm     # VP9 + Opus
+node render.mjs --out out/reel.gif      # animated GIF
+node sfx.mjs cues.json out/sfx.mp3      # MP3 instead of WAV
+```
+
+> Unknown containers fall back to H.264/MP4 (video) or 16-bit PCM WAV (audio).
 
 ---
 
@@ -155,6 +184,14 @@ ffmpeg -y -i out/motionos_typography_silent.mp4 -i scratch/motionos_reel_audio.m
 ## 🎬 Showcase Catalog & Creator Style Gallery
 
 MotionOS includes battle-tested, high-retention template compositions reproducing the exact editing archetypes of top viral creators:
+
+Every style below ships a `preview/` folder — a `preview/index.html` player plus three captioned `preview/frames/*.webp` stills, recorded in the style's `template.json`. Browse them without rendering, or regenerate them all in one command:
+
+```bash
+npx motionos previews                      # build previews for any style that lacks one
+npx motionos previews --force              # rebuild every style
+npx motionos previews --only raj-shamani-neon-lime
+```
 
 ### 1. Advoc Media Suite (`aiwith.om` / Claude Code Pipeline)
 
@@ -237,13 +274,17 @@ antigravity-motion-graphics/
 │   └── effects-pipeline.md    # Face tracking and 51 video effects guide
 ├── lib/
 │   ├── motion.js              # Closed-form springs, PRNG, and tracker physics
+│   ├── formats.js             # Central media format registry (video/audio/image in & out)
 │   └── veos.js                # MotionOS Vibe Editing OS engine & style presets
 ├── bin/
 │   ├── cli.js                 # Unified 'motionos' CLI entry point
 │   ├── veos.js                # VEOS sub-command runner (prep, plan, preview, render)
 │   └── create.js              # Interactive & non-interactive project scaffolder
+├── scripts/
+│   └── build_previews.mjs     # Renders captioned preview stills for every creator style
 ├── tests/                     # Test suites (Node.js test runner & Python unittest)
 │   ├── motion.test.js         # Spring dynamics & PRNG tests
+│   ├── formats.test.js        # Media format registry & codec selection tests
 │   ├── sfx.test.js            # Audio synthesis & WAV header tests
 │   ├── api.test.js            # TTS presets & fallback tests
 │   └── test_beats.py          # Beat grid generator tests

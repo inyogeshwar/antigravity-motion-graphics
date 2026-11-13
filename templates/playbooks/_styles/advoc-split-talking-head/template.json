@@ -10,5 +10,18 @@
     "Talking Head Tutorials",
     "Tech Workflows"
   ],
-  "status": "released"
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Discover morluto/rea",
+      "The Problem (Machine code unreadable)",
+      "Solution (Meet REA - Ghidra, JADX)"
+    ]
+  }
 }

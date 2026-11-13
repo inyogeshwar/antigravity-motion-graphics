@@ -26,6 +26,7 @@ import {
   getPlaybookStyle,
   initPlaybook
 } from '../lib/vibe.js';
+import { videoFileRegex, formatList } from '../lib/formats.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -72,6 +73,8 @@ Standard Vibe Actions:
                             Options: --plan <path> --out <path> --width [1080|2160]
   review <video>            Generate contact sheet & run vision verification rubric
   styles                    List all 23 available creator styles
+
+Input accepts any container FFmpeg can read: ${formatList('video')}.
 
 Examples:
   npx motionos veos playbook list
@@ -150,10 +153,11 @@ switch (subcmd) {
       process.exit(1);
     }
 
-    // Find raw clips in folder
-    const files = fs.readdirSync(folder).filter(f => /\.(mp4|mov|mkv|m4v)$/i.test(f) && !f.includes('_motionos') && !f.includes('_effects'));
+    // Find raw clips in folder (any supported video container)
+    const files = fs.readdirSync(folder).filter(f => videoFileRegex().test(f) && !f.includes('_motionos') && !f.includes('_effects'));
     if (files.length === 0) {
-      console.error(`❌ No raw video files (.mp4/.mov) found in folder: ${folder}`);
+      console.error(`❌ No raw video files found in folder: ${folder}`);
+      console.error(`   Supported formats: ${formatList('video')}`);
       console.error(`   Place your raw talking-head clip in this folder and try again.`);
       process.exit(1);
     }

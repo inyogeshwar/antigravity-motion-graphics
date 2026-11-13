@@ -13,5 +13,18 @@
     "Software Engineering"
   ],
   "status": "released",
-  "aspect_ratio": "16:9"
+  "aspect_ratio": "16:9",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "Central Node & Connected Flowchart",
+      "Roadmap Checklist & Animated Donut Chart",
+      "Local PC vs 24/7 Cloud Comparison"
+    ]
+  }
 }

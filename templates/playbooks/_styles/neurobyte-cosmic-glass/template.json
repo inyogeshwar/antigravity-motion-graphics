@@ -11,5 +11,18 @@
     "GitHub Curations",
     "Open Source"
   ],
-  "status": "released"
+  "status": "released",
+  "preview": {
+    "page": "preview/index.html",
+    "frames": [
+      "preview/frames/01.webp",
+      "preview/frames/02.webp",
+      "preview/frames/03.webp"
+    ],
+    "captions": [
+      "SPOTIFY GLOW + FIRST VOCAL HOOK",
+      "GOLDEN FLARE & BASS DROP",
+      "VIRAL INSTAGRAM AUTO-CAPTION KARAOKE"
+    ]
+  }
 }
