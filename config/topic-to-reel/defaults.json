@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "input": {
+    "required": ["topic"],
+    "infer_optional_fields": true
+  },
+  "platform": {
+    "default": "instagram_reels",
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "fps": 30,
+    "container": "mp4",
+    "video_codec": "libx264",
+    "audio_codec": "aac",
+    "pixel_format": "yuv420p"
+  },
+  "language": {
+    "mode": "auto",
+    "india_creator_default": "hinglish",
+    "supported": ["hi", "en", "hinglish"]
+  },
+  "visual": {
+    "default_preset": "editorial-collage-kinetic-type",
+    "principles": ["one-idea-per-scene", "bold-readable-type", "purposeful-motion", "original-illustration", "visual-variety", "platform-safe-margins"],
+    "avoid": ["generic-ai-slop", "random-motion", "unlicensed-assets", "copied-mascots", "unreadable-text"]
+  },
+  "duration": {
+    "mode": "auto",
+    "minimum_seconds": 10,
+    "maximum_seconds": 90
+  },
+  "audio": {
+    "music_enabled": true,
+    "sfx_enabled": true,
+    "voiceover": "use-configured-provider-only",
+    "duck_music_under_voice": true
+  },
+  "research": {
+    "enabled_for_factual_topics": true,
+    "prefer_primary_sources": true,
+    "require_source_ledger": true,
+    "never_invent_citations": true
+  },
+  "review": {
+    "required": true,
+    "preview_required_before_approval": true,
+    "final_render_requires_explicit_approval": true,
+    "publishing_requires_separate_explicit_approval": true
+  },
+  "storage": {
+    "project_root": "projects",
+    "keep_generated_outputs_out_of_git_by_default": true,
+    "never_store_secrets": true
+  },
+  "qa": {
+    "inspect_contact_sheet": true,
+    "inspect_draft_video": true,
+    "verify_media_metadata": true,
+    "verify_audio_sync": true,
+    "verify_safe_margins": true,
+    "verify_asset_rights": true
+  }
+}
