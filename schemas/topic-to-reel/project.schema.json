@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Topic-to-Reel Project State",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["project_id", "topic", "status", "settings", "created_at", "approval_required"],
+  "properties": {
+    "project_id": {"type": "string"},
+    "topic": {"type": "string", "minLength": 2},
+    "title": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["queued", "researching", "planning", "generating_assets", "generating_audio", "rendering_preview", "awaiting_review", "revision_requested", "approved", "rendering_final", "completed", "blocked", "failed"]
+    },
+    "settings": {"type": "object"},
+    "research": {"type": "object"},
+    "script": {"type": "object"},
+    "storyboard": {"type": "array", "items": {"type": "object"}},
+    "assets": {"type": "array", "items": {"type": "object"}},
+    "audio": {"type": "object"},
+    "previews": {"type": "object"},
+    "qa": {"type": "object"},
+    "approval_required": {"type": "boolean", "const": true},
+    "approved_at": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}
