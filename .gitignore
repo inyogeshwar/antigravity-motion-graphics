@@ -70,14 +70,12 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# IDE & Editor Directories (Preserve team shared configs if added)
+# IDE & Editor Directories
 .idea/
 *.swp
 *.swo
 *~
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json
+.vscode/
 
 # Blog fonts ignored from git
 assets/fonts/blog/

@@ -33,8 +33,10 @@ export const LIBRARY_MAP = {
   'jet-whoosh': 'assets/sfx/library/whoosh/jet-whoosh.wav',
   click: 'assets/sfx/library/ui/click-hd.mp3',
   'click-mouse': 'assets/sfx/library/ui/click-mouse.mp3',
-  pop: 'assets/sfx/library/ui/notification-iphone.mp3',
+  pop: 'assets/sfx/library/pop/bubble-pop.mp3',
+  bubble: 'assets/sfx/library/pop/bubble-pop.mp3',
   notification: 'assets/sfx/library/ui/notification-iphone.mp3',
+  iphone: 'assets/sfx/library/ui/notification-iphone.mp3',
   keyboard: 'assets/sfx/library/ui/keyboard-typing.mp3',
   beep: 'assets/sfx/library/ui/ui-beep.mp3',
   punch: 'assets/sfx/library/impact/impact-punch.mp3',
@@ -98,6 +100,19 @@ export const LIBRARY_MAP = {
   'glitch-quick': 'assets/sfx/library/impact/glitch-quick.mp3',
   'riser-fast': 'assets/sfx/library/impact/riser-fast.mp3'
 };
+
+// Automatically link and register all authentic audio assets from catalog.json by exact ID
+try {
+  const catalogPath = path.resolve(ROOT_DIR, 'assets/sfx/catalog.json');
+  if (existsSync(catalogPath)) {
+    const catalogData = JSON.parse(readFileSync(catalogPath, 'utf8'));
+    for (const item of catalogData.sfx || []) {
+      if (item.id && item.path) {
+        LIBRARY_MAP[item.id] = item.path;
+      }
+    }
+  }
+} catch (_) {}
 
 /**
  * Mix authentic SFX sample audio files using FFmpeg

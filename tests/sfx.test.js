@@ -1,6 +1,7 @@
 // tests/sfx.test.js - Unit tests for procedural SFX synthesis
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync, existsSync } from 'node:fs';
 import { synthesizeSfx, mixLibrarySfx, VOICES, LIBRARY_MAP } from '../sfx.mjs';
 
 describe('SFX Procedural Synthesizer & Library - sfx.mjs', () => {
@@ -19,6 +20,15 @@ describe('SFX Procedural Synthesizer & Library - sfx.mjs', () => {
     assert.ok(LIBRARY_MAP.kaching, 'Missing kaching sample');
     assert.ok(LIBRARY_MAP.riser, 'Missing riser sample');
     assert.ok(LIBRARY_MAP.shutter, 'Missing shutter sample');
+  });
+
+  test('links every sound effect from catalog.json in LIBRARY_MAP', () => {
+    const catalog = JSON.parse(readFileSync('assets/sfx/catalog.json', 'utf8'));
+    assert.ok(catalog.sfx && catalog.sfx.length >= 50, 'Catalog should contain 50+ SFX');
+    for (const item of catalog.sfx) {
+      assert.ok(LIBRARY_MAP[item.id], `Missing sample for catalog ID: ${item.id}`);
+      assert.ok(existsSync(LIBRARY_MAP[item.id]), `Sample file missing on disk: ${LIBRARY_MAP[item.id]}`);
+    }
   });
 
   test('mixLibrarySfx handles sample mixing gracefully', () => {

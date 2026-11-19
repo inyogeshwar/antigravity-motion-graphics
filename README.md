@@ -69,7 +69,7 @@ Read the full [MotionOS Guide & Production Manual](docs/MOTIONOS_GUIDE.md).
 - **Zero-Dependency Headless Renderer (`render.mjs`):** High-speed Playwright Chromium automation piping raw frames into FFmpeg with sub-frame motion blur sampling.
 - **Format-Agnostic Pipeline (`lib/formats.js`):** A single registry of every supported container. Feed it MP4, MOV, MKV, WebM, AVI, MPEG, TS, GIF or any FFmpeg-readable clip, and render out to MP4, MOV (ProRes alpha), WebM, MKV, animated GIF, WAV, MP3, M4A, FLAC, OGG or Opus — the codec follows the `--out` extension.
 - **One-Command Style Previews (`scripts/build_previews.mjs`):** Deterministically renders a preview page plus three captioned still frames for every creator style, straight from the compositions — no FFmpeg required.
-- **Procedural Sound Synthesizer (`sfx.mjs`):** Pure algorithmic sound design generating clicks, pops, thumps, whooshes, and dings directly into 16-bit 48kHz WAV audio buffers (and transcoded to MP3/M4A/FLAC/OGG/Opus on request).
+- **Procedural Synthesizer & 51-Sample Creator Audio Library (`sfx.mjs`):** Dual sound design engine offering zero-dependency procedural synthesis (clicks, pops, thumps, whooshes, dings) plus an authentic 51-sample creator SFX library (`assets/sfx/library/`, indexed via `assets/sfx/catalog.json`) covering bubble pops, highlighter markers, paper tear/slides, sub-bass drops, mechanical keyboard, DSLR shutters, radio tuning, and viral accents.
 - **AI Voice Narration (`cartesia.mjs` & `heygen.mjs`):** Seamless integration with Cartesia AI (`sonic-3.6`) and HeyGen Voice Turbo Free for multilingual product promotion.
 - **Behind-the-Head & Face Tracking Effects (`.agent/skills/effects`):** 51 computer-vision effects placing 3D typography, liquid glass widgets, and dynamic brackets around live human video.
 - **Beat Grid Synchronization (`beats.py`):** Onset detection and perceptual beat alignment locking animation milestones to the audio rhythm.
@@ -162,10 +162,13 @@ npm run test:all
 npm run render -- --dur 15 --fps 30 --w 1080 --h 1920 --out out/silent.mp4
 ```
 
-### 5. Generate Procedural Sound Effects
+### 5. Generate Sound Effects (Synthesis & Creator Samples)
 ```bash
-# Synthesize audio cues to 48kHz WAV
+# Synthesize procedural audio cues to 48kHz WAV
 npm run sfx cues.json out/sfx.wav
+
+# Or mix authentic creator samples from assets/sfx/library (51 sounds)
+node sfx.mjs cues.json out/sfx.wav --library
 ```
 
 ### 6. Kinetic Typography & Auto-Caption Reel Showcase
