@@ -18,10 +18,10 @@ test('parseLyrics handles raw string and LRC format', () => {
   assert.strictEqual(lines[0].text, 'Line 1');
   assert.strictEqual(lines[0].time, 0);
 
-  const lrc = "[00:02.50] Pehla Nasha\n[00:06.00] Khumar Hai";
+  const lrc = "[00:02.50] Neon Lights\n[00:06.00] Shining Bright";
   const parsedLrc = parseLyrics(lrc, 10.0);
   assert.strictEqual(parsedLrc.length, 2);
-  assert.strictEqual(parsedLrc[0].text, 'Pehla Nasha');
+  assert.strictEqual(parsedLrc[0].text, 'Neon Lights');
   assert.strictEqual(parsedLrc[0].time, 2.5);
   assert.strictEqual(parsedLrc[1].time, 6.0);
 });

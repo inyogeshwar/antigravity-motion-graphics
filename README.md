@@ -222,13 +222,13 @@ npx motionos previews --only raj-shamani-neon-lime
 
 ---
 
-### 3. Bollywood & Lyrical Synchronized Suite (BitChord + SpotiDost)
+### 3. Hindi & Multilingual Lyrical Motion Suite
 
 | Style Preset | Inspiration | Typography & Animation | Features | Render Command |
 |---|---|---|---|---|
-| **`lyrical-neon-pulse`** | BitChord + SpotiDost *(Kamariya)* | Kinetic Bold Display + Pulsing Glow | Beat-locked word boundaries, Shazam audio recognition, LRCLIB sync. | `node render.mjs --html compositions/kamariya_reel/index.html --dur 25 --fps 30` |
-| **`lyrical-minimal-editorial`** | BitChord Editorial | Modern Serif (`Billion Dreams` / `Lemon Milk`) | Film grain overlays, subtle drift, romantic Bollywood pacing. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset minimal` |
-| **`lyrical-cyber-hindi`** | Indian Hip-Hop & Indie Folk | Devanagari Calligraphic + Cyber Cyan Glow | Native Hindi script tracking, dynamic glow drop shadows. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset cyber` |
+| **`lyrical-neon-pulse`** | MotionOS Lyrical Studio | Kinetic Bold Display + Pulsing Glow | Beat-locked word boundaries, open audio recognition, LRCLIB sync. | `node render.mjs --html compositions/kamariya_reel/index.html --dur 25 --fps 30` |
+| **`lyrical-minimal-editorial`** | Minimal Editorial | Modern Serif (`Billion Dreams` / `Lemon Milk`) | Film grain overlays, subtle drift, clean pacing. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset minimal` |
+| **`lyrical-cyber-hindi`** | Indie & Hip-Hop Lyrical | Devanagari Calligraphic + Cyber Cyan Glow | Native Hindi script tracking, dynamic glow drop shadows. | `node scripts/auto_lyrics_syncer.mjs track.mp3 --preset cyber` |
 
 ---
 
