@@ -4,15 +4,16 @@
 
 **The Autonomous Operating System for Motion Design & Vibe Editing**
 
-[![npm version](https://img.shields.io/npm/v/antigravity-motion-graphics.svg)](https://www.npmjs.com/package/antigravity-motion-graphics)
+[![npm core](https://img.shields.io/npm/v/antigravity-motion-graphics.svg?label=antigravity-motion-graphics&color=amber)](https://www.npmjs.com/package/antigravity-motion-graphics)
+[![npm create](https://img.shields.io/npm/v/create-antigravity-motion.svg?label=create-antigravity-motion&color=blue)](https://www.npmjs.com/package/create-antigravity-motion)
 [![CI](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml/badge.svg)](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/codeql.yml/badge.svg)](https://github.com/inyogeshwar/antigravity-motion-graphics/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js Version](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-brightgreen.svg)](package.json)
 [![Python Version](https://img.shields.io/badge/Python-%3E%3D3.10-blue.svg)](beats.py)
 
 *Turn raw footage into viral creator videos and write code for cinematic, broadcast-grade motion graphics with zero non-determinism.*
 
+[NPM Packages](#-official-npm-packages) •
 [Vibe Editing](#vibe-editing-workflow) •
 [Key Features](#key-features) •
 [Quickstart](#quickstart) •
@@ -20,6 +21,17 @@
 [The Render Contract](#the-render-contract)
 
 </div>
+
+---
+
+## 📦 Official NPM Packages
+
+This project is published as two complementary NPM packages:
+
+| Package | Version | Description | Quickstart Command |
+| :--- | :--- | :--- | :--- |
+| [**`antigravity-motion-graphics`**](https://www.npmjs.com/package/antigravity-motion-graphics) | [![npm](https://img.shields.io/npm/v/antigravity-motion-graphics.svg)](https://www.npmjs.com/package/antigravity-motion-graphics) | **Core Engine & CLI Suite** — Mathematical spring physics, vibe editing pipeline, 51-sample creator SFX library, and `motionos` / `vibe` CLI. | `npm i antigravity-motion-graphics`<br>`npx motionos --help` |
+| [**`create-antigravity-motion`**](https://www.npmjs.com/package/create-antigravity-motion) | [![npm](https://img.shields.io/npm/v/create-antigravity-motion.svg)](https://www.npmjs.com/package/create-antigravity-motion) | **One-Click Scaffolding Wizard** — Interactive CLI to scaffold a production-ready studio project in seconds. | `npm create antigravity-motion my-video`<br>`npx create-antigravity-motion my-video` |
 
 ---
 

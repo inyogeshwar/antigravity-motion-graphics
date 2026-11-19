@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-11-19
+
+### Added
+- **51-Sample Creator Audio Library & Dynamic Engine Linking (`sfx.mjs`, `assets/sfx/`):**
+  - Expanded sound effect library to 51 high-production creator audio samples across 9 categories (whoosh, ui, pop, marker, paper, impact, camera, finance, novelty).
+  - Dynamic catalog registration in `sfx.mjs` ensuring all 51 sounds are accessible by exact ID and friendly creator shortcuts (`bubble`, `marker`, `radio`, `sub-drop`, `keyboard`, `dslr`, `switch`, `bell`).
+  - Unit test verifying 100% resolution for all catalog sounds (`tests/sfx.test.js`).
+- **Format-Agnostic Media Registry (`lib/formats.js`):**
+  - Automatic detection and codec mapping for input and output containers (MP4, MOV ProRes alpha, WebM, MKV, animated GIF, WAV, MP3, M4A, FLAC, OGG, Opus).
+- **One-Command Style Preview Generator (`scripts/build_previews.mjs`):**
+  - Instant headless generation of captioned still frames and preview HTML across 20+ creator styles.
+- **Instagram Viral Intelligence Suite (`lib/instagram.js`):**
+  - 26 hook formulas, viral hook scoring heuristics, AI caption humanizer, and feed-truncation linter.
+- **Updated `create-antigravity-motion` to v1.1.0:**
+  - Upgraded scaffolding wizard with interactive templates and updated dependencies.
+
+### Changed
+- **Dependencies Upgrade:**
+  - Upgraded `playwright` to `^1.65.1`.
+  - Upgraded `gsap` to `^3.15.1`.
+- **Package Tarball Manifest:**
+  - Added `assets/sfx`, `schemas`, and `config` to package `files` so audio assets and schemas are bundled in npm distribution.
+- **Copyright Sanitization:**
+  - Removed unlicensed binary video and sanitized lyrical compositions to 100% royalty-free creative typography.
+
 ## [1.1.0] - 2026-11-03
 
 ### Added

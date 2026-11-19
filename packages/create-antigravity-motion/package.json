@@ -1,6 +1,6 @@
 {
   "name": "create-antigravity-motion",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "One-click interactive project initializer for Antigravity Motion Studio",
   "type": "module",
   "main": "index.js",
