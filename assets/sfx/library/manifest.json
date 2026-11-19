@@ -363,5 +363,260 @@
     "originalName": "Gears 1.wav",
     "sizeBytes": 565556,
     "sizeKb": 552.3
+  },
+  {
+    "id": "bubble-pop",
+    "path": "assets/sfx/library/pop/bubble-pop.mp3",
+    "category": "pop",
+    "tags": [
+      "pop",
+      "bubble",
+      "sticker",
+      "avatar",
+      "emoji"
+    ],
+    "originalName": "Soap bubble sound.mp3",
+    "sizeBytes": 15377,
+    "sizeKb": 15.02
+  },
+  {
+    "id": "pop-click",
+    "path": "assets/sfx/library/pop/pop-click.mp3",
+    "category": "pop",
+    "tags": [
+      "pop",
+      "click",
+      "punchy",
+      "badge",
+      "button"
+    ],
+    "originalName": "Hard pop click.mp3",
+    "sizeBytes": 19869,
+    "sizeKb": 19.4
+  },
+  {
+    "id": "marker-swipe",
+    "path": "assets/sfx/library/marker/marker-swipe.mp3",
+    "category": "marker",
+    "tags": [
+      "marker",
+      "highlight",
+      "drawing",
+      "line",
+      "underline"
+    ],
+    "originalName": "Pen marker line.mp3",
+    "sizeBytes": 14120,
+    "sizeKb": 13.79
+  },
+  {
+    "id": "pencil-scribble",
+    "path": "assets/sfx/library/marker/pencil-scribble.mp3",
+    "category": "marker",
+    "tags": [
+      "pencil",
+      "scribble",
+      "doodle",
+      "sketch",
+      "note"
+    ],
+    "originalName": "Short pencil writing.mp3",
+    "sizeBytes": 14539,
+    "sizeKb": 14.2
+  },
+  {
+    "id": "paper-slide",
+    "path": "assets/sfx/library/paper/paper-slide.mp3",
+    "category": "paper",
+    "tags": [
+      "paper",
+      "slide",
+      "document",
+      "contract",
+      "receipt"
+    ],
+    "originalName": "Paper slide.mp3",
+    "sizeBytes": 17207,
+    "sizeKb": 16.8
+  },
+  {
+    "id": "page-turn",
+    "path": "assets/sfx/library/paper/page-turn.mp3",
+    "category": "paper",
+    "tags": [
+      "paper",
+      "page",
+      "turn",
+      "flip",
+      "book"
+    ],
+    "originalName": "Page turn single.mp3",
+    "sizeBytes": 12359,
+    "sizeKb": 12.07
+  },
+  {
+    "id": "sub-bass-drop",
+    "path": "assets/sfx/library/impact/sub-bass-drop.mp3",
+    "category": "impact",
+    "tags": [
+      "bass",
+      "sub",
+      "drop",
+      "hook",
+      "rumble"
+    ],
+    "originalName": "Knocking sub bass.mp3",
+    "sizeBytes": 34728,
+    "sizeKb": 33.91
+  },
+  {
+    "id": "short-bass-hit",
+    "path": "assets/sfx/library/impact/short-bass-hit.mp3",
+    "category": "impact",
+    "tags": [
+      "bass",
+      "hit",
+      "thump",
+      "punch",
+      "drop"
+    ],
+    "originalName": "Short bass hit.mp3",
+    "sizeBytes": 19756,
+    "sizeKb": 19.29
+  },
+  {
+    "id": "cinematic-impact-heavy",
+    "path": "assets/sfx/library/impact/cinematic-impact-heavy.mp3",
+    "category": "impact",
+    "tags": [
+      "cinematic",
+      "impact",
+      "trailer",
+      "shock",
+      "reveal"
+    ],
+    "originalName": "Big cinematic impact.mp3",
+    "sizeBytes": 43215,
+    "sizeKb": 42.2
+  },
+  {
+    "id": "whoosh-cinematic-fast",
+    "path": "assets/sfx/library/whoosh/whoosh-cinematic-fast.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "cinematic",
+      "fast",
+      "transition",
+      "swipe"
+    ],
+    "originalName": "Cinematic whoosh fast transition.mp3",
+    "sizeBytes": 37628,
+    "sizeKb": 36.75
+  },
+  {
+    "id": "fast-sweep-transition",
+    "path": "assets/sfx/library/whoosh/fast-sweep-transition.mp3",
+    "category": "whoosh",
+    "tags": [
+      "whoosh",
+      "sweep",
+      "transition",
+      "quick",
+      "clean"
+    ],
+    "originalName": "Fast small sweep transition.mp3",
+    "sizeBytes": 22589,
+    "sizeKb": 22.06
+  },
+  {
+    "id": "switch-click",
+    "path": "assets/sfx/library/ui/switch-click.mp3",
+    "category": "ui",
+    "tags": [
+      "switch",
+      "toggle",
+      "click",
+      "ui",
+      "button"
+    ],
+    "originalName": "Quick switch click.mp3",
+    "sizeBytes": 13319,
+    "sizeKb": 13.01
+  },
+  {
+    "id": "light-switch",
+    "path": "assets/sfx/library/ui/light-switch.mp3",
+    "category": "ui",
+    "tags": [
+      "switch",
+      "toggle",
+      "tap",
+      "light",
+      "interface"
+    ],
+    "originalName": "On or off light switch tap.mp3",
+    "sizeBytes": 11515,
+    "sizeKb": 11.25
+  },
+  {
+    "id": "tech-affirmation",
+    "path": "assets/sfx/library/ui/tech-affirmation.mp3",
+    "category": "ui",
+    "tags": [
+      "affirmation",
+      "success",
+      "tech",
+      "chime",
+      "verified"
+    ],
+    "originalName": "Cybernetic technology affirmation.mp3",
+    "sizeBytes": 36781,
+    "sizeKb": 35.92
+  },
+  {
+    "id": "achievement-bell",
+    "path": "assets/sfx/library/novelty/achievement-bell.mp3",
+    "category": "novelty",
+    "tags": [
+      "bell",
+      "achievement",
+      "success",
+      "ding",
+      "win"
+    ],
+    "originalName": "Achievement bell.mp3",
+    "sizeBytes": 25055,
+    "sizeKb": 24.47
+  },
+  {
+    "id": "vinyl-scratch",
+    "path": "assets/sfx/library/novelty/vinyl-scratch.mp3",
+    "category": "novelty",
+    "tags": [
+      "vinyl",
+      "scratch",
+      "record",
+      "stop",
+      "meme"
+    ],
+    "originalName": "Record player vinyl scratch.mp3",
+    "sizeBytes": 30936,
+    "sizeKb": 30.21
+  },
+  {
+    "id": "tape-rewind",
+    "path": "assets/sfx/library/novelty/tape-rewind.mp3",
+    "category": "novelty",
+    "tags": [
+      "tape",
+      "rewind",
+      "retro",
+      "fast",
+      "transition"
+    ],
+    "originalName": "Fast tape rewind cinematic transition.mp3",
+    "sizeBytes": 37570,
+    "sizeKb": 36.69
   }
 ]
