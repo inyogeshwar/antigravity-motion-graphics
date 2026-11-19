@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "count": 44,
+  "count": 51,
   "sfx": [
     {
       "id": "swoosh-fast",
@@ -621,6 +621,118 @@
       "originalName": "Fast tape rewind cinematic transition.mp3",
       "sizeBytes": 37570,
       "sizeKb": 36.69
+    },
+    {
+      "id": "whoosh-metal",
+      "path": "assets/sfx/library/whoosh/whoosh-metal.mp3",
+      "category": "whoosh",
+      "tags": [
+        "whoosh",
+        "metal",
+        "blade",
+        "sharp",
+        "transition",
+        "slice"
+      ],
+      "originalName": "Short Whoosh Metal.mp3",
+      "sizeBytes": 34794,
+      "sizeKb": 33.98
+    },
+    {
+      "id": "radio-tuning",
+      "path": "assets/sfx/library/novelty/radio-tuning.mp3",
+      "category": "novelty",
+      "tags": [
+        "radio",
+        "tuning",
+        "static",
+        "channel",
+        "retro",
+        "topic-shift"
+      ],
+      "originalName": "Radio Adjustment.mp3",
+      "sizeBytes": 48956,
+      "sizeKb": 47.81
+    },
+    {
+      "id": "keyboard-mechanical",
+      "path": "assets/sfx/library/ui/keyboard-mechanical.mp3",
+      "category": "ui",
+      "tags": [
+        "keyboard",
+        "mechanical",
+        "clack",
+        "typing",
+        "coding",
+        "developer"
+      ],
+      "originalName": "Mechanical Keyboard.mp3",
+      "sizeBytes": 26593,
+      "sizeKb": 25.97
+    },
+    {
+      "id": "camera-shutter-dslr",
+      "path": "assets/sfx/library/camera/camera-shutter-dslr.mp3",
+      "category": "camera",
+      "tags": [
+        "camera",
+        "shutter",
+        "dslr",
+        "photo",
+        "canon",
+        "snap"
+      ],
+      "originalName": "Shutter 5Dm4.mp3",
+      "sizeBytes": 10892,
+      "sizeKb": 10.64
+    },
+    {
+      "id": "sub-drop-cinematic",
+      "path": "assets/sfx/library/impact/sub-drop-cinematic.mp3",
+      "category": "impact",
+      "tags": [
+        "sub",
+        "drop",
+        "bass",
+        "rumble",
+        "hook",
+        "cinematic"
+      ],
+      "originalName": "Sub Drop 2.mp3",
+      "sizeBytes": 28316,
+      "sizeKb": 27.65
+    },
+    {
+      "id": "glitch-quick",
+      "path": "assets/sfx/library/impact/glitch-quick.mp3",
+      "category": "impact",
+      "tags": [
+        "glitch",
+        "digital",
+        "quick",
+        "cyber",
+        "accent",
+        "snap"
+      ],
+      "originalName": "Glitch 1.mp3",
+      "sizeBytes": 8636,
+      "sizeKb": 8.43
+    },
+    {
+      "id": "riser-fast",
+      "path": "assets/sfx/library/impact/riser-fast.mp3",
+      "category": "impact",
+      "tags": [
+        "riser",
+        "tension",
+        "buildup",
+        "fast",
+        "countdown",
+        "transition"
+      ],
+      "originalName": "Riser 3.mp3",
+      "sizeBytes": 77734,
+      "sizeKb": 75.91
     }
   ]
 }

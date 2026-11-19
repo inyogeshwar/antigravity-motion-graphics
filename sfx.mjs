@@ -85,7 +85,18 @@ export const LIBRARY_MAP = {
   'vinyl-scratch': 'assets/sfx/library/novelty/vinyl-scratch.mp3',
   scratch: 'assets/sfx/library/novelty/vinyl-scratch.mp3',
   'tape-rewind': 'assets/sfx/library/novelty/tape-rewind.mp3',
-  rewind: 'assets/sfx/library/novelty/tape-rewind.mp3'
+  rewind: 'assets/sfx/library/novelty/tape-rewind.mp3',
+  'whoosh-metal': 'assets/sfx/library/whoosh/whoosh-metal.mp3',
+  'radio-tuning': 'assets/sfx/library/novelty/radio-tuning.mp3',
+  radio: 'assets/sfx/library/novelty/radio-tuning.mp3',
+  'keyboard-mechanical': 'assets/sfx/library/ui/keyboard-mechanical.mp3',
+  'mechanical-keyboard': 'assets/sfx/library/ui/keyboard-mechanical.mp3',
+  'camera-shutter-dslr': 'assets/sfx/library/camera/camera-shutter-dslr.mp3',
+  dslr: 'assets/sfx/library/camera/camera-shutter-dslr.mp3',
+  'sub-drop-cinematic': 'assets/sfx/library/impact/sub-drop-cinematic.mp3',
+  'sub-drop': 'assets/sfx/library/impact/sub-drop-cinematic.mp3',
+  'glitch-quick': 'assets/sfx/library/impact/glitch-quick.mp3',
+  'riser-fast': 'assets/sfx/library/impact/riser-fast.mp3'
 };
 
 /**
